@@ -1,4 +1,4 @@
-# Game Jam Mirror
+# Split Memories
 
 Description of the game
 
@@ -22,7 +22,7 @@ We believe AI tools are innovative productivity tools that should be used critic
 
 # Copyright and license
 
-Copyright © 2026 Game Jam Mirror - Coetus Interactive
+Copyright © 2026 Split Memories - Coetus Interactive
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
