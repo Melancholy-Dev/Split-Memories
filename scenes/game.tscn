@@ -1,19 +1,30 @@
 [gd_scene format=3 uid="uid://cxuba5jas6jti"]
 
+[ext_resource type="Script" uid="uid://d0gqi80l2i32w" path="res://scripts/managers/scene_manager.gd" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://hcrnfh7fr1nv" path="res://scripts/managers/audio_manager.gd" id="3_lbhrr"]
+[ext_resource type="Script" uid="uid://i0t2qqkkvlst" path="res://scripts/managers/animation_manager.gd" id="4_iywne"]
+[ext_resource type="PackedScene" uid="uid://oigabceown8o" path="res://scenes/levels/prototype.tscn" id="5_iywne"]
+
 [node name="Game" type="Node2D" unique_id=1715201550]
 
 [node name="Managers" type="Node" parent="." unique_id=1731005612]
 
-[node name="InputManager" type="Node" parent="Managers" unique_id=1035426538]
-
 [node name="SceneManager" type="Node" parent="Managers" unique_id=1629852135]
+unique_name_in_owner = true
+script = ExtResource("2_lnu2h")
+
+[node name="AudioManager" type="Node" parent="Managers" unique_id=316114605]
+unique_name_in_owner = true
+script = ExtResource("3_lbhrr")
+
+[node name="AnimationManager" type="Node" parent="Managers" unique_id=1589977257]
+unique_name_in_owner = true
+script = ExtResource("4_iywne")
 
 [node name="World" type="Node2D" parent="." unique_id=1592657735]
 
 [node name="Levels" type="Node2D" parent="World" unique_id=916306363]
 
-[node name="Entities" type="Node2D" parent="World" unique_id=1431009704]
+[node name="Prototype" parent="World/Levels" unique_id=2068148297 instance=ExtResource("5_iywne")]
 
 [node name="UILayers" type="Node" parent="." unique_id=1577220794]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=567764803]

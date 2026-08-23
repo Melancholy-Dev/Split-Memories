@@ -1,3 +1,47 @@
 [gd_scene format=3 uid="uid://oigabceown8o"]
 
+[ext_resource type="Script" uid="uid://cvgdc5x27qn41" path="res://scripts/managers/level_manager.gd" id="1_a1d61"]
+[ext_resource type="Script" uid="uid://bdklnrs5tga8l" path="res://scripts/grid/grid.gd" id="1_dovyc"]
+[ext_resource type="PackedScene" uid="uid://crn7n0jpujqa0" path="res://scenes/components/player.tscn" id="1_qq37k"]
+[ext_resource type="PackedScene" uid="uid://bc3gweejimojt" path="res://scenes/components/static_object.tscn" id="4_corbn"]
+[ext_resource type="PackedScene" uid="uid://dfo7hk2la7evv" path="res://scenes/components/pushable_object.tscn" id="4_js0vw"]
+
 [node name="Prototype" type="Node2D" unique_id=2068148297]
+script = ExtResource("1_a1d61")
+
+[node name="Grid" type="Node2D" parent="." unique_id=1575728120]
+script = ExtResource("1_dovyc")
+
+[node name="TileMap" type="TileMapLayer" parent="." unique_id=231105567]
+
+[node name="Entities" type="Node2D" parent="." unique_id=652481978]
+
+[node name="Player" parent="Entities" unique_id=250994355 instance=ExtResource("1_qq37k")]
+initial_grid_position = Vector2i(10, 10)
+
+[node name="MovementComponent" parent="Entities/Player/Components" parent_id_path=PackedInt32Array(250994355, 1212383466) index="2" unique_id=962384229 node_paths=PackedStringArray("board")]
+board = NodePath("../../../../Grid")
+
+[node name="PushableObjects" type="Node2D" parent="Entities" unique_id=573764610]
+
+[node name="Crate_0" parent="Entities/PushableObjects" unique_id=2011022084 instance=ExtResource("4_js0vw")]
+initial_grid_position = Vector2i(3, 3)
+
+[node name="Crate_1" parent="Entities/PushableObjects" unique_id=870798284 instance=ExtResource("4_js0vw")]
+initial_grid_position = Vector2i(4, 4)
+
+[node name="Crate_2" parent="Entities/PushableObjects" unique_id=1188068236 instance=ExtResource("4_js0vw")]
+initial_grid_position = Vector2i(5, 5)
+
+[node name="StaticObjects" type="Node2D" parent="Entities" unique_id=1612077439]
+
+[node name="Wall_0" parent="Entities/StaticObjects" unique_id=1912285805 instance=ExtResource("4_corbn")]
+initial_grid_position = Vector2i(1, 1)
+
+[node name="Wall_1" parent="Entities/StaticObjects" unique_id=1128046176 instance=ExtResource("4_corbn")]
+initial_grid_position = Vector2i(2, 2)
+
+[node name="Wall_2" parent="Entities/StaticObjects" unique_id=1893989859 instance=ExtResource("4_corbn")]
+initial_grid_position = Vector2i(6, 6)
+
+[editable path="Entities/Player"]

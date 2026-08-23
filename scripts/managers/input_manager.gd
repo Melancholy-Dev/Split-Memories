@@ -1,11 +1,25 @@
-extends Node
+extends Node # Autoload Singleton class
+
+# Signals
+signal direction_pressed_p1(direction: Vector2i)
+signal direction_pressed_p2(direction: Vector2i)
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("move_up_p1"):
+		direction_pressed_p1.emit(Vector2i.UP)
+	elif event.is_action_pressed("move_down_p1"):
+		direction_pressed_p1.emit(Vector2i.DOWN)
+	elif event.is_action_pressed("move_left_p1"):
+		direction_pressed_p1.emit(Vector2i.LEFT)
+	elif event.is_action_pressed("move_right_p1"):
+		direction_pressed_p1.emit(Vector2i.RIGHT)
+	
+	if event.is_action_pressed("move_up_p2"):
+		direction_pressed_p2.emit(Vector2i.UP)
+	elif event.is_action_pressed("move_down_p2"):
+		direction_pressed_p2.emit(Vector2i.DOWN)
+	elif event.is_action_pressed("move_left_p2"):
+		direction_pressed_p2.emit(Vector2i.LEFT)
+	elif event.is_action_pressed("move_right_p2"):
+		direction_pressed_p2.emit(Vector2i.RIGHT)

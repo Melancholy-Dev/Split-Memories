@@ -1,8 +1,99 @@
 [gd_scene format=3 uid="uid://crn7n0jpujqa0"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jorle"]
+[ext_resource type="Script" uid="uid://dufg2fe407jmv" path="res://scripts/entities/player.gd" id="1_6mmc7"]
+[ext_resource type="Script" uid="uid://025rlms2ash0" path="res://scripts/components/animation_component.gd" id="2_acvb7"]
+[ext_resource type="Script" uid="uid://buu41lb7k67mg" path="res://scripts/components/movement_component.gd" id="2_h3cwf"]
+[ext_resource type="Texture2D" uid="uid://cgtrlfa066ibn" path="res://assets/sprites/entities/players/prototype/player_1.png" id="2_ps70n"]
+[ext_resource type="Script" uid="uid://dp5t7ho3j25f4" path="res://scripts/components/audio_component.gd" id="2_sjsxr"]
 
-[node name="Player" type="CharacterBody2D" unique_id=250994355]
+[sub_resource type="SpriteFrames" id="SpriteFrames_acvb7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ps70n")
+}],
+"loop": 1,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ps70n")
+}],
+"loop": 1,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ps70n")
+}],
+"loop": 1,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ps70n")
+}],
+"loop": 1,
+"name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ps70n")
+}],
+"loop": 1,
+"name": &"move_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ps70n")
+}],
+"loop": 1,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ps70n")
+}],
+"loop": 1,
+"name": &"move_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ps70n")
+}],
+"loop": 1,
+"name": &"move_up",
+"speed": 5.0
+}]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1121625997]
-shape = SubResource("CapsuleShape2D_jorle")
+[node name="Player" type="Node2D" unique_id=606878679]
+script = ExtResource("1_6mmc7")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=326422892]
+sprite_frames = SubResource("SpriteFrames_acvb7")
+animation = &"move_up"
+
+[node name="MoveAudio" type="AudioStreamPlayer2D" parent="." unique_id=313720976]
+
+[node name="Components" type="Node" parent="." unique_id=1212383466]
+
+[node name="AnimationComponent" type="Node" parent="Components" unique_id=1117744600 node_paths=PackedStringArray("animated_sprite")]
+unique_name_in_owner = true
+script = ExtResource("2_acvb7")
+animated_sprite = NodePath("../../AnimatedSprite")
+
+[node name="AudioComponent" type="Node" parent="Components" unique_id=1976647451]
+unique_name_in_owner = true
+script = ExtResource("2_sjsxr")
+
+[node name="MovementComponent" type="Node" parent="Components" unique_id=962384229 node_paths=PackedStringArray("player")]
+unique_name_in_owner = true
+script = ExtResource("2_h3cwf")
+player = NodePath("../..")
