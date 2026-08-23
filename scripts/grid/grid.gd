@@ -4,7 +4,7 @@ class_name GridBoard extends Node2D
 signal player_step_completed(direction: Vector2i, moved_entities: Array[GridEntity])
 
 # Variables
-@export var grid_size := Vector2i(16, 16) # Cells number
+var grid_size := Vector2i(14, 17) # Cells number
 var tile_size := Vector2i(16, 16) # Cells size
 var cells: Array = []
 

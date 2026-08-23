@@ -21,10 +21,10 @@ script = ExtResource("3_lbhrr")
 unique_name_in_owner = true
 script = ExtResource("4_iywne")
 
-[node name="World" type="Node2D" parent="." unique_id=1592657735]
+[node name="Levels" type="Node2D" parent="." unique_id=916306363]
 
-[node name="Levels" type="Node2D" parent="World" unique_id=916306363]
-
-[node name="Prototype" parent="World/Levels" unique_id=2068148297 instance=ExtResource("5_iywne")]
+[node name="Prototype" parent="Levels" unique_id=2068148297 instance=ExtResource("5_iywne")]
 
 [node name="UILayers" type="Node" parent="." unique_id=1577220794]
+
+[node name="Camera" type="Node" parent="." unique_id=128163797]

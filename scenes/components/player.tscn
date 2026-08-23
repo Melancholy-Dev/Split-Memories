@@ -78,15 +78,17 @@ script = ExtResource("1_6mmc7")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=326422892]
 sprite_frames = SubResource("SpriteFrames_acvb7")
-animation = &"move_up"
+animation = &"idle_down"
+autoplay = "idle_down"
 
 [node name="MoveAudio" type="AudioStreamPlayer2D" parent="." unique_id=313720976]
 
 [node name="Components" type="Node" parent="." unique_id=1212383466]
 
-[node name="AnimationComponent" type="Node" parent="Components" unique_id=1117744600 node_paths=PackedStringArray("animated_sprite")]
+[node name="AnimationComponent" type="Node" parent="Components" unique_id=1117744600 node_paths=PackedStringArray("player", "animated_sprite")]
 unique_name_in_owner = true
 script = ExtResource("2_acvb7")
+player = NodePath("../..")
 animated_sprite = NodePath("../../AnimatedSprite")
 
 [node name="AudioComponent" type="Node" parent="Components" unique_id=1976647451]

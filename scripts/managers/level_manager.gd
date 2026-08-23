@@ -1,8 +1,8 @@
 extends Node2D
 
 # Nodes
-@onready var board: GridBoard = $Grid
-@onready var player: Player = $Entities/Player
+@export var board: GridBoard
+@export var player: Player
 @onready var pushable_objects := $Entities/PushableObjects.get_children()
 @onready var static_objects := $Entities/StaticObjects.get_children()
 

@@ -1,12 +1,18 @@
 class_name AnimationComponent extends Node
 
 # Nodes
+@export var player: Player
 @export var animated_sprite: AnimatedSprite2D
+@export var sprite_frames: SpriteFrames
 @onready var movement_component: MovementComponent = %MovementComponent
 
 
 func _ready() -> void:
-	movement_component.trying_to_move.connect(play_move_animation)
+	animated_sprite.sprite_frames = sprite_frames
+	if player.is_player_one:
+		InputManager.direction_pressed_p1.connect(play_move_animation)
+	else:
+		InputManager.direction_pressed_p2.connect(play_move_animation)
 
 func play_move_animation(direction: Vector2i) -> void:
 	var animation_name := _get_animation_name(direction)
