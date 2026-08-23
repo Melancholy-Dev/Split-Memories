@@ -1,11 +1,14 @@
-extends Node
+class_name AnimationManager extends Node
+
+# Nodes
+@export var animation_player: AnimationPlayer
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	UndoManager.is_undoing_started.connect(play_undo_transition)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func play_undo_transition() -> void:
+	if animation_player.is_playing():
+		animation_player.play("RESET")
+		animation_player.play("black_transition")
+	animation_player.play("black_transition")

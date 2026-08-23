@@ -85,17 +85,17 @@ autoplay = "idle_down"
 
 [node name="Components" type="Node" parent="." unique_id=1212383466]
 
-[node name="AnimationComponent" type="Node" parent="Components" unique_id=1117744600 node_paths=PackedStringArray("player", "animated_sprite")]
+[node name="AnimationComponent" type="Node" parent="Components" unique_id=1117744600 node_paths=PackedStringArray("player", "animated_sprite") groups=["animation_component"]]
 unique_name_in_owner = true
 script = ExtResource("2_acvb7")
 player = NodePath("../..")
 animated_sprite = NodePath("../../AnimatedSprite")
 
-[node name="AudioComponent" type="Node" parent="Components" unique_id=1976647451]
+[node name="AudioComponent" type="Node" parent="Components" unique_id=1976647451 groups=["audio_component"]]
 unique_name_in_owner = true
 script = ExtResource("2_sjsxr")
 
-[node name="MovementComponent" type="Node" parent="Components" unique_id=962384229 node_paths=PackedStringArray("player")]
+[node name="MovementComponent" type="Node" parent="Components" unique_id=962384229 node_paths=PackedStringArray("player") groups=["movement_components"]]
 unique_name_in_owner = true
 script = ExtResource("2_h3cwf")
 player = NodePath("../..")

@@ -1,4 +1,4 @@
-class_name GridBoard extends Node2D
+class_name Grid extends Node2D
 
 # Signals
 signal player_step_completed(direction: Vector2i, moved_entities: Array[GridEntity])
@@ -61,6 +61,30 @@ func unregister_entity(entity: GridEntity) -> void:
 	if is_inside_grid(cell) and get_entity_at(cell) == entity:
 		cells[cell.y][cell.x] = null
 
+func create_snapshot() -> Dictionary:
+	var snapshot: Dictionary = {}
+	for row in cells:
+		for entity in row:
+			if entity != null:
+				snapshot[entity] = entity.grid_position
+	return snapshot
+
+func restore_snapshot(snapshot: Dictionary) -> void:
+	for row in cells:
+		row.fill(null)
+	for entity_key in snapshot:
+		var entity: GridEntity
+		if entity_key is GridEntity:
+			entity = entity_key
+		if entity == null:
+			continue
+		var cell: Vector2i = snapshot[entity_key]
+		if not is_inside_grid(cell):
+			continue
+		cells[cell.y][cell.x] = entity
+		entity.set_grid_position(cell)
+		entity.position = cell_to_world(cell)
+
 func _set_entity_cell(entity: GridEntity, new_cell: Vector2i) -> void:
 	var old_cell := entity.grid_position
 	if is_inside_grid(old_cell) and get_entity_at(old_cell) == entity:
@@ -81,19 +105,16 @@ func try_move_player(player: Player, direction: Vector2i) -> Array[GridEntity]:
 	var player_cell := player.grid_position
 	var next_cell := player_cell + direction
 	var entity := get_entity_at(next_cell)
-
 	# Player cannot exit from the grid
 	if not is_inside_grid(next_cell):
 		player_step_completed.emit(direction, moved_entities)
 		return moved_entities
-
 	# Empity cell (only player move)
 	if entity == null:
 		_move_entity_in_grid(player, next_cell)
 		moved_entities.append(player)
 		player_step_completed.emit(direction, moved_entities)
 		return moved_entities
-
 	# Static object encountered (player cannot move)
 	if not entity.can_be_pushed():
 		player_step_completed.emit(direction, moved_entities)

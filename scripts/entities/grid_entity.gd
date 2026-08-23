@@ -6,10 +6,10 @@ signal grid_position_changed(old_position: Vector2i, new_position: Vector2i)
 # Variables
 @export var initial_grid_position: Vector2i
 var grid_position: Vector2i
-var board: GridBoard
+var board: Grid
 
 
-func init(_board: GridBoard, _position: Vector2i) -> void:
+func init(_board: Grid, _position: Vector2i) -> void:
 	board = _board
 	initial_grid_position = _position
 	grid_position = _position
