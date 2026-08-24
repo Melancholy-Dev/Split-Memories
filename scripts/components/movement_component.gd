@@ -18,31 +18,32 @@ func _ready() -> void:
 func _on_direction_pressed(direction: Vector2i) -> void:
 	if is_moving or UndoManager.is_undoing():
 		return
-
 	is_moving = true
 	var previous_state := UndoManager.capture_state()
 	var moved_entities := board.try_move_player(player, direction)
 	if not moved_entities.is_empty():
 		UndoManager.commit_state(previous_state)
-
 	if moved_entities.is_empty():
 		await get_tree().create_timer(movement_duration).timeout
 	else:
 		await _animate_entities(moved_entities)
-
 	is_moving = false
 
 func _animate_entities(entities: Array[GridEntity]) -> void:
 	for entity in entities:
-		var target_position := board.cell_to_world(entity.grid_position)
+		var start_position := entity.position.round()
+		var target_position := board.cell_to_world(entity.grid_position).round()
+		entity.position = start_position
 		var tween := entity.create_tween()
 		tween.set_trans(Tween.TRANS_LINEAR)
-		tween.set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property(
-			entity,
-			"position",
-			target_position,
+		tween.tween_method(
+			func(progress: float) -> void:
+				entity.position = start_position.lerp(target_position, progress).round(),
+			0.0,
+			1.0,
 			movement_duration
 		)
 
 	await get_tree().create_timer(movement_duration).timeout
+	for entity in entities:
+		entity.position = board.cell_to_world(entity.grid_position).round()

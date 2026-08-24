@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqdhpbhtu4vhp"
-path="res://.godot/imported/mirror.png-7a44dceac4b54a452cb0bc0225e419d0.ctex"
+path="res://.godot/imported/mirror.png-d5518bd95b8c4ed1030b8a0b93a3168d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tilesets/prototype/mirror.png"
-dest_files=["res://.godot/imported/mirror.png-7a44dceac4b54a452cb0bc0225e419d0.ctex"]
+source_file="res://assets/sprites/rooms/prototype/mirror.png"
+dest_files=["res://.godot/imported/mirror.png-d5518bd95b8c4ed1030b8a0b93a3168d.ctex"]
 
 [params]
 
