@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sx5mc1yt7taa"
-path="res://.godot/imported/Book_small.png-b7ed3c100cc19a097f7706bfcbc7d9b6.ctex"
+uid="uid://crpb7obst4kj5"
+path="res://.godot/imported/Book.png-34898f39f589c8586ddd374b7c0c25d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/entities/pushable_objects/level_2/Book_small.png"
-dest_files=["res://.godot/imported/Book_small.png-b7ed3c100cc19a097f7706bfcbc7d9b6.ctex"]
+source_file="res://assets/sprites/entities/pushable_objects/level_2/reality/Book.png"
+dest_files=["res://.godot/imported/Book.png-34898f39f589c8586ddd374b7c0c25d3.ctex"]
 
 [params]
 

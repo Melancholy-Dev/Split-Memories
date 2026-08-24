@@ -47,40 +47,31 @@ script = ExtResource("1_dovyc")
 position = Vector2(168, 152)
 sprite_frames = ExtResource("5_odond")
 
-[node name="MovementComponent" parent="Side_1/Entities/Player_1/Components" parent_id_path=PackedInt32Array(250994355, 1212383466) index="2" unique_id=962384229 node_paths=PackedStringArray("board")]
-board = NodePath("../../../../Grid_1")
-
 [node name="PushableObjects" type="Node2D" parent="Side_1/Entities" unique_id=573764610]
 
 [node name="Crate_0" parent="Side_1/Entities/PushableObjects" unique_id=1688533336 instance=ExtResource("4_js0vw")]
 position = Vector2(56, 56)
 texture = ExtResource("9_hhhrn")
-object_type = "crate"
 
 [node name="Crate_1" parent="Side_1/Entities/PushableObjects" unique_id=870798284 instance=ExtResource("4_js0vw")]
 position = Vector2(88, 88)
 texture = ExtResource("9_hhhrn")
-object_type = "crate"
 
 [node name="Crate_2" parent="Side_1/Entities/PushableObjects" unique_id=1188068236 instance=ExtResource("4_js0vw")]
 position = Vector2(104, 104)
 texture = ExtResource("9_hhhrn")
-object_type = "crate"
 
 [node name="Plant_0" parent="Side_1/Entities/PushableObjects" unique_id=2011022084 instance=ExtResource("4_js0vw")]
 position = Vector2(136, 136)
 texture = ExtResource("10_ar1yk")
-object_type = "plant"
 
 [node name="Plant_1" parent="Side_1/Entities/PushableObjects" unique_id=1704969232 instance=ExtResource("4_js0vw")]
 position = Vector2(120, 120)
 texture = ExtResource("10_ar1yk")
-object_type = "plant"
 
 [node name="Plant_2" parent="Side_1/Entities/PushableObjects" unique_id=52916855 instance=ExtResource("4_js0vw")]
 position = Vector2(152, 152)
 texture = ExtResource("10_ar1yk")
-object_type = "plant"
 
 [node name="StaticObjects" type="Node2D" parent="Side_1/Entities" unique_id=1612077439]
 
@@ -112,40 +103,31 @@ position = Vector2(8, 8)
 sprite_frames = ExtResource("6_76ncn")
 is_player_one = false
 
-[node name="MovementComponent" parent="Side_2/Entities/Player_2/Components" parent_id_path=PackedInt32Array(840756937, 1212383466) index="2" unique_id=962384229 node_paths=PackedStringArray("board")]
-board = NodePath("../../../../Grid_2")
-
 [node name="PushableObjects" type="Node2D" parent="Side_2/Entities" unique_id=102929155]
 
 [node name="Crate_0" parent="Side_2/Entities/PushableObjects" unique_id=1246484834 instance=ExtResource("4_js0vw")]
 position = Vector2(56, 56)
 texture = ExtResource("9_hhhrn")
-object_type = "crate"
 
 [node name="Crate_1" parent="Side_2/Entities/PushableObjects" unique_id=1016217478 instance=ExtResource("4_js0vw")]
 position = Vector2(88, 88)
 texture = ExtResource("9_hhhrn")
-object_type = "crate"
 
 [node name="Crate_2" parent="Side_2/Entities/PushableObjects" unique_id=1647229785 instance=ExtResource("4_js0vw")]
 position = Vector2(104, 104)
 texture = ExtResource("9_hhhrn")
-object_type = "crate"
 
 [node name="Plant_0" parent="Side_2/Entities/PushableObjects" unique_id=987845112 instance=ExtResource("4_js0vw")]
 position = Vector2(120, 120)
 texture = ExtResource("10_ar1yk")
-object_type = "plant"
 
 [node name="Plant_1" parent="Side_2/Entities/PushableObjects" unique_id=1822847848 instance=ExtResource("4_js0vw")]
 position = Vector2(136, 136)
 texture = ExtResource("10_ar1yk")
-object_type = "plant"
 
 [node name="Plant_2" parent="Side_2/Entities/PushableObjects" unique_id=1833339835 instance=ExtResource("4_js0vw")]
 position = Vector2(120, 152)
 texture = ExtResource("10_ar1yk")
-object_type = "plant"
 
 [node name="StaticObjects" type="Node2D" parent="Side_2/Entities" unique_id=1064399378]
 
@@ -160,6 +142,3 @@ texture = ExtResource("12_ar1yk")
 [node name="Wall_2" parent="Side_2/Entities/StaticObjects" unique_id=268704805 instance=ExtResource("4_corbn")]
 position = Vector2(72, 72)
 texture = ExtResource("12_ar1yk")
-
-[editable path="Side_1/Entities/Player_1"]
-[editable path="Side_2/Entities/Player_2"]

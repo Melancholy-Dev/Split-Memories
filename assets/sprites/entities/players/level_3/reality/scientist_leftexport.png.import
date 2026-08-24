@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gpm46xbbnmxj"
-path="res://.godot/imported/icon.png-088c95489cd7f41b58c3aa11722dee50.ctex"
+uid="uid://caa251rl6hdq1"
+path="res://.godot/imported/scientist_leftexport.png-6352db9445b53fcbaf3df49daee50921.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/icon.png"
-dest_files=["res://.godot/imported/icon.png-088c95489cd7f41b58c3aa11722dee50.ctex"]
+source_file="res://assets/sprites/entities/players/level_3/reality/scientist_leftexport.png"
+dest_files=["res://.godot/imported/scientist_leftexport.png-6352db9445b53fcbaf3df49daee50921.ctex"]
 
 [params]
 

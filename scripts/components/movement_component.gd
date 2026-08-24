@@ -2,7 +2,7 @@ class_name MovementComponent extends Node
 
 # Nodes
 @export var player: Player
-@export var board: Grid
+var board: Grid
 
 # Variables
 var movement_duration := 0.12
@@ -10,6 +10,12 @@ var is_moving := false
 
 
 func _ready() -> void:
+	var board_name: String
+	if player.is_player_one:
+		board_name = "Grid_1"
+	else:
+		board_name = "Grid_2"
+	board = player.get_parent().get_parent().get_node(board_name)
 	if player.is_player_one:
 		InputManager.direction_pressed_p1.connect(_on_direction_pressed)
 	else:
