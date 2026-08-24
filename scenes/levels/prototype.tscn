@@ -51,29 +51,23 @@ board = NodePath("../../../../Grid_1")
 
 [node name="Crate_0" parent="Side_1/Entities/PushableObjects" unique_id=2011022084 instance=ExtResource("4_js0vw")]
 position = Vector2(56, 56)
-initial_grid_position = Vector2i(3, 3)
 
 [node name="Crate_1" parent="Side_1/Entities/PushableObjects" unique_id=870798284 instance=ExtResource("4_js0vw")]
 position = Vector2(88, 88)
-initial_grid_position = Vector2i(5, 5)
 
 [node name="Crate_2" parent="Side_1/Entities/PushableObjects" unique_id=1188068236 instance=ExtResource("4_js0vw")]
 position = Vector2(104, 104)
-initial_grid_position = Vector2i(6, 6)
 
 [node name="StaticObjects" type="Node2D" parent="Side_1/Entities" unique_id=1612077439]
 
 [node name="Wall_0" parent="Side_1/Entities/StaticObjects" unique_id=1912285805 instance=ExtResource("4_corbn")]
 position = Vector2(24, 24)
-initial_grid_position = Vector2i(1, 1)
 
 [node name="Wall_1" parent="Side_1/Entities/StaticObjects" unique_id=1128046176 instance=ExtResource("4_corbn")]
 position = Vector2(40, 40)
-initial_grid_position = Vector2i(2, 2)
 
 [node name="Wall_2" parent="Side_1/Entities/StaticObjects" unique_id=1893989859 instance=ExtResource("4_corbn")]
 position = Vector2(72, 72)
-initial_grid_position = Vector2i(4, 4)
 
 [node name="Side_2" type="Node2D" parent="." unique_id=2039548093 node_paths=PackedStringArray("board", "player")]
 position = Vector2(256, 0)
@@ -101,29 +95,23 @@ board = NodePath("../../../../Grid_2")
 
 [node name="Crate_0" parent="Side_2/Entities/PushableObjects" unique_id=1246484834 instance=ExtResource("4_js0vw")]
 position = Vector2(56, 56)
-initial_grid_position = Vector2i(3, 3)
 
 [node name="Crate_1" parent="Side_2/Entities/PushableObjects" unique_id=1016217478 instance=ExtResource("4_js0vw")]
 position = Vector2(88, 88)
-initial_grid_position = Vector2i(5, 5)
 
 [node name="Crate_2" parent="Side_2/Entities/PushableObjects" unique_id=1647229785 instance=ExtResource("4_js0vw")]
 position = Vector2(104, 104)
-initial_grid_position = Vector2i(6, 6)
 
 [node name="StaticObjects" type="Node2D" parent="Side_2/Entities" unique_id=1064399378]
 
 [node name="Wall_0" parent="Side_2/Entities/StaticObjects" unique_id=2041531608 instance=ExtResource("4_corbn")]
 position = Vector2(24, 24)
-initial_grid_position = Vector2i(1, 1)
 
 [node name="Wall_1" parent="Side_2/Entities/StaticObjects" unique_id=1047422180 instance=ExtResource("4_corbn")]
 position = Vector2(40, 40)
-initial_grid_position = Vector2i(2, 2)
 
 [node name="Wall_2" parent="Side_2/Entities/StaticObjects" unique_id=268704805 instance=ExtResource("4_corbn")]
 position = Vector2(72, 72)
-initial_grid_position = Vector2i(4, 4)
 
 [editable path="Side_1/Entities/Player_1"]
 [editable path="Side_2/Entities/Player_2"]

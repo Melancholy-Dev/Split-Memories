@@ -9,8 +9,13 @@ extends Node2D
 
 func _ready() -> void:
 	for object in static_objects:
-		board.register_entity(object, object.initial_grid_position)
+		_register_entity_at_editor_position(object)
 	for object in pushable_objects:
-		board.register_entity(object, object.initial_grid_position)
-	board.register_entity(player, player.initial_grid_position)
+		_register_entity_at_editor_position(object)
+	_register_entity_at_editor_position(player)
 	UndoManager.register_board(board)
+
+func _register_entity_at_editor_position(entity: GridEntity) -> void:
+	var board_position := board.to_local(entity.global_position)
+	entity.initial_grid_position = board.world_to_cell(board_position)
+	board.register_entity(entity, entity.initial_grid_position)

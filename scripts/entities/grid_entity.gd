@@ -4,7 +4,7 @@ class_name GridEntity extends Node2D
 signal grid_position_changed(old_position: Vector2i, new_position: Vector2i)
 
 # Variables
-@export var initial_grid_position: Vector2i
+var initial_grid_position: Vector2i
 var grid_position: Vector2i
 var board: Grid
 
