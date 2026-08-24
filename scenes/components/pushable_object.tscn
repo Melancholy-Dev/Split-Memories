@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dfo7hk2la7evv"]
 
 [ext_resource type="Script" uid="uid://csaoahsfl4mw4" path="res://scripts/entities/pushable_object.gd" id="1_xurpb"]
-[ext_resource type="Texture2D" uid="uid://cynvf3oq0r506" path="res://assets/sprites/entities/pushable_objects/level_2/Book_pile.png" id="2_7cb0y"]
+[ext_resource type="Texture2D" uid="uid://dstt7mfrhwoum" path="res://assets/sprites/entities/pushable_objects/prototype/crate.png" id="2_7cb0y"]
 [ext_resource type="Script" uid="uid://dp5t7ho3j25f4" path="res://scripts/components/audio_component.gd" id="3_qisyh"]
 
 [node name="PushableObject" type="Node2D" unique_id=2011022084]

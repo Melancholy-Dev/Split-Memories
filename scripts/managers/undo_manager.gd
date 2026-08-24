@@ -16,6 +16,10 @@ func register_board(board: Grid) -> void:
 	if not _boards.has(board):
 		_boards.append(board)
 
+func clear_boards() -> void:
+	_boards.clear()
+	_history.clear()
+
 func capture_state() -> Dictionary:
 	var state: Dictionary = {}
 	for board in _boards:

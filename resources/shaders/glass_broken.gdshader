@@ -177,15 +177,17 @@ void fragment() {
 	}
 
 	if (!found) {
-		COLOR = vec4(0.0);
-		discard;
+		COLOR = vec4(0.0, 0.0, 0.0, 1.0);
+	} else {
+		float edge = 1.0 - smoothstep(0.0, edge_thickness, found_edge);
+		result.rgb += edge * edge_brightness;
+
+		float fade = 1.0;
+		if (alpha_fade_start < 1.0) {
+			fade = 1.0 - smoothstep(alpha_fade_start, 1.0, found_t);
+		}
+		result.a *= fade;
+
+		COLOR = result;
 	}
-
-	float edge = 1.0 - smoothstep(0.0, edge_thickness, found_edge);
-	result.rgb += edge * edge_brightness;
-
-	float fade = 1.0 - smoothstep(alpha_fade_start, 1.0, found_t);
-	result.a *= fade;
-
-	COLOR = result;
 }
