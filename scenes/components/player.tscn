@@ -73,12 +73,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_v4i73"]
-offsets = PackedFloat32Array(0, 0.064705886, 0.58235294)
+[sub_resource type="Gradient" id="Gradient_ps70n"]
+offsets = PackedFloat32Array(0, 0.2764706, 0.7235294)
 colors = PackedColorArray(1, 1, 1, 1, 0.88343555, 0.88343555, 0.88343555, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_v4i73"]
-gradient = SubResource("Gradient_v4i73")
+gradient = SubResource("Gradient_ps70n")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -93,7 +93,8 @@ autoplay = "idle_down"
 [node name="MoveAudio" type="AudioStreamPlayer2D" parent="." unique_id=313720976]
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=326461918]
-color = Color(0.4351923, 0.43519226, 0.43519226, 1)
+color = Color(0.99817103, 0.765535, 0.5508234, 1)
+energy = 2.5
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_v4i73")
 

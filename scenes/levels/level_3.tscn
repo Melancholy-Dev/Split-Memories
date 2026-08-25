@@ -21,7 +21,8 @@ texture = ExtResource("3_t4txi")
 sources/0 = SubResource("TileSetAtlasSource_76ncn")
 sources/1 = SubResource("TileSetAtlasSource_jdskk")
 
-[node name="Prototype" type="Node2D" unique_id=2068148297]
+[node name="Level_3" type="Node2D" unique_id=2068148297]
+modulate = Color(0.39215687, 0.39215687, 0.39215687, 1)
 script = ExtResource("1_qi5uv")
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=231105567]

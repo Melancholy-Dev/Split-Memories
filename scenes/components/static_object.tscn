@@ -1,11 +1,6 @@
 [gd_scene format=3 uid="uid://bc3gweejimojt"]
 
 [ext_resource type="Script" uid="uid://cuobgujrkv8ag" path="res://scripts/entities/static_object.gd" id="1_udfq6"]
-[ext_resource type="Texture2D" uid="uid://c6s1u2bpd56hr" path="res://assets/sprites/entities/static_objects/prototype/wall.png" id="2_4yho3"]
 
 [node name="StaticObject" type="Node2D" unique_id=1912285805]
 script = ExtResource("1_udfq6")
-
-[node name="Sprite" type="Sprite2D" parent="." unique_id=950151983]
-light_mask = 3
-texture = ExtResource("2_4yho3")

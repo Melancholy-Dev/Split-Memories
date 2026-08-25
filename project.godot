@@ -17,27 +17,24 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-LitManager="*uid://brf2hvdtyyw3q"
-PhantomCameraManager="*uid://duq6jhf6unyis"
 InputManager="*uid://bscugmxnxur15"
 UndoManager="*uid://cjqi53j5xmbb7"
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
+window/size/viewport_width=640
+window/size/viewport_height=360
 window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gdscript_formatter/plugin.cfg", "res://addons/lit/plugin.cfg")
+enabled=PackedStringArray()
 
 [file_customization]
 
 folder_colors={
-"res://addons/": "gray",
 "res://assets/": "green",
 "res://assets/audio/": "teal",
 "res://assets/fonts/": "teal",
@@ -147,6 +144,7 @@ pause={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 2d/snap/snap_2d_transforms_to_pixel=true
 
 [shader_globals]

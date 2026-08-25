@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dyv7onxg3c4wc" path="res://assets/sprites/entities/pushable_objects/prototype/plant.png" id="9_dnkej"]
 [ext_resource type="Texture2D" uid="uid://dstt7mfrhwoum" path="res://assets/sprites/entities/pushable_objects/prototype/crate.png" id="9_mkypq"]
 [ext_resource type="PackedScene" uid="uid://bc3gweejimojt" path="res://scenes/components/static_object.tscn" id="11_7h2jl"]
-[ext_resource type="Texture2D" uid="uid://c6s1u2bpd56hr" path="res://assets/sprites/entities/static_objects/prototype/wall.png" id="12_mqh5v"]
 [ext_resource type="SpriteFrames" uid="uid://ck0m7g5pa5ik0" path="res://resources/animations/players/p2_prototype.tres" id="13_7o3do"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_76ncn"]
@@ -26,7 +25,8 @@ texture = ExtResource("3_wtwp4")
 sources/0 = SubResource("TileSetAtlasSource_76ncn")
 sources/1 = SubResource("TileSetAtlasSource_jdskk")
 
-[node name="Prototype" type="Node2D" unique_id=2068148297]
+[node name="Level_1" type="Node2D" unique_id=2068148297]
+modulate = Color(0.39215687, 0.39215687, 0.39215687, 1)
 script = ExtResource("1_dnkej")
 
 [node name="TileMap" type="TileMapLayer" parent="." unique_id=231105567]
@@ -46,6 +46,9 @@ script = ExtResource("5_bahl2")
 [node name="Player_1" parent="Side_1/Entities" unique_id=250994355 instance=ExtResource("6_np2pn")]
 position = Vector2(104, 248)
 sprite_frames = ExtResource("7_v6ha0")
+
+[node name="PointLight2D" parent="Side_1/Entities/Player_1" index="2" unique_id=326461918]
+visible = false
 
 [node name="PushableObjects" type="Node2D" parent="Side_1/Entities" unique_id=573764610]
 
@@ -81,99 +84,75 @@ texture = ExtResource("9_mkypq")
 
 [node name="Bed_0" parent="Side_1/Entities/StaticObjects" unique_id=1912285805 instance=ExtResource("11_7h2jl")]
 position = Vector2(120, 24)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_1" parent="Side_1/Entities/StaticObjects" unique_id=1801893442 instance=ExtResource("11_7h2jl")]
 position = Vector2(120, 40)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_2" parent="Side_1/Entities/StaticObjects" unique_id=27718177 instance=ExtResource("11_7h2jl")]
 position = Vector2(40, 88)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_3" parent="Side_1/Entities/StaticObjects" unique_id=1751668313 instance=ExtResource("11_7h2jl")]
 position = Vector2(56, 88)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_4" parent="Side_1/Entities/StaticObjects" unique_id=1830699685 instance=ExtResource("11_7h2jl")]
 position = Vector2(168, 104)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_5" parent="Side_1/Entities/StaticObjects" unique_id=1101332741 instance=ExtResource("11_7h2jl")]
 position = Vector2(184, 104)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_6" parent="Side_1/Entities/StaticObjects" unique_id=1154585553 instance=ExtResource("11_7h2jl")]
 position = Vector2(24, 136)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_7" parent="Side_1/Entities/StaticObjects" unique_id=712946935 instance=ExtResource("11_7h2jl")]
 position = Vector2(24, 152)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_8" parent="Side_1/Entities/StaticObjects" unique_id=1909021064 instance=ExtResource("11_7h2jl")]
 position = Vector2(136, 136)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_9" parent="Side_1/Entities/StaticObjects" unique_id=1605796535 instance=ExtResource("11_7h2jl")]
 position = Vector2(136, 152)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_10" parent="Side_1/Entities/StaticObjects" unique_id=1419081494 instance=ExtResource("11_7h2jl")]
 position = Vector2(184, 152)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_11" parent="Side_1/Entities/StaticObjects" unique_id=1401374313 instance=ExtResource("11_7h2jl")]
 position = Vector2(200, 152)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_12" parent="Side_1/Entities/StaticObjects" unique_id=162112426 instance=ExtResource("11_7h2jl")]
 position = Vector2(216, 200)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_13" parent="Side_1/Entities/StaticObjects" unique_id=729621639 instance=ExtResource("11_7h2jl")]
 position = Vector2(216, 216)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_14" parent="Side_1/Entities/StaticObjects" unique_id=1589934199 instance=ExtResource("11_7h2jl")]
 position = Vector2(120, 200)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_15" parent="Side_1/Entities/StaticObjects" unique_id=1832987877 instance=ExtResource("11_7h2jl")]
 position = Vector2(120, 184)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_16" parent="Side_1/Entities/StaticObjects" unique_id=839299169 instance=ExtResource("11_7h2jl")]
 position = Vector2(104, 168)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_17" parent="Side_1/Entities/StaticObjects" unique_id=1627808462 instance=ExtResource("11_7h2jl")]
 position = Vector2(88, 168)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_18" parent="Side_1/Entities/StaticObjects" unique_id=743370686 instance=ExtResource("11_7h2jl")]
 position = Vector2(40, 216)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_19" parent="Side_1/Entities/StaticObjects" unique_id=1468925719 instance=ExtResource("11_7h2jl")]
 position = Vector2(56, 216)
-texture = ExtResource("12_mqh5v")
 
 [node name="Machine_0" parent="Side_1/Entities/StaticObjects" unique_id=2102978648 instance=ExtResource("11_7h2jl")]
 position = Vector2(72, 120)
-texture = ExtResource("12_mqh5v")
 
 [node name="Machine_1" parent="Side_1/Entities/StaticObjects" unique_id=1816576627 instance=ExtResource("11_7h2jl")]
 position = Vector2(104, 136)
-texture = ExtResource("12_mqh5v")
 
 [node name="Machine_2" parent="Side_1/Entities/StaticObjects" unique_id=922950698 instance=ExtResource("11_7h2jl")]
 position = Vector2(168, 168)
-texture = ExtResource("12_mqh5v")
 
 [node name="Machine_3" parent="Side_1/Entities/StaticObjects" unique_id=373770744 instance=ExtResource("11_7h2jl")]
 position = Vector2(168, 56)
-texture = ExtResource("12_mqh5v")
 
 [node name="Side_2" type="Node2D" parent="." unique_id=2039548093 node_paths=PackedStringArray("board", "player")]
 position = Vector2(256, 0)
@@ -225,96 +204,74 @@ texture = ExtResource("9_mkypq")
 
 [node name="Bed_0" parent="Side_2/Entities/StaticObjects" unique_id=1843604489 instance=ExtResource("11_7h2jl")]
 position = Vector2(104, 24)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_1" parent="Side_2/Entities/StaticObjects" unique_id=1337976875 instance=ExtResource("11_7h2jl")]
 position = Vector2(104, 40)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_2" parent="Side_2/Entities/StaticObjects" unique_id=427820952 instance=ExtResource("11_7h2jl")]
 position = Vector2(168, 88)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_3" parent="Side_2/Entities/StaticObjects" unique_id=1442889585 instance=ExtResource("11_7h2jl")]
 position = Vector2(184, 88)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_4" parent="Side_2/Entities/StaticObjects" unique_id=1539385853 instance=ExtResource("11_7h2jl")]
 position = Vector2(40, 104)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_5" parent="Side_2/Entities/StaticObjects" unique_id=774591386 instance=ExtResource("11_7h2jl")]
 position = Vector2(56, 104)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_6" parent="Side_2/Entities/StaticObjects" unique_id=1388483416 instance=ExtResource("11_7h2jl")]
 position = Vector2(200, 136)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_7" parent="Side_2/Entities/StaticObjects" unique_id=1185503163 instance=ExtResource("11_7h2jl")]
 position = Vector2(200, 152)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_8" parent="Side_2/Entities/StaticObjects" unique_id=1225963815 instance=ExtResource("11_7h2jl")]
 position = Vector2(88, 136)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_9" parent="Side_2/Entities/StaticObjects" unique_id=1446039748 instance=ExtResource("11_7h2jl")]
 position = Vector2(88, 152)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_10" parent="Side_2/Entities/StaticObjects" unique_id=935770455 instance=ExtResource("11_7h2jl")]
 position = Vector2(24, 152)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_11" parent="Side_2/Entities/StaticObjects" unique_id=110154538 instance=ExtResource("11_7h2jl")]
 position = Vector2(40, 152)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_12" parent="Side_2/Entities/StaticObjects" unique_id=1464601440 instance=ExtResource("11_7h2jl")]
 position = Vector2(8, 200)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_13" parent="Side_2/Entities/StaticObjects" unique_id=682343745 instance=ExtResource("11_7h2jl")]
 position = Vector2(8, 216)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_14" parent="Side_2/Entities/StaticObjects" unique_id=385277370 instance=ExtResource("11_7h2jl")]
 position = Vector2(104, 200)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_15" parent="Side_2/Entities/StaticObjects" unique_id=1749842826 instance=ExtResource("11_7h2jl")]
 position = Vector2(104, 184)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_16" parent="Side_2/Entities/StaticObjects" unique_id=1620146919 instance=ExtResource("11_7h2jl")]
 position = Vector2(136, 168)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_17" parent="Side_2/Entities/StaticObjects" unique_id=1477831469 instance=ExtResource("11_7h2jl")]
 position = Vector2(120, 168)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_18" parent="Side_2/Entities/StaticObjects" unique_id=1602817373 instance=ExtResource("11_7h2jl")]
 position = Vector2(168, 216)
-texture = ExtResource("12_mqh5v")
 
 [node name="Bed_19" parent="Side_2/Entities/StaticObjects" unique_id=1809426447 instance=ExtResource("11_7h2jl")]
 position = Vector2(184, 216)
-texture = ExtResource("12_mqh5v")
 
 [node name="Machine_0" parent="Side_2/Entities/StaticObjects" unique_id=1481044939 instance=ExtResource("11_7h2jl")]
 position = Vector2(152, 120)
-texture = ExtResource("12_mqh5v")
 
 [node name="Machine_1" parent="Side_2/Entities/StaticObjects" unique_id=724045851 instance=ExtResource("11_7h2jl")]
 position = Vector2(120, 136)
-texture = ExtResource("12_mqh5v")
 
 [node name="Machine_2" parent="Side_2/Entities/StaticObjects" unique_id=1806956500 instance=ExtResource("11_7h2jl")]
 position = Vector2(56, 168)
-texture = ExtResource("12_mqh5v")
 
 [node name="Machine_3" parent="Side_2/Entities/StaticObjects" unique_id=39442875 instance=ExtResource("11_7h2jl")]
 position = Vector2(56, 56)
-texture = ExtResource("12_mqh5v")
+
+[editable path="Side_1/Entities/Player_1"]

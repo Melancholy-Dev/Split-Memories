@@ -144,7 +144,7 @@ _music_player = NodePath("../../Audio/Music")
 
 [node name="Levels" type="Node2D" parent="." unique_id=916306363]
 
-[node name="UILayers" type="Node" parent="." unique_id=1577220794]
+[node name="UILayers" type="CanvasLayer" parent="." unique_id=1577220794]
 
 [node name="MainMenu" parent="UILayers" unique_id=949514378 groups=["main_menu"] instance=ExtResource("8_gee14")]
 unique_name_in_owner = true
@@ -153,7 +153,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 visible = false
 
-[node name="Transitions" type="CanvasLayer" parent="UILayers" unique_id=568035319]
+[node name="Transitions" type="Node" parent="UILayers" unique_id=568035319]
 
 [node name="PuzzleCompletedLabel" type="Label" parent="UILayers/Transitions" unique_id=101885176]
 visible = false

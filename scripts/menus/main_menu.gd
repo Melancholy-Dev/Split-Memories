@@ -63,5 +63,5 @@ func _on_level_3_button_pressed() -> void:
 func _game_started(level: int) -> void:
 	await %AnimationManager.play_scene_change_transition()
 	await scene_manager.load_level(level)
-	await %AnimationManager.play_reset()
 	visible = false
+	await %AnimationManager.play_reset()
