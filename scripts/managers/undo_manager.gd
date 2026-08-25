@@ -36,6 +36,7 @@ func _on_undo_pressed() -> void:
 	_is_undoing = true
 	var animation_manager := get_tree().get_first_node_in_group("animation_manager")
 	is_undoing_started.emit()
+	await get_tree().create_timer(0.3).timeout
 	var state: Dictionary = _history.pop_back()
 	for board in _boards:
 		if state.has(board):

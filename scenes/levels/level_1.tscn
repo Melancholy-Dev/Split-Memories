@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://crn7n0jpujqa0" path="res://scenes/components/player.tscn" id="6_np2pn"]
 [ext_resource type="SpriteFrames" uid="uid://dvjfcgesbh140" path="res://resources/animations/players/p1_prototype.tres" id="7_v6ha0"]
 [ext_resource type="PackedScene" uid="uid://dfo7hk2la7evv" path="res://scenes/components/pushable_object.tscn" id="8_gmpev"]
+[ext_resource type="Texture2D" uid="uid://dyv7onxg3c4wc" path="res://assets/sprites/entities/pushable_objects/prototype/plant.png" id="9_dnkej"]
 [ext_resource type="Texture2D" uid="uid://dstt7mfrhwoum" path="res://assets/sprites/entities/pushable_objects/prototype/crate.png" id="9_mkypq"]
 [ext_resource type="PackedScene" uid="uid://bc3gweejimojt" path="res://scenes/components/static_object.tscn" id="11_7h2jl"]
 [ext_resource type="Texture2D" uid="uid://c6s1u2bpd56hr" path="res://assets/sprites/entities/static_objects/prototype/wall.png" id="12_mqh5v"]
@@ -50,15 +51,15 @@ sprite_frames = ExtResource("7_v6ha0")
 
 [node name="Cart_0" parent="Side_1/Entities/PushableObjects" unique_id=1688533336 instance=ExtResource("8_gmpev")]
 position = Vector2(136, 120)
-texture = ExtResource("9_mkypq")
+texture = ExtResource("9_dnkej")
 
 [node name="Cart_1" parent="Side_1/Entities/PushableObjects" unique_id=2011022084 instance=ExtResource("8_gmpev")]
 position = Vector2(120, 152)
-texture = ExtResource("9_mkypq")
+texture = ExtResource("9_dnkej")
 
 [node name="Cart_2" parent="Side_1/Entities/PushableObjects" unique_id=1175402225 instance=ExtResource("8_gmpev")]
 position = Vector2(24, 200)
-texture = ExtResource("9_mkypq")
+texture = ExtResource("9_dnkej")
 
 [node name="Chair_0" parent="Side_1/Entities/PushableObjects" unique_id=1657488890 instance=ExtResource("8_gmpev")]
 position = Vector2(104, 40)
@@ -194,15 +195,15 @@ is_player_one = false
 
 [node name="Cart_0" parent="Side_2/Entities/PushableObjects" unique_id=350495978 instance=ExtResource("8_gmpev")]
 position = Vector2(152, 104)
-texture = ExtResource("9_mkypq")
+texture = ExtResource("9_dnkej")
 
 [node name="Cart_1" parent="Side_2/Entities/PushableObjects" unique_id=690942800 instance=ExtResource("8_gmpev")]
 position = Vector2(88, 184)
-texture = ExtResource("9_mkypq")
+texture = ExtResource("9_dnkej")
 
 [node name="Cart_2" parent="Side_2/Entities/PushableObjects" unique_id=139674431 instance=ExtResource("8_gmpev")]
 position = Vector2(72, 216)
-texture = ExtResource("9_mkypq")
+texture = ExtResource("9_dnkej")
 
 [node name="Chair_0" parent="Side_2/Entities/PushableObjects" unique_id=1636138854 instance=ExtResource("8_gmpev")]
 position = Vector2(24, 200)

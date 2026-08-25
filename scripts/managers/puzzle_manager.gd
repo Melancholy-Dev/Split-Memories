@@ -5,6 +5,8 @@ signal puzzle_completed
 # Nodes
 @onready var objects_1: Node = $Side_1/Entities/PushableObjects
 @onready var objects_2: Node = $Side_2/Entities/PushableObjects
+@onready var grid_1: Grid = $Side_1/Grid_1
+@onready var grid_2: Grid = $Side_2/Grid_2
 
 # Variables
 var puzzle_solved := false
@@ -25,16 +27,19 @@ func _on_object_position_changed(_old_position: Vector2i, _new_position: Vector2
 func check_puzzle_solution() -> void:
 	if puzzle_solved:
 		return
-	if _get_objects_state(objects_1) == _get_objects_state(objects_2):
+	if _get_objects_state(objects_1, grid_1) == _get_objects_state(objects_2, grid_2, true):
 		puzzle_solved = true
 		_on_puzzle_solved()
 
-func _get_objects_state(container: Node) -> Array[String]:
+func _get_objects_state(container: Node, grid: Grid, mirror_horizontal: bool = false) -> Array[String]:
 	var state: Array[String] = []
 	for child in container.get_children():
 		var object := child as PushableObject
 		if object != null:
-			state.append("%s:%d,%d" % [object.object_type, object.grid_position.x, object.grid_position.y])
+			var cell := object.grid_position
+			if mirror_horizontal:
+				cell.x = grid.grid_size.x - 1 - cell.x
+			state.append("%s:%d,%d" % [object.object_type, cell.x, cell.y])
 	state.sort()
 	return state
 
