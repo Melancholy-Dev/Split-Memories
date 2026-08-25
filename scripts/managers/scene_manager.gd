@@ -7,7 +7,7 @@ signal level_loaded()
 # Nodes
 @export var levels_root: Node2D
 @export var level_scenes: Array[PackedScene] = []
-@export var puzzle_completed: Label
+@export var puzzle_completed_label: Label
 
 # Variables
 var current_level: Node
@@ -34,10 +34,10 @@ func load_level(index: int) -> void:
 func _on_puzzle_completed() -> void:
 	loading_level.emit()
 	await %AnimationManager.play_scene_change_transition()
-	puzzle_completed.visible = true
+	puzzle_completed_label.visible = true
 	await get_tree().create_timer(1.5).timeout
 	if current_level_index + 1 < level_scenes.size():
 		await load_level(current_level_index + 1)
 		await %AnimationManager.play_reset()
-		puzzle_completed.visible = false
+		puzzle_completed_label.visible = false
 		level_loaded.emit()

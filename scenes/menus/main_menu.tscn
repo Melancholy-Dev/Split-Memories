@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cg8jqxcxs834c"]
 
-[ext_resource type="Script" uid="uid://c7klu3ggtvfta" path="res://scripts/components/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Script" uid="uid://c7klu3ggtvfta" path="res://scripts/menus/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://vl6gdjtt57vw" path="res://assets/fonts/pixelplay.ttf" id="1_l6cm7"]
 
 [sub_resource type="Theme" id="Theme_l6cm7"]
@@ -18,7 +18,7 @@ default_font_size = 16
 default_font = ExtResource("1_l6cm7")
 default_font_size = 16
 
-[node name="MainMenu" type="Control" unique_id=949514378 node_paths=PackedStringArray("menu_buttons", "level_buttons", "tutorial", "credits", "back_button")]
+[node name="MainMenu" type="Control" unique_id=949514378 node_paths=PackedStringArray("initial_focus", "menu_buttons", "level_buttons", "tutorial", "credits", "back_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,6 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ekxnf")
+initial_focus = NodePath("MenuButtons/Play/PanelContainer/PlayButton")
 menu_buttons = NodePath("MenuButtons")
 level_buttons = NodePath("LevelsButtons")
 tutorial = NodePath("Tutorial")

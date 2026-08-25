@@ -7,4 +7,5 @@
 script = ExtResource("1_udfq6")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=950151983]
+light_mask = 3
 texture = ExtResource("2_4yho3")

@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://bal572pfoyik1"]
+
+[ext_resource type="Script" uid="uid://d3krd4f5u2cus" path="res://scripts/menus/pause_menu.gd" id="1_7unhi"]
+[ext_resource type="FontFile" uid="uid://vl6gdjtt57vw" path="res://assets/fonts/pixelplay.ttf" id="1_fwndu"]
+
+[sub_resource type="Theme" id="Theme_fwndu"]
+default_font = ExtResource("1_fwndu")
+default_font_size = 48
+
+[sub_resource type="Theme" id="Theme_7unhi"]
+default_font = ExtResource("1_fwndu")
+
+[node name="PauseMenu" type="Control" unique_id=2018703224 node_paths=PackedStringArray("initial_focus")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7unhi")
+initial_focus = NodePath("PanelContainer/PauseButtons/Resume/PanelContainer/ResumeButton")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=320969938]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PauseButtons" type="VBoxContainer" parent="PanelContainer" unique_id=549545562]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/PauseButtons" unique_id=364783925]
+layout_mode = 2
+theme = SubResource("Theme_fwndu")
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="Resume" type="MarginContainer" parent="PanelContainer/PauseButtons" unique_id=1655340863]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PauseButtons/Resume" unique_id=928760167]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="PanelContainer/PauseButtons/Resume/PanelContainer" unique_id=1400188892 groups=["ui_button"]]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = SubResource("Theme_7unhi")
+text = "Resume"
+
+[node name="Retry" type="MarginContainer" parent="PanelContainer/PauseButtons" unique_id=1505734723]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PauseButtons/Retry" unique_id=637059992]
+layout_mode = 2
+
+[node name="RetryButton" type="Button" parent="PanelContainer/PauseButtons/Retry/PanelContainer" unique_id=740717284 groups=["ui_button"]]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = SubResource("Theme_7unhi")
+text = "Retry"
+
+[node name="MainMenu" type="MarginContainer" parent="PanelContainer/PauseButtons" unique_id=2114971054]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PauseButtons/MainMenu" unique_id=1865415656]
+layout_mode = 2
+
+[node name="MainMenuButton" type="Button" parent="PanelContainer/PauseButtons/MainMenu/PanelContainer" unique_id=1188717682 groups=["ui_button"]]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = SubResource("Theme_7unhi")
+text = "Go back to Main Menu"
+
+[connection signal="pressed" from="PanelContainer/PauseButtons/Resume/PanelContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PanelContainer/PauseButtons/Retry/PanelContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="PanelContainer/PauseButtons/MainMenu/PanelContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

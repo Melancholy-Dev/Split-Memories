@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8cgmiljscwp7"
-path="res://.godot/imported/Mira_down.png-da3d555fe02e141bb4282460ae1d97ed.ctex"
+uid="uid://c0ki5x5ft5r7m"
+path="res://.godot/imported/mira_up.png-bf03ad4bfd74c515da3fa55885d0553a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/entities/players/level_1/reality/Mira_down.png"
-dest_files=["res://.godot/imported/Mira_down.png-da3d555fe02e141bb4282460ae1d97ed.ctex"]
+source_file="res://assets/sprites/entities/players/level_1/reality/mira_up.png"
+dest_files=["res://.godot/imported/mira_up.png-bf03ad4bfd74c515da3fa55885d0553a.ctex"]
 
 [params]
 
