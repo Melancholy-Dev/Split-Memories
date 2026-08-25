@@ -1,3 +1,283 @@
 [gd_scene format=3 uid="uid://cg8jqxcxs834c"]
 
-[node name="MainMenu" type="Node2D" unique_id=272868107]
+[ext_resource type="Script" uid="uid://c7klu3ggtvfta" path="res://scripts/components/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="FontFile" uid="uid://vl6gdjtt57vw" path="res://assets/fonts/pixelplay.ttf" id="1_l6cm7"]
+
+[sub_resource type="Theme" id="Theme_l6cm7"]
+default_font = ExtResource("1_l6cm7")
+default_font_size = 48
+
+[sub_resource type="Theme" id="Theme_vue75"]
+default_font = ExtResource("1_l6cm7")
+
+[sub_resource type="Theme" id="Theme_ekxnf"]
+default_font = ExtResource("1_l6cm7")
+default_font_size = 16
+
+[sub_resource type="Theme" id="Theme_bqqt6"]
+default_font = ExtResource("1_l6cm7")
+default_font_size = 16
+
+[node name="MainMenu" type="Control" unique_id=949514378 node_paths=PackedStringArray("menu_buttons", "level_buttons", "tutorial", "credits", "back_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+menu_buttons = NodePath("MenuButtons")
+level_buttons = NodePath("LevelsButtons")
+tutorial = NodePath("Tutorial")
+credits = NodePath("Credits")
+back_button = NodePath("BackButton")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1770944946]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="." unique_id=132847954]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -280.0
+offset_right = -31.0
+offset_bottom = 63.0
+grow_horizontal = 0
+theme = SubResource("Theme_l6cm7")
+text = "Split Memories"
+
+[node name="BackButton" type="VBoxContainer" parent="." unique_id=1404593798]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = -85.0
+offset_right = 135.0
+offset_bottom = -56.0
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Back" type="MarginContainer" parent="BackButton" unique_id=221452322]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="BackButton/Back" unique_id=880738970]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="BackButton/Back/PanelContainer" unique_id=1236261478 groups=["ui_button"]]
+layout_mode = 2
+theme = SubResource("Theme_vue75")
+text = "Go Back"
+
+[node name="MenuButtons" type="VBoxContainer" parent="." unique_id=696405602]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = -85.0
+offset_right = 135.0
+offset_bottom = 92.0
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Play" type="MarginContainer" parent="MenuButtons" unique_id=890597023]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MenuButtons/Play" unique_id=333900977]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="MenuButtons/Play/PanelContainer" unique_id=691417107 groups=["ui_button"]]
+layout_mode = 2
+theme = SubResource("Theme_vue75")
+text = "Play"
+
+[node name="Levels" type="MarginContainer" parent="MenuButtons" unique_id=595610466]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MenuButtons/Levels" unique_id=1961630905]
+layout_mode = 2
+
+[node name="LevelsButton" type="Button" parent="MenuButtons/Levels/PanelContainer" unique_id=2066746980 groups=["ui_button"]]
+layout_mode = 2
+theme = SubResource("Theme_vue75")
+text = "Levels"
+
+[node name="Tutorial" type="MarginContainer" parent="MenuButtons" unique_id=782063603]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MenuButtons/Tutorial" unique_id=609680891]
+layout_mode = 2
+
+[node name="TutorialButton" type="Button" parent="MenuButtons/Tutorial/PanelContainer" unique_id=1261658303 groups=["ui_button"]]
+layout_mode = 2
+theme = SubResource("Theme_vue75")
+text = "Tutorial"
+
+[node name="Credits" type="MarginContainer" parent="MenuButtons" unique_id=1886697956]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MenuButtons/Credits" unique_id=841119461]
+layout_mode = 2
+
+[node name="CreditsButton" type="Button" parent="MenuButtons/Credits/PanelContainer" unique_id=753200179 groups=["ui_button"]]
+layout_mode = 2
+theme = SubResource("Theme_vue75")
+text = "Credits"
+
+[node name="Quit" type="MarginContainer" parent="MenuButtons" unique_id=997212441]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MenuButtons/Quit" unique_id=1070639726]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="MenuButtons/Quit/PanelContainer" unique_id=1936195367 groups=["ui_button"]]
+layout_mode = 2
+theme = SubResource("Theme_vue75")
+text = "Quit"
+
+[node name="LevelsButtons" type="VBoxContainer" parent="." unique_id=1258987857]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_top = -15.0
+offset_right = 135.0
+offset_bottom = 88.000015
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Level1" type="MarginContainer" parent="LevelsButtons" unique_id=1641581159]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="LevelsButtons/Level1" unique_id=1904089676]
+layout_mode = 2
+
+[node name="Level1Button" type="Button" parent="LevelsButtons/Level1/PanelContainer" unique_id=426364652 groups=["ui_button"]]
+layout_mode = 2
+theme = SubResource("Theme_vue75")
+text = "Level 1"
+
+[node name="Level2" type="MarginContainer" parent="LevelsButtons" unique_id=14130655]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="LevelsButtons/Level2" unique_id=1839017094]
+layout_mode = 2
+
+[node name="Level2Button" type="Button" parent="LevelsButtons/Level2/PanelContainer" unique_id=1153801523 groups=["ui_button"]]
+layout_mode = 2
+theme = SubResource("Theme_vue75")
+text = "Level 2"
+
+[node name="Level3" type="MarginContainer" parent="LevelsButtons" unique_id=1370425694]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="LevelsButtons/Level3" unique_id=625284303]
+layout_mode = 2
+
+[node name="Level3Button" type="Button" parent="LevelsButtons/Level3/PanelContainer" unique_id=1973328880 groups=["ui_button"]]
+layout_mode = 2
+theme = SubResource("Theme_vue75")
+text = "Level 3"
+
+[node name="Tutorial" type="Control" parent="." unique_id=1576968823]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Comands" type="Label" parent="Tutorial" unique_id=1693612519]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -164.0
+offset_right = 162.0
+offset_bottom = -23.0
+grow_vertical = 0
+theme = SubResource("Theme_ekxnf")
+text = "Commands:
+
+Wasd:    Move Player1
+Arrows:  Move Player2
+Space:              Undo
+Esc:               Pause"
+horizontal_alignment = 1
+
+[node name="Explanations" type="Label" parent="Tutorial" unique_id=905193784]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -200.0
+offset_right = -17.0
+offset_bottom = -11.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource("Theme_bqqt6")
+text = "You are a scientist who, using a technology
+that allows you to visualize people's
+unconscious, has to treat his patients by
+ordering the different objects in the rooms, so
+ that they match from both sides of the mirror.
+Once objects are finally sorted, you will have
+to perform one last operation across the mirror,
+which varies from person to person"
+horizontal_alignment = 1
+
+[node name="Credits" type="Control" parent="." unique_id=2003579518]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Comands" type="Label" parent="Credits" unique_id=755749577]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = -165.0
+offset_right = 419.595
+offset_bottom = -24.0
+grow_vertical = 0
+theme = SubResource("Theme_ekxnf")
+text = "Game made by: Coetus Interactive
+Developer: Melancholy
+Graphics: Zaffy (Level 3, UI), Franz (Level 2), Ciuffo (Level 1)
+Level Design: Melancholy, Clanvy
+Narrative: Melancholy, Ambit, Clanvy, Ciuffo, Franz
+Music and sounds: Ambit"
+
+[connection signal="pressed" from="BackButton/Back/PanelContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MenuButtons/Play/PanelContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuButtons/Levels/PanelContainer/LevelsButton" to="." method="_on_levels_button_pressed"]
+[connection signal="pressed" from="MenuButtons/Tutorial/PanelContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="MenuButtons/Credits/PanelContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MenuButtons/Quit/PanelContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="LevelsButtons/Level1/PanelContainer/Level1Button" to="." method="_on_level_1_button_pressed"]
+[connection signal="pressed" from="LevelsButtons/Level2/PanelContainer/Level2Button" to="." method="_on_level_2_button_pressed"]
+[connection signal="pressed" from="LevelsButtons/Level3/PanelContainer/Level3Button" to="." method="_on_level_3_button_pressed"]

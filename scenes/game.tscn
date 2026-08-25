@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bwh0w6j8kqyg7" path="res://scenes/levels/level_1.tscn" id="5_p57ef"]
 [ext_resource type="Shader" uid="uid://5j4b7huve2c8" path="res://resources/shaders/glass_broken.gdshader" id="6_p57ef"]
 [ext_resource type="FontFile" uid="uid://vl6gdjtt57vw" path="res://assets/fonts/pixelplay.ttf" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://cg8jqxcxs834c" path="res://scenes/main_menu.tscn" id="8_gee14"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ar1yk"]
 font = ExtResource("7_u5sy4")
@@ -65,18 +66,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../PuzzleCompleted:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="Animation" id="Animation_iywne"]
 resource_name = "black_transition"
@@ -121,18 +110,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../PuzzleCompleted:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(2),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p57ef"]
 _data = {
@@ -145,12 +122,12 @@ _data = {
 
 [node name="Managers" type="Node" parent="." unique_id=1731005612]
 
-[node name="SceneManager" type="Node" parent="Managers" unique_id=1629852135 node_paths=PackedStringArray("animation_player", "levels_root") groups=["scene_manager"]]
+[node name="SceneManager" type="Node" parent="Managers" unique_id=1629852135 node_paths=PackedStringArray("levels_root", "puzzle_completed") groups=["scene_manager"]]
 unique_name_in_owner = true
 script = ExtResource("2_lnu2h")
-animation_player = NodePath("../../UILayers/Transitions/AnimationPlayer")
 levels_root = NodePath("../../Levels")
 level_scenes = Array[PackedScene]([ExtResource("5_iywne"), ExtResource("5_p57ef")])
+puzzle_completed = NodePath("../../UILayers/Transitions/PuzzleCompleted")
 
 [node name="AnimationManager" type="Node" parent="Managers" unique_id=1589977257 node_paths=PackedStringArray("animation_player") groups=["animation_manager"]]
 unique_name_in_owner = true
@@ -166,6 +143,9 @@ _music_player = NodePath("../../Audio/Music")
 [node name="Levels" type="Node2D" parent="." unique_id=916306363]
 
 [node name="UILayers" type="Node" parent="." unique_id=1577220794]
+
+[node name="MainMenu" parent="UILayers" unique_id=949514378 instance=ExtResource("8_gee14")]
+unique_name_in_owner = true
 
 [node name="Transitions" type="CanvasLayer" parent="UILayers" unique_id=568035319]
 
@@ -190,6 +170,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="UndoReact" type="ColorRect" parent="UILayers/Transitions" unique_id=620808441]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
