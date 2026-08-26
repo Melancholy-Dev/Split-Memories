@@ -21,7 +21,6 @@ func load_level(index: int) -> void:
 	if is_instance_valid(current_level):
 		UndoManager.clear_boards()
 		current_level.queue_free()
-		await get_tree().process_frame
 	current_level = level_scenes[index].instantiate()
 	levels_root.add_child(current_level)
 	current_level_index = index
@@ -33,11 +32,8 @@ func load_level(index: int) -> void:
 
 func _on_puzzle_completed() -> void:
 	loading_level.emit()
-	await %AnimationManager.play_scene_change_transition()
-	puzzle_completed_label.visible = true
-	await get_tree().create_timer(1.5).timeout
+	await %AnimationManager.play_scene_change_transition(puzzle_completed_label)
 	if current_level_index + 1 < level_scenes.size():
-		await load_level(current_level_index + 1)
-		await %AnimationManager.play_reset()
-		puzzle_completed_label.visible = false
+		load_level(current_level_index + 1)
+		await %AnimationManager.play_loading_new_level_transition()
 		level_loaded.emit()

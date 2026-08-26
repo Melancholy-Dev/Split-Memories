@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://c7klu3ggtvfta" path="res://scripts/menus/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://vl6gdjtt57vw" path="res://assets/fonts/pixelplay.ttf" id="1_l6cm7"]
 
+[sub_resource type="Theme" id="Theme_ovrgc"]
+default_font = ExtResource("1_l6cm7")
+default_font_size = 16
+
 [sub_resource type="Theme" id="Theme_l6cm7"]
 default_font = ExtResource("1_l6cm7")
 default_font_size = 48
@@ -41,6 +45,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="GameVersion" type="Label" parent="." unique_id=1301069667]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 6.0
+offset_right = 91.0
+offset_bottom = 27.0
+theme = SubResource("Theme_ovrgc")
+text = "Game Version:"
 
 [node name="Title" type="Label" parent="." unique_id=132847954]
 layout_mode = 1

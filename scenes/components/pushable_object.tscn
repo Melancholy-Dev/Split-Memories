@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://csaoahsfl4mw4" path="res://scripts/entities/pushable_object.gd" id="1_xurpb"]
 [ext_resource type="Texture2D" uid="uid://dstt7mfrhwoum" path="res://assets/sprites/entities/pushable_objects/prototype/crate.png" id="2_7cb0y"]
-[ext_resource type="Script" uid="uid://dp5t7ho3j25f4" path="res://scripts/components/audio_component.gd" id="3_qisyh"]
 
 [sub_resource type="Gradient" id="Gradient_v4i73"]
 offsets = PackedFloat32Array(0, 0.2764706, 0.7235294)
@@ -27,9 +26,3 @@ texture = ExtResource("2_7cb0y")
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
-
-[node name="Components" type="Node" parent="." unique_id=765639350]
-
-[node name="AudioComponent" type="Node" parent="Components" unique_id=759325469]
-unique_name_in_owner = true
-script = ExtResource("3_qisyh")

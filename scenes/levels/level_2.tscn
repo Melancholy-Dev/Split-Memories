@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://crpb7obst4kj5" path="res://assets/sprites/entities/pushable_objects/level_2/reality/book.png" id="11_1yj8c"]
 [ext_resource type="Script" uid="uid://csaoahsfl4mw4" path="res://scripts/entities/pushable_object.gd" id="11_5niy6"]
 [ext_resource type="SpriteFrames" uid="uid://ck0m7g5pa5ik0" path="res://resources/animations/players/p2_prototype.tres" id="12_5niy6"]
-[ext_resource type="Script" uid="uid://dp5t7ho3j25f4" path="res://scripts/components/audio_component.gd" id="13_wikm6"]
 [ext_resource type="Texture2D" uid="uid://coxtopldhghj2" path="res://assets/sprites/entities/pushable_objects/level_2/mirror/bone_pile.png" id="18_lkn2k"]
 [ext_resource type="Texture2D" uid="uid://bbea00oo8rjxm" path="res://assets/sprites/entities/pushable_objects/level_2/mirror/ruined_book_pile.png" id="18_p4se4"]
 [ext_resource type="Texture2D" uid="uid://bh25dfyhlp5p6" path="res://assets/sprites/entities/pushable_objects/level_2/mirror/bone.png" id="19_p4se4"]
@@ -221,12 +220,6 @@ color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Components" type="Node" parent="Side_1/Entities/PushableObjects/MaskPile_0" unique_id=765639350]
-
-[node name="AudioComponent" type="Node" parent="Side_1/Entities/PushableObjects/MaskPile_0/Components" unique_id=759325469]
-unique_name_in_owner = true
-script = ExtResource("13_wikm6")
-
 [node name="MaskPile_1" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=643120304]
 position = Vector2(24, 120)
 script = ExtResource("11_5niy6")
@@ -244,11 +237,6 @@ texture = ExtResource("9_1yj8c")
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
-
-[node name="Components" type="Node" parent="Side_1/Entities/PushableObjects/MaskPile_1" unique_id=701712920]
-
-[node name="AudioComponent" type="Node" parent="Side_1/Entities/PushableObjects/MaskPile_1/Components" unique_id=1637157398]
-script = ExtResource("13_wikm6")
 
 [node name="MaskPile_2" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=1276701561]
 position = Vector2(56, 40)
@@ -268,11 +256,6 @@ color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Components" type="Node" parent="Side_1/Entities/PushableObjects/MaskPile_2" unique_id=792130108]
-
-[node name="AudioComponent" type="Node" parent="Side_1/Entities/PushableObjects/MaskPile_2/Components" unique_id=757189572]
-script = ExtResource("13_wikm6")
-
 [node name="Mask_0" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=879858468]
 position = Vector2(88, 88)
 script = ExtResource("11_5niy6")
@@ -290,11 +273,6 @@ texture = ExtResource("10_1yj8c")
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
-
-[node name="Components" type="Node" parent="Side_1/Entities/PushableObjects/Mask_0" unique_id=882537967]
-
-[node name="AudioComponent" type="Node" parent="Side_1/Entities/PushableObjects/Mask_0/Components" unique_id=915744783]
-script = ExtResource("13_wikm6")
 
 [node name="Mask_1" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=1993134779]
 position = Vector2(24, 232)
@@ -314,11 +292,6 @@ color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Components" type="Node" parent="Side_1/Entities/PushableObjects/Mask_1" unique_id=1962000088]
-
-[node name="AudioComponent" type="Node" parent="Side_1/Entities/PushableObjects/Mask_1/Components" unique_id=377025699]
-script = ExtResource("13_wikm6")
-
 [node name="BookPile_0" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=741332491]
 position = Vector2(184, 232)
 script = ExtResource("11_5niy6")
@@ -336,11 +309,6 @@ texture = ExtResource("10_r88tb")
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
-
-[node name="Components" type="Node" parent="Side_1/Entities/PushableObjects/BookPile_0" unique_id=977281971]
-
-[node name="AudioComponent" type="Node" parent="Side_1/Entities/PushableObjects/BookPile_0/Components" unique_id=1000883187]
-script = ExtResource("13_wikm6")
 
 [node name="BookPile_1" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=332406510]
 position = Vector2(104, 104)
@@ -360,11 +328,6 @@ color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Components" type="Node" parent="Side_1/Entities/PushableObjects/BookPile_1" unique_id=1613159655]
-
-[node name="AudioComponent" type="Node" parent="Side_1/Entities/PushableObjects/BookPile_1/Components" unique_id=1339919576]
-script = ExtResource("13_wikm6")
-
 [node name="BookPile_2" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=637241307]
 position = Vector2(184, 56)
 script = ExtResource("11_5niy6")
@@ -382,11 +345,6 @@ texture = ExtResource("10_r88tb")
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
-
-[node name="Components" type="Node" parent="Side_1/Entities/PushableObjects/BookPile_2" unique_id=2139754681]
-
-[node name="AudioComponent" type="Node" parent="Side_1/Entities/PushableObjects/BookPile_2/Components" unique_id=2036619533]
-script = ExtResource("13_wikm6")
 
 [node name="Book_0" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=1830003162]
 position = Vector2(24, 24)
@@ -406,11 +364,6 @@ color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Components" type="Node" parent="Side_1/Entities/PushableObjects/Book_0" unique_id=738621886]
-
-[node name="AudioComponent" type="Node" parent="Side_1/Entities/PushableObjects/Book_0/Components" unique_id=634285542]
-script = ExtResource("13_wikm6")
-
 [node name="Book_1" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=551277175]
 position = Vector2(104, 152)
 script = ExtResource("11_5niy6")
@@ -428,11 +381,6 @@ texture = ExtResource("11_1yj8c")
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
-
-[node name="Components" type="Node" parent="Side_1/Entities/PushableObjects/Book_1" unique_id=435344929]
-
-[node name="AudioComponent" type="Node" parent="Side_1/Entities/PushableObjects/Book_1/Components" unique_id=267975539]
-script = ExtResource("13_wikm6")
 
 [node name="StaticObjects" type="Node2D" parent="Side_1/Entities" unique_id=1612077439]
 
@@ -661,11 +609,6 @@ color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Components" type="Node" parent="Side_2/Entities/PushableObjects/MaskPile_0" unique_id=53954790]
-
-[node name="AudioComponent" type="Node" parent="Side_2/Entities/PushableObjects/MaskPile_0/Components" unique_id=2054270881]
-script = ExtResource("13_wikm6")
-
 [node name="MaskPile_1" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=791394458]
 position = Vector2(24, 216)
 script = ExtResource("11_5niy6")
@@ -683,11 +626,6 @@ texture = ExtResource("18_lkn2k")
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
-
-[node name="Components" type="Node" parent="Side_2/Entities/PushableObjects/MaskPile_1" unique_id=791741680]
-
-[node name="AudioComponent" type="Node" parent="Side_2/Entities/PushableObjects/MaskPile_1/Components" unique_id=2009624291]
-script = ExtResource("13_wikm6")
 
 [node name="MaskPile_2" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=1474825999]
 position = Vector2(120, 136)
@@ -707,11 +645,6 @@ color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Components" type="Node" parent="Side_2/Entities/PushableObjects/MaskPile_2" unique_id=1721005050]
-
-[node name="AudioComponent" type="Node" parent="Side_2/Entities/PushableObjects/MaskPile_2/Components" unique_id=851710689]
-script = ExtResource("13_wikm6")
-
 [node name="Mask_0" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=906274635]
 position = Vector2(56, 72)
 script = ExtResource("11_5niy6")
@@ -729,11 +662,6 @@ texture = ExtResource("19_p4se4")
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
-
-[node name="Components" type="Node" parent="Side_2/Entities/PushableObjects/Mask_0" unique_id=2013498409]
-
-[node name="AudioComponent" type="Node" parent="Side_2/Entities/PushableObjects/Mask_0/Components" unique_id=401274684]
-script = ExtResource("13_wikm6")
 
 [node name="Mask_1" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=438565340]
 position = Vector2(8, 88)
@@ -753,11 +681,6 @@ color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Components" type="Node" parent="Side_2/Entities/PushableObjects/Mask_1" unique_id=1527523710]
-
-[node name="AudioComponent" type="Node" parent="Side_2/Entities/PushableObjects/Mask_1/Components" unique_id=1140525077]
-script = ExtResource("13_wikm6")
-
 [node name="BookPile_0" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=1197640493]
 position = Vector2(168, 200)
 script = ExtResource("11_5niy6")
@@ -775,11 +698,6 @@ texture = ExtResource("18_p4se4")
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
-
-[node name="Components" type="Node" parent="Side_2/Entities/PushableObjects/BookPile_0" unique_id=2112837058]
-
-[node name="AudioComponent" type="Node" parent="Side_2/Entities/PushableObjects/BookPile_0/Components" unique_id=1918219117]
-script = ExtResource("13_wikm6")
 
 [node name="BookPile_1" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=518349746]
 position = Vector2(120, 104)
@@ -799,11 +717,6 @@ color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Components" type="Node" parent="Side_2/Entities/PushableObjects/BookPile_1" unique_id=1919755733]
-
-[node name="AudioComponent" type="Node" parent="Side_2/Entities/PushableObjects/BookPile_1/Components" unique_id=1365480269]
-script = ExtResource("13_wikm6")
-
 [node name="BookPile_2" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=940944519]
 position = Vector2(200, 88)
 script = ExtResource("11_5niy6")
@@ -821,11 +734,6 @@ texture = ExtResource("18_p4se4")
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
-
-[node name="Components" type="Node" parent="Side_2/Entities/PushableObjects/BookPile_2" unique_id=1797388285]
-
-[node name="AudioComponent" type="Node" parent="Side_2/Entities/PushableObjects/BookPile_2/Components" unique_id=225640793]
-script = ExtResource("13_wikm6")
 
 [node name="Book_0" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=721280341]
 position = Vector2(24, 104)
@@ -845,11 +753,6 @@ color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Components" type="Node" parent="Side_2/Entities/PushableObjects/Book_0" unique_id=1122656326]
-
-[node name="AudioComponent" type="Node" parent="Side_2/Entities/PushableObjects/Book_0/Components" unique_id=660997800]
-script = ExtResource("13_wikm6")
-
 [node name="Book_1" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=502526471]
 position = Vector2(72, 200)
 script = ExtResource("11_5niy6")
@@ -866,11 +769,6 @@ texture = ExtResource("21_lkn2k")
 [node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/Book_1" unique_id=647967679]
 color = Color(1, 0.7647059, 0.54901963, 1)
 texture = SubResource("GradientTexture2D_7cb0y")
-
-[node name="Components" type="Node" parent="Side_2/Entities/PushableObjects/Book_1" unique_id=611349229]
-
-[node name="AudioComponent" type="Node" parent="Side_2/Entities/PushableObjects/Book_1/Components" unique_id=1384887575]
-script = ExtResource("13_wikm6")
 
 [node name="StaticObjects" type="Node2D" parent="Side_2/Entities" unique_id=1064399378]
 

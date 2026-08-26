@@ -5,11 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://q4dxgtmg3fwo" path="res://scenes/levels/level_2.tscn" id="3_vtaks"]
 [ext_resource type="Script" uid="uid://i0t2qqkkvlst" path="res://scripts/managers/animation_manager.gd" id="4_iywne"]
 [ext_resource type="PackedScene" uid="uid://46s5tgflrf5r" path="res://scenes/levels/level_3.tscn" id="4_kvpfn"]
-[ext_resource type="PackedScene" uid="uid://bwh0w6j8kqyg7" path="res://scenes/levels/level_1.tscn" id="5_p57ef"]
+[ext_resource type="PackedScene" uid="uid://bwh0w6j8kqyg7" path="res://scenes/levels/level_1 (old).tscn" id="5_p57ef"]
 [ext_resource type="PackedScene" uid="uid://bal572pfoyik1" path="res://scenes/menus/pause_menu.tscn" id="6_0tnpc"]
 [ext_resource type="Shader" uid="uid://5j4b7huve2c8" path="res://resources/shaders/glass_broken.gdshader" id="6_p57ef"]
 [ext_resource type="FontFile" uid="uid://vl6gdjtt57vw" path="res://assets/fonts/pixelplay.ttf" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://cg8jqxcxs834c" path="res://scenes/menus/main_menu.tscn" id="8_gee14"]
+[ext_resource type="Shader" uid="uid://dk234sdgbaibi" path="res://resources/shaders/pause_menu.gdshader" id="11_kvpfn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ar1yk"]
 font = ExtResource("7_u5sy4")
@@ -18,6 +19,8 @@ font_size = 32
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_u5sy4"]
 shader = ExtResource("6_p57ef")
 shader_parameter/fall_progress = 0.0
+shader_parameter/blur_lod = 1.0000000475
+shader_parameter/glass_alpha = 0.0
 shader_parameter/pieces_x = 6
 shader_parameter/pieces_y = 5
 shader_parameter/gravity = 3.0
@@ -28,7 +31,11 @@ shader_parameter/delay_variation = 0.28
 shader_parameter/exit_margin = 0.35
 shader_parameter/edge_thickness = 0.01950000092625
 shader_parameter/edge_brightness = 0.150000007125
-shader_parameter/alpha_fade_start = 0.50000002375
+shader_parameter/alpha_fade_start = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dinhu"]
+shader = ExtResource("11_kvpfn")
+shader_parameter/lod = 0.0
 
 [sub_resource type="Animation" id="Animation_lbhrr"]
 length = 0.001
@@ -47,7 +54,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../SceneChangeReact:material:shader_parameter/fall_progress")
+tracks/1/path = NodePath("../GlassRect:material:shader_parameter/fall_progress")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -59,18 +66,357 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("../SceneChangeReact:visible")
+tracks/2/path = NodePath("../../PauseMenu/PanelContainer:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../BlurRect:material:shader_parameter/lod")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../GlassRect:material:shader_parameter/blur_lod")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0000000475]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../GlassRect:material:shader_parameter/edge_brightness")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.150000007125]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../GlassRect:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../BlurRect:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../GlassRect:material:shader_parameter/glass_alpha")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_kvpfn"]
+resource_name = "loading_new_level"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BlurRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.03333336, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0000000475, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_vtaks"]
+resource_name = "pause_menu"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../PauseMenu/PanelContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../BlurRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../BlurRect:material:shader_parameter/lod")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0009999999, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0000000475]
+}
+
+[sub_resource type="Animation" id="Animation_scene_change_blur"]
+resource_name = "scene_change_blur"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../BlurRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../GlassRect:material:shader_parameter/fall_progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../GlassRect:material:shader_parameter/blur_lod")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0000000475]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../GlassRect:material:shader_parameter/edge_brightness")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.81),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.150000007125]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../GlassRect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../BlurRect:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../GlassRect:material:shader_parameter/glass_alpha")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_scene_change_glass"]
+resource_name = "scene_change_glass"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../GlassRect:material:shader_parameter/fall_progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../GlassRect:material:shader_parameter/edge_brightness")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.150000007125]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../GlassRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../BlurRect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../GlassRect:material:shader_parameter/blur_lod")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0000000475]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../GlassRect:material:shader_parameter/glass_alpha")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_iywne"]
-resource_name = "black_transition"
+resource_name = "undo_transition"
 length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -84,40 +430,27 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_level_completed"]
-resource_name = "level_completed"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../SceneChangeReact:material:shader_parameter/fall_progress")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../SceneChangeReact:visible")
+tracks/1/path = NodePath("../BlurRect:material:shader_parameter/lod")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
+"times": PackedFloat32Array(0, 0.15, 0.35, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0000000475, 1.0000000475, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p57ef"]
 _data = {
 &"RESET": SubResource("Animation_lbhrr"),
-&"black_transition": SubResource("Animation_iywne"),
-&"level_completed": SubResource("Animation_level_completed")
+&"loading_new_level": SubResource("Animation_kvpfn"),
+&"pause_menu": SubResource("Animation_vtaks"),
+&"scene_change_blur": SubResource("Animation_scene_change_blur"),
+&"scene_change_glass": SubResource("Animation_scene_change_glass"),
+&"undo_transition": SubResource("Animation_iywne")
 }
 
 [node name="Game" type="Node2D" unique_id=1715201550]
@@ -148,12 +481,9 @@ _music_player = NodePath("../../Audio/Music")
 
 [node name="MainMenu" parent="UILayers" unique_id=949514378 groups=["main_menu"] instance=ExtResource("8_gee14")]
 unique_name_in_owner = true
+z_as_relative = false
 
-[node name="PauseMenu" parent="UILayers" unique_id=2018703224 groups=["pause_menu"] instance=ExtResource("6_0tnpc")]
-unique_name_in_owner = true
-visible = false
-
-[node name="Transitions" type="Node" parent="UILayers" unique_id=568035319]
+[node name="Transitions" type="Node" parent="UILayers" unique_id=1625030556]
 
 [node name="PuzzleCompletedLabel" type="Label" parent="UILayers/Transitions" unique_id=101885176]
 visible = false
@@ -175,7 +505,9 @@ label_settings = SubResource("LabelSettings_ar1yk")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="UndoReact" type="ColorRect" parent="UILayers/Transitions" unique_id=620808441]
+[node name="BlackRect" type="ColorRect" parent="UILayers/Transitions" unique_id=620808441]
+visible = false
+modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -183,8 +515,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
-[node name="SceneChangeReact" type="ColorRect" parent="UILayers/Transitions" unique_id=45971803]
-visible = false
+[node name="GlassRect" type="ColorRect" parent="UILayers/Transitions" unique_id=45971803]
 z_index = 1
 material = SubResource("ShaderMaterial_u5sy4")
 anchors_preset = 15
@@ -193,10 +524,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="BlurRect" type="ColorRect" parent="UILayers/Transitions" unique_id=802474241]
+visible = false
+material = SubResource("ShaderMaterial_dinhu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UILayers/Transitions" unique_id=625704565]
-root_node = NodePath("../UndoReact")
+root_node = NodePath("../BlackRect")
 libraries/ = SubResource("AnimationLibrary_p57ef")
 autoplay = &"RESET"
+
+[node name="PauseMenu" parent="UILayers" unique_id=2018703224 groups=["pause_menu"] instance=ExtResource("6_0tnpc")]
+unique_name_in_owner = true
+visible = false
+
+[node name="PanelContainer" parent="UILayers/PauseMenu" index="0" unique_id=320969938]
+modulate = Color(1, 1, 1, 0)
 
 [node name="Audio" type="Node" parent="." unique_id=1579824888]
 
@@ -208,3 +555,5 @@ autoplay = &"RESET"
 
 [node name="Camera2D" type="Camera2D" parent="Camera" unique_id=1664677405]
 position = Vector2(240, 136)
+
+[editable path="UILayers/PauseMenu"]

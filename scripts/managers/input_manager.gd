@@ -7,12 +7,15 @@ signal undo_pressed
 signal pause_pressed
 
 # Nodes
-@onready var scene_manager := get_tree().get_first_node_in_group("scene_manager")
 @onready var pm := get_tree().get_first_node_in_group("pause_menu")
-
+@onready var main_menu := get_tree().get_first_node_in_group("main_menu")
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	_connect_scene_manager()
+
+func _connect_scene_manager() -> void:
+	var scene_manager := get_tree().get_first_node_in_group("scene_manager")
 	scene_manager.loading_level.connect(_disable_input_reading)
 	scene_manager.level_loaded.connect(_enabling_input_reading)
 
@@ -23,6 +26,9 @@ func _enabling_input_reading() -> void:
 	set_process_unhandled_input(true)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if main_menu.visible:
+		return
+
 	if event.is_action_pressed("pause"):
 		pause_pressed.emit()
 	

@@ -3,6 +3,8 @@ shader_type canvas_item;
 uniform sampler2D screen_tex : hint_screen_texture, filter_linear_mipmap;
 
 uniform float fall_progress : hint_range(0.0, 1.0) = 0.0;
+uniform float blur_lod : hint_range(0.0, 5.0) = 0.0;
+uniform float glass_alpha : hint_range(0.0, 1.0) = 0.0;
 
 uniform int pieces_x = 5;
 uniform int pieces_y = 3;
@@ -122,8 +124,30 @@ void piece_transform(
 	piece_angle = (rnd3 - 0.5) * rotation_amount * t;
 }
 
+vec4 sample_screen(vec2 uv, vec2 pixel_size) {
+	if (blur_lod <= 0.001) {
+		vec4 source = texture(screen_tex, uv);
+		source.a = 1.0;
+		return source;
+	}
+
+	vec2 offset = pixel_size * (1.0 + blur_lod * 2.0);
+	vec4 color = texture(screen_tex, uv) * 0.25;
+	color += texture(screen_tex, uv + vec2(offset.x, 0.0)) * 0.125;
+	color += texture(screen_tex, uv - vec2(offset.x, 0.0)) * 0.125;
+	color += texture(screen_tex, uv + vec2(0.0, offset.y)) * 0.125;
+	color += texture(screen_tex, uv - vec2(0.0, offset.y)) * 0.125;
+	color += texture(screen_tex, uv + offset) * 0.0625;
+	color += texture(screen_tex, uv - offset) * 0.0625;
+	color += texture(screen_tex, uv + vec2(offset.x, -offset.y)) * 0.0625;
+	color += texture(screen_tex, uv + vec2(-offset.x, offset.y)) * 0.0625;
+	color.a = 1.0;
+	return color;
+}
+
 void fragment() {
 	vec2 uv = SCREEN_UV;
+	vec2 pixel_size = SCREEN_PIXEL_SIZE;
 	vec2 grid = vec2(float(pieces_x), float(pieces_y));
 	vec2 p_now = uv * grid;
 	vec2 base_cell = floor(p_now);
@@ -169,7 +193,7 @@ void fragment() {
 
 			if (distance(from_cell, cell_id) > 0.001) continue;
 
-			result = texture(screen_tex, uv_from);
+			result = sample_screen(uv_from, pixel_size);
 			found_edge = from_edge;
 			found_t = t;
 			found = true;
@@ -177,7 +201,7 @@ void fragment() {
 	}
 
 	if (!found) {
-		COLOR = vec4(0.0, 0.0, 0.0, 1.0);
+		COLOR = vec4(0.0, 0.0, 0.0, glass_alpha);
 	} else {
 		float edge = 1.0 - smoothstep(0.0, edge_thickness, found_edge);
 		result.rgb += edge * edge_brightness;
@@ -186,7 +210,7 @@ void fragment() {
 		if (alpha_fade_start < 1.0) {
 			fade = 1.0 - smoothstep(alpha_fade_start, 1.0, found_t);
 		}
-		result.a *= fade;
+		result.a *= fade * glass_alpha;
 
 		COLOR = result;
 	}

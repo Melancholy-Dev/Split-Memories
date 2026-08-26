@@ -8,6 +8,13 @@ class_name MainMenu extends Menu
 @export var credits: Control
 @export var back_button: VBoxContainer
 
+
+func _ready() -> void:
+	super._ready()
+	$GameVersion.text = "Game Version: " + ProjectSettings.get_setting(
+		"application/config/version"
+	)
+
 ### Menu Buttons pressed
 func _on_play_button_pressed() -> void:
 	_button_selected()
@@ -61,7 +68,7 @@ func _on_level_3_button_pressed() -> void:
 	_game_started(2)
 
 func _game_started(level: int) -> void:
-	await %AnimationManager.play_scene_change_transition()
 	await scene_manager.load_level(level)
+	await %AnimationManager.play_scene_change_transition()
 	visible = false
-	await %AnimationManager.play_reset()
+	await %AnimationManager.play_loading_new_level_transition()
