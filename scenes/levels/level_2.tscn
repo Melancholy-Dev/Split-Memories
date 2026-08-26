@@ -9,14 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://do58c8q3ph341" path="res://assets/sprites/entities/static_objects/level_2/mirror/rack_mirror.png" id="5_v8d84"]
 [ext_resource type="Texture2D" uid="uid://dkoxetve5jpl6" path="res://assets/sprites/entities/static_objects/level_2/mirror/table_mirror.png" id="6_gw1l3"]
 [ext_resource type="PackedScene" uid="uid://crn7n0jpujqa0" path="res://scenes/components/player.tscn" id="6_v8d84"]
-[ext_resource type="SpriteFrames" uid="uid://dvjfcgesbh140" path="res://resources/animations/players/p1_prototype.tres" id="7_gw1l3"]
 [ext_resource type="Texture2D" uid="uid://di2rhohogchtm" path="res://assets/sprites/entities/pushable_objects/level_2/reality/mask_pile.png" id="9_1yj8c"]
 [ext_resource type="Texture2D" uid="uid://b6uvwmeknaxhv" path="res://assets/sprites/entities/pushable_objects/level_2/reality/mask_sad.png" id="10_1yj8c"]
 [ext_resource type="PackedScene" uid="uid://bc3gweejimojt" path="res://scenes/components/static_object.tscn" id="10_lkn2k"]
 [ext_resource type="Texture2D" uid="uid://dtxhkjlk506vq" path="res://assets/sprites/entities/pushable_objects/level_2/reality/book_pile.png" id="10_r88tb"]
 [ext_resource type="Texture2D" uid="uid://crpb7obst4kj5" path="res://assets/sprites/entities/pushable_objects/level_2/reality/book.png" id="11_1yj8c"]
 [ext_resource type="Script" uid="uid://csaoahsfl4mw4" path="res://scripts/entities/pushable_object.gd" id="11_5niy6"]
-[ext_resource type="SpriteFrames" uid="uid://ck0m7g5pa5ik0" path="res://resources/animations/players/p2_prototype.tres" id="12_5niy6"]
 [ext_resource type="Texture2D" uid="uid://coxtopldhghj2" path="res://assets/sprites/entities/pushable_objects/level_2/mirror/bone_pile.png" id="18_lkn2k"]
 [ext_resource type="Texture2D" uid="uid://bbea00oo8rjxm" path="res://assets/sprites/entities/pushable_objects/level_2/mirror/ruined_book_pile.png" id="18_p4se4"]
 [ext_resource type="Texture2D" uid="uid://bh25dfyhlp5p6" path="res://assets/sprites/entities/pushable_objects/level_2/mirror/bone.png" id="19_p4se4"]
@@ -125,8 +123,51 @@ sources/1 = SubResource("TileSetAtlasSource_gw1l3")
 sources/2 = SubResource("TileSetAtlasSource_p4se4")
 sources/3 = SubResource("TileSetAtlasSource_sibr7")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_p4se4"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"idle_down",
+"speed": 1.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"idle_left",
+"speed": 1.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"idle_right",
+"speed": 1.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"idle_up",
+"speed": 1.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"move_down",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"move_left",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"move_right",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"move_up",
+"speed": 12.0
+}]
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7cb0y"]
-polygon = PackedVector2Array(4, 8, -3, 7, -8, 0, -7, -7, -2, -8, 3, -6, 8, 0, 8, 5)
+polygon = PackedVector2Array(4, 8, 0, 8, 0, 7, -3, 7, -3, 6, -4, 6, -4, 5, -5, 5, -5, 2, -6, 2, -6, 1, -7, 1, -7, 0, -8, 0, -8, -5, -7, -5, -7, -6, -6, -6, -6, -7, -2, -7, -2, -8, 1, -8, 1, -7, 2, -7, 2, -6, 3, -6, 3, -5, 4, -5, 4, -3, 5, -3, 5, -2, 6, -2, 6, -1, 7, -1, 7, 0, 8, 0, 8, 5, 7, 5, 7, 6, 6, 6, 6, 7, 4, 7)
 
 [sub_resource type="Gradient" id="Gradient_v4i73"]
 offsets = PackedFloat32Array(0, 0.2764706, 0.7235294)
@@ -137,25 +178,71 @@ gradient = SubResource("Gradient_v4i73")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7e6ji"]
-polygon = PackedVector2Array(-3, -4, 5, -4, 5, 1, 6, 1, 6, 6, -5, 6, -5, 1, -3, 1)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p4se4"]
+polygon = PackedVector2Array(1, -6, 1, -5, 5, -5, 5, -4, 6, -4, 6, -3, 7, -3, 7, 2, 6, 2, 6, 3, 5, 3, 5, 4, 3, 4, 3, 5, -1, 5, -1, 4, -4, 4, -4, 3, -5, 3, -5, 2, -6, 2, -6, -1, -5, -1, -5, -3, -4, -3, -4, -4, -3, -4, -3, -5, -2, -5, -2, -6)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s0he0"]
 polygon = PackedVector2Array(3, -6, 3, -2, 7, -2, 7, 7, -7, 7, -7, -1, -5, -1, -5, -6)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7e6ji"]
+polygon = PackedVector2Array(-3, -4, 5, -4, 5, 1, 6, 1, 6, 6, -5, 6, -5, 1, -3, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sibr7"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"idle_down",
+"speed": 1.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"idle_left",
+"speed": 1.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"idle_right",
+"speed": 1.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"idle_up",
+"speed": 1.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"move_down",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"move_left",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"move_right",
+"speed": 12.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"move_up",
+"speed": 12.0
+}]
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yxkvy"]
-polygon = PackedVector2Array(8, 1, 1, -5, -1, -6, -5, -6, -8, -2, -8, 0, -7, 5, -6, 6, 0, 6, 4, 7, 6, 7, 8, 4)
+polygon = PackedVector2Array(8, 1, 7, 1, 7, 0, 6, 0, 6, -1, 5, -1, 5, -2, 2, -2, 2, -4, 1, -4, 1, -5, -1, -5, -1, -6, -5, -6, -5, -5, -6, -5, -6, -4, -7, -4, -7, -2, -8, -2, -8, 0, -7, 0, -7, 5, -6, 5, -6, 6, -2, 6, -2, 5, -1, 5, -1, 4, 0, 4, 0, 3, 1, 3, 1, 4, 2, 4, 2, 5, 3, 5, 3, 6, 4, 6, 4, 7, 6, 7, 6, 6, 7, 6, 7, 4, 8, 4)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_joiyc"]
-polygon = PackedVector2Array(-2, -6, 2, -6, 5, -4, 6, -2, 6, 0, 4, 3, 1, 6, -3, 6, -4, 5, -5, 0, -5, -2, -4, -4)
+polygon = PackedVector2Array(-2, -6, 2, -6, 2, -5, 4, -5, 4, -4, 5, -4, 5, -2, 6, -2, 6, 0, 5, 0, 5, 2, 4, 2, 4, 3, 3, 3, 3, 4, 2, 4, 2, 5, 1, 5, 1, 6, -3, 6, -3, 5, -4, 5, -4, 0, -5, 0, -5, -2, -4, -2, -4, -4, -3, -4, -3, -5, -2, -5)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tn15g"]
-polygon = PackedVector2Array(5, -6, 5, 0, 7, 0, 7, 6, 6, 7, -6, 7, -7, 6, -7, -1, -6, -2, -3, -2, -3, -6)
+polygon = PackedVector2Array(5, -6, 5, 0, 7, 0, 7, 6, 6, 6, 6, 7, -6, 7, -6, 6, -7, 6, -7, -1, -6, -1, -6, -2, -3, -2, -3, -6)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_oftal"]
 polygon = PackedVector2Array(-5, -4, 3, -4, 3, 1, 5, 1, 5, 6, -6, 6, -6, 1, -5, 1)
 
-[node name="Level_2" type="Node2D" unique_id=2068148297]
+[node name="Level_3" type="Node2D" unique_id=2068148297]
 modulate = Color(0.39215687, 0.39215687, 0.39215687, 1)
 script = ExtResource("1_brxtv")
 
@@ -198,7 +285,10 @@ script = ExtResource("5_ndlae")
 
 [node name="Player_1" parent="Side_1/Entities" unique_id=250994355 instance=ExtResource("6_v8d84")]
 position = Vector2(104, 248)
-sprite_frames = ExtResource("7_gw1l3")
+
+[node name="AnimatedSprite" parent="Side_1/Entities/Player_1" index="0" unique_id=326422892]
+sprite_frames = SubResource("SpriteFrames_p4se4")
+animation = &"move_up"
 
 [node name="PushableObjects" type="Node2D" parent="Side_1/Entities" unique_id=573764610]
 
@@ -225,7 +315,7 @@ position = Vector2(24, 120)
 script = ExtResource("11_5niy6")
 object_type = "mask_pile"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/MaskPile_1" unique_id=2052320935]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/MaskPile_1" unique_id=1342147296]
 occluder = SubResource("OccluderPolygon2D_7cb0y")
 
 [node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/MaskPile_1" unique_id=1721464365]
@@ -262,7 +352,7 @@ script = ExtResource("11_5niy6")
 object_type = "mask"
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/Mask_0" unique_id=470309711]
-occluder = SubResource("OccluderPolygon2D_7e6ji")
+occluder = SubResource("OccluderPolygon2D_p4se4")
 
 [node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/Mask_0" unique_id=2073091388]
 texture = ExtResource("10_1yj8c")
@@ -279,8 +369,8 @@ position = Vector2(24, 232)
 script = ExtResource("11_5niy6")
 object_type = "mask"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/Mask_1" unique_id=133381353]
-occluder = SubResource("OccluderPolygon2D_7e6ji")
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/Mask_1" unique_id=1464019204]
+occluder = SubResource("OccluderPolygon2D_p4se4")
 
 [node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/Mask_1" unique_id=924318349]
 texture = ExtResource("10_1yj8c")
@@ -586,8 +676,11 @@ script = ExtResource("5_ndlae")
 
 [node name="Player_2" parent="Side_2/Entities" unique_id=840756937 instance=ExtResource("6_v8d84")]
 position = Vector2(104, 248)
-sprite_frames = ExtResource("12_5niy6")
 is_player_one = false
+
+[node name="AnimatedSprite" parent="Side_2/Entities/Player_2" index="0" unique_id=326422892]
+sprite_frames = SubResource("SpriteFrames_sibr7")
+animation = &"move_up"
 
 [node name="PushableObjects" type="Node2D" parent="Side_2/Entities" unique_id=102929155]
 
@@ -953,3 +1046,4 @@ position = Vector2(24, 232)
 position = Vector2(8, 232)
 
 [editable path="Side_1/Entities/Player_1"]
+[editable path="Side_2/Entities/Player_2"]

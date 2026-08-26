@@ -1,11 +1,15 @@
 class_name MovementComponent extends Node
 
+# Signals
+signal movement_started(direction: Vector2i)
+signal movement_finished
+
 # Nodes
 @export var player: Player
 var board: Grid
 
 # Variables
-var movement_duration := 0.12
+var movement_duration := 0.2
 var is_moving := false
 
 
@@ -31,8 +35,11 @@ func _on_direction_pressed(direction: Vector2i) -> void:
 		UndoManager.commit_state(previous_state)
 	if moved_entities.is_empty():
 		await get_tree().create_timer(movement_duration).timeout
+		movement_finished.emit()
 	else:
+		movement_started.emit(direction)
 		await _animate_entities(moved_entities)
+		movement_finished.emit()
 	is_moving = false
 
 func _animate_entities(entities: Array[GridEntity]) -> void:

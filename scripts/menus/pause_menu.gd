@@ -13,7 +13,7 @@ func _ready() -> void:
 	InputManager.pause_pressed.connect(_pause_pressed)
 
 func _pause_pressed() -> void:
-	if _transitioning:
+	if _transitioning or %AnimationManager.is_animating:
 		return
 	_transitioning = true
 	if is_paused:
