@@ -2,21 +2,27 @@
 
 [ext_resource type="Script" uid="uid://dbesexrgdmwc" path="res://scripts/managers/puzzle_manager.gd" id="1_vmg1d"]
 [ext_resource type="Script" uid="uid://cvgdc5x27qn41" path="res://scripts/managers/level_manager.gd" id="2_1nwmf"]
-[ext_resource type="Texture2D" uid="uid://drltw56hqvfpa" path="res://assets/sprites/rooms/level_2/tileset_2.png" id="3_5f5xw"]
-[ext_resource type="Texture2D" uid="uid://dogss67clr6hg" path="res://assets/sprites/entities/static_objects/level_2/reality/rack.png" id="4_o3ttr"]
-[ext_resource type="Texture2D" uid="uid://dbhdni8rw31d" path="res://assets/sprites/entities/static_objects/level_2/reality/table.png" id="5_kdsi4"]
+[ext_resource type="Texture2D" uid="uid://bwlw1rafr4c0e" path="res://assets/sprites/rooms/level_3/tileset_3.png" id="3_kdsi4"]
+[ext_resource type="Texture2D" uid="uid://dyps6a6fdf0gg" path="res://assets/sprites/entities/static_objects/level_3/reality/arm_1.png" id="4_5f5xw"]
+[ext_resource type="Texture2D" uid="uid://ue4g42lkfhoy" path="res://assets/sprites/entities/static_objects/level_3/reality/bed_lab.png" id="5_o3ttr"]
 [ext_resource type="Texture2D" uid="uid://cchelu3ixsdty" path="res://assets/sprites/entities/players/level_3/reality/scientist_down.png" id="6_f6egh"]
-[ext_resource type="Texture2D" uid="uid://do58c8q3ph341" path="res://assets/sprites/entities/static_objects/level_2/mirror/rack_mirror.png" id="6_kva3v"]
-[ext_resource type="Texture2D" uid="uid://dkoxetve5jpl6" path="res://assets/sprites/entities/static_objects/level_2/mirror/table_mirror.png" id="7_jql0x"]
+[ext_resource type="Texture2D" uid="uid://c7enj7xnsmgi5" path="res://assets/sprites/entities/static_objects/level_3/reality/robot.png" id="6_kdsi4"]
+[ext_resource type="Texture2D" uid="uid://cgluadbyyarsv" path="res://assets/sprites/entities/static_objects/level_3/reality/hologram.png" id="7_o3ttr"]
 [ext_resource type="Texture2D" uid="uid://b1vt2gwv4n28j" path="res://assets/sprites/entities/players/level_3/reality/scientist_left.png" id="7_t4txi"]
 [ext_resource type="Texture2D" uid="uid://bgbm8q7fm4ki4" path="res://assets/sprites/entities/players/level_3/reality/scientist_right.png" id="8_apo5x"]
 [ext_resource type="Script" uid="uid://bdklnrs5tga8l" path="res://scripts/grid/grid.gd" id="8_do6pa"]
 [ext_resource type="Texture2D" uid="uid://kuifi1p2kv67" path="res://assets/sprites/entities/players/level_3/reality/scientist_up.png" id="9_josfm"]
 [ext_resource type="PackedScene" uid="uid://crn7n0jpujqa0" path="res://scenes/components/player.tscn" id="9_n8qcm"]
+[ext_resource type="PackedScene" uid="uid://bc3gweejimojt" path="res://scenes/components/static_object.tscn" id="10_fhpes"]
+[ext_resource type="Texture2D" uid="uid://cf8wyfw237bc4" path="res://assets/sprites/entities/static_objects/level_3/mirror/arm_2.png" id="14_kva3v"]
 [ext_resource type="Texture2D" uid="uid://bhdjxpstemly1" path="res://assets/sprites/entities/players/level_3/mirror/scientist_mirror_down.png" id="14_lgrx1"]
 [ext_resource type="Texture2D" uid="uid://bk4rcjmwlagg1" path="res://assets/sprites/entities/players/level_3/mirror/scientist_mirror_left.png" id="15_fhpes"]
+[ext_resource type="Texture2D" uid="uid://bh7khuth2bncx" path="res://assets/sprites/entities/static_objects/level_3/mirror/bed_lab_mirror.png" id="15_jql0x"]
+[ext_resource type="Shader" uid="uid://bt88nsf63ctbu" path="res://resources/shaders/crt_vhs.gdshader" id="15_kdsi4"]
+[ext_resource type="Texture2D" uid="uid://pmba1fle5pvp" path="res://assets/sprites/entities/static_objects/level_3/mirror/robot_mirror.png" id="16_do6pa"]
 [ext_resource type="Texture2D" uid="uid://vedurybmuq7n" path="res://assets/sprites/entities/players/level_3/mirror/scientist_mirror_right.png" id="16_vmg1d"]
 [ext_resource type="Texture2D" uid="uid://dc1yyy8le405" path="res://assets/sprites/entities/players/level_3/mirror/scientist_mirror_up.png" id="17_1nwmf"]
+[ext_resource type="Texture2D" uid="uid://bxcuv02o53hyw" path="res://assets/sprites/entities/static_objects/level_3/mirror/hologram_mirror.png" id="17_n8qcm"]
 
 [sub_resource type="Gradient" id="Gradient_gw1l3"]
 
@@ -32,15 +38,117 @@ gradient = SubResource("Gradient_v8d84")
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fqy8p"]
 polygon = PackedVector2Array(224, 272, 224, 0, 224, 0, 224, 272)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3p04p"]
-texture = ExtResource("3_5f5xw")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kva3v"]
+texture = ExtResource("3_kdsi4")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_kva3v"]
+sources/0 = SubResource("TileSetAtlasSource_kva3v")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aey3y"]
+texture = ExtResource("4_5f5xw")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0dme"]
+texture = ExtResource("5_o3ttr")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+4:0/0 = 0
+3:2/0 = 0
+2:2/0 = 0
+2:1/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+5:3/0 = 0
+4:3/0 = 0
+3:3/0 = 0
+2:3/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_js0vw"]
-sources/4 = SubResource("TileSetAtlasSource_3p04p")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o5em7"]
+texture = ExtResource("6_kdsi4")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdsi4"]
+texture = ExtResource("7_o3ttr")
+0:0/animation_columns = 12
+0:0/animation_separation = Vector2i(1, 0)
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/animation_frame_11/duration = 1.0
+0:0/0 = 0
+0:1/animation_columns = 12
+0:1/animation_separation = Vector2i(1, 0)
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/animation_frame_4/duration = 1.0
+0:1/animation_frame_5/duration = 1.0
+0:1/animation_frame_6/duration = 1.0
+0:1/animation_frame_7/duration = 1.0
+0:1/animation_frame_8/duration = 1.0
+0:1/animation_frame_9/duration = 1.0
+0:1/animation_frame_10/duration = 1.0
+0:1/animation_frame_11/duration = 1.0
+0:1/0 = 0
+1:1/animation_columns = 12
+1:1/animation_separation = Vector2i(1, 0)
+1:1/animation_frame_0/duration = 1.0
+1:1/animation_frame_1/duration = 1.0
+1:1/animation_frame_2/duration = 1.0
+1:1/animation_frame_3/duration = 1.0
+1:1/animation_frame_4/duration = 1.0
+1:1/animation_frame_5/duration = 1.0
+1:1/animation_frame_6/duration = 1.0
+1:1/animation_frame_7/duration = 1.0
+1:1/animation_frame_8/duration = 1.0
+1:1/animation_frame_9/duration = 1.0
+1:1/animation_frame_10/duration = 1.0
+1:1/animation_frame_11/duration = 1.0
+1:1/0 = 0
+1:0/animation_columns = 12
+1:0/animation_separation = Vector2i(1, 0)
+1:0/animation_frame_0/duration = 1.0
+1:0/animation_frame_1/duration = 1.0
+1:0/animation_frame_2/duration = 1.0
+1:0/animation_frame_3/duration = 1.0
+1:0/animation_frame_4/duration = 1.0
+1:0/animation_frame_5/duration = 1.0
+1:0/animation_frame_6/duration = 1.0
+1:0/animation_frame_7/duration = 1.0
+1:0/animation_frame_8/duration = 1.0
+1:0/animation_frame_9/duration = 1.0
+1:0/animation_frame_10/duration = 1.0
+1:0/animation_frame_11/duration = 1.0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fhpes"]
+sources/0 = SubResource("TileSetAtlasSource_aey3y")
+sources/1 = SubResource("TileSetAtlasSource_k0dme")
+sources/3 = SubResource("TileSetAtlasSource_o5em7")
+sources/5 = SubResource("TileSetAtlasSource_kdsi4")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lgrx1"]
 atlas = ExtResource("6_f6egh")
@@ -225,84 +333,261 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lkn2k"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kva3v"]
+shader = ExtResource("15_kdsi4")
+shader_parameter/edge_pinning = false
+shader_parameter/edge_pin_power = 2.0
+shader_parameter/roll = true
+shader_parameter/roll_speed = 1.6
+shader_parameter/roll_size = 2.0
+shader_parameter/roll_variation = 0.919
+shader_parameter/distort_intensity = 0.005
+shader_parameter/breathing_strength = -1.0
+shader_parameter/breathing_softness = 1.0
+shader_parameter/breathing_bias = 0.0
+shader_parameter/vhs_crease_smear = 0.2
+shader_parameter/vhs_crease_intensity = 0.2
+shader_parameter/vhs_crease_jitter = 0.1
+shader_parameter/vhs_crease_speed = 0.5
+shader_parameter/vhs_crease_discolor_amt = 1.0
+shader_parameter/vhs_bottom_thickness = 0.025
+shader_parameter/vhs_bottom_jitter_px = 6.0
+shader_parameter/vhs_mtap_strength = 1.0
+shader_parameter/vhs_chroma_twist = 0.0
+shader_parameter/vhs_tap_spread_px = 1.0
+shader_parameter/vhs_samples = 3
+shader_parameter/sparkle_intensity = 0.0
+shader_parameter/optics_compensation_r = -0.01
+shader_parameter/optics_compensation_g = 0.0
+shader_parameter/optics_compensation_b = 0.0
+shader_parameter/aberration = 0.0
+shader_parameter/discolor = true
+shader_parameter/saturation = 0.2
+shader_parameter/contrast = 1.06
+shader_parameter/static_noise_intensity = 0.02
+shader_parameter/curve = 0.0
+shader_parameter/aspect = 0.563
+shader_parameter/sharpness = 0.667
+shader_parameter/color_offset = 0.0
+shader_parameter/min_scanline_thickness = 0.5
+shader_parameter/wobble_strength = 0.2
+shader_parameter/virtual_scanlines = 324.0
+shader_parameter/mask_type = 6
+shader_parameter/mask_brightness = 1.2
+shader_parameter/scanline_brightness = 1.0
+shader_parameter/vignette_intensity = 2.0
+shader_parameter/vignette_opacity = 0.6
+shader_parameter/dead_cells_on = false
+shader_parameter/dead_seed = 1.0
+shader_parameter/dead_cell_px = 30.0
+shader_parameter/dead_radius_px = 1.0
+shader_parameter/dead_strength = 1.0
+shader_parameter/hot_cells_on = false
+shader_parameter/hot_seed = 1.0
+shader_parameter/hot_cell_px = 50.0
+shader_parameter/hot_radius_px = 1.0
+shader_parameter/hot_intensity = 0.615
+shader_parameter/hot_flicker = 0.8
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sbygb"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, 6.2222223, 6.2222223, 8, -6.2222223, 8, -8, 6.2222223)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v8d84"]
-texture = ExtResource("4_o3ttr")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jql0x"]
+texture = ExtResource("3_kdsi4")
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_lkn2k")
-0:1/0 = 0
-0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_sbygb")
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5niy6"]
-polygon = PackedVector2Array(-8, -4.4444447, -4.4444447, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wikm6"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, -0.88888884, 0.8888893, -0.88888884, 0.8888893, 4.4444447, -4.4444447, 8, -4.4444447, -0.88888884, -8, -0.88888884)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1c1qw"]
-polygon = PackedVector2Array(-8, -8, 4.4444447, -8, 8, -4.4444447, 8, 8, -8, 8)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1a10c"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, -4.4444447, 4.4444447, -0.88888884, 4.4444447, 8, -0.88888884, 4.4444447, -0.88888884, -0.88888884, -8, -0.88888884)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gw1l3"]
-texture = ExtResource("5_kdsi4")
-0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_5niy6")
 1:0/0 = 0
-1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_1c1qw")
-0:1/0 = 0
-0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_wikm6")
-1:1/0 = 0
-1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_1a10c")
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mx6s3"]
-polygon = PackedVector2Array(-6.2222223, -8, 6.2222223, -8, 8, -6.2222223, 8, 8, -8, 8, -8, -6.2222223)
+[sub_resource type="TileSet" id="TileSet_kdsi4"]
+sources/0 = SubResource("TileSetAtlasSource_jql0x")
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7d3nu"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, 6.2222223, 6.2222223, 8, -6.2222223, 8, -8, 6.2222223)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4se4"]
-texture = ExtResource("6_kva3v")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_22mqa"]
+texture = ExtResource("14_kva3v")
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_mx6s3")
-0:1/0 = 0
-0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_7d3nu")
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r6ket"]
-polygon = PackedVector2Array(-8, -4.4444447, -4.4444447, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xworo"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, -0.88888884, 0.8888893, -0.88888884, 0.8888893, 4.4444447, -4.4444447, 8, -4.4444447, -0.88888884, -8, -0.88888884)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wwjag"]
-polygon = PackedVector2Array(-8, -8, 4.4444447, -8, 8, -4.4444447, 8, 8, -8, 8)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rvwo1"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, -4.4444447, 4.4444447, -0.88888884, 4.4444447, 8, -0.88888884, 4.4444447, -0.88888884, -0.88888884, -8, -0.88888884)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sibr7"]
-texture = ExtResource("7_jql0x")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6c6bd"]
+texture = ExtResource("15_jql0x")
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_r6ket")
 1:0/0 = 0
-1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_wwjag")
 0:1/0 = 0
-0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xworo")
 1:1/0 = 0
-1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_rvwo1")
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+5:1/0 = 0
+3:0/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+4:3/0 = 0
+5:2/0 = 0
+5:3/0 = 0
+3:3/0 = 0
+2:3/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_7e6ji"]
-occlusion_layer_0/light_mask = 1
-sources/0 = SubResource("TileSetAtlasSource_v8d84")
-sources/1 = SubResource("TileSetAtlasSource_gw1l3")
-sources/2 = SubResource("TileSetAtlasSource_p4se4")
-sources/3 = SubResource("TileSetAtlasSource_sibr7")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2qmps"]
+texture = ExtResource("16_do6pa")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gtyp3"]
+texture = ExtResource("17_n8qcm")
+0:0/animation_columns = 34
+0:0/animation_separation = Vector2i(1, 0)
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/animation_frame_11/duration = 1.0
+0:0/animation_frame_12/duration = 1.0
+0:0/animation_frame_13/duration = 1.0
+0:0/animation_frame_14/duration = 1.0
+0:0/animation_frame_15/duration = 1.0
+0:0/animation_frame_16/duration = 1.0
+0:0/animation_frame_17/duration = 1.0
+0:0/animation_frame_18/duration = 1.0
+0:0/animation_frame_19/duration = 1.0
+0:0/animation_frame_20/duration = 1.0
+0:0/animation_frame_21/duration = 1.0
+0:0/animation_frame_22/duration = 1.0
+0:0/animation_frame_23/duration = 1.0
+0:0/animation_frame_24/duration = 1.0
+0:0/animation_frame_25/duration = 1.0
+0:0/animation_frame_26/duration = 1.0
+0:0/animation_frame_27/duration = 1.0
+0:0/animation_frame_28/duration = 1.0
+0:0/animation_frame_29/duration = 1.0
+0:0/animation_frame_30/duration = 1.0
+0:0/animation_frame_31/duration = 1.0
+0:0/animation_frame_32/duration = 1.0
+0:0/animation_frame_33/duration = 1.0
+0:0/0 = 0
+0:1/animation_columns = 34
+0:1/animation_separation = Vector2i(1, 0)
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/animation_frame_4/duration = 1.0
+0:1/animation_frame_5/duration = 1.0
+0:1/animation_frame_6/duration = 1.0
+0:1/animation_frame_7/duration = 1.0
+0:1/animation_frame_8/duration = 1.0
+0:1/animation_frame_9/duration = 1.0
+0:1/animation_frame_10/duration = 1.0
+0:1/animation_frame_11/duration = 1.0
+0:1/animation_frame_12/duration = 1.0
+0:1/animation_frame_13/duration = 1.0
+0:1/animation_frame_14/duration = 1.0
+0:1/animation_frame_15/duration = 1.0
+0:1/animation_frame_16/duration = 1.0
+0:1/animation_frame_17/duration = 1.0
+0:1/animation_frame_18/duration = 1.0
+0:1/animation_frame_19/duration = 1.0
+0:1/animation_frame_20/duration = 1.0
+0:1/animation_frame_21/duration = 1.0
+0:1/animation_frame_22/duration = 1.0
+0:1/animation_frame_23/duration = 1.0
+0:1/animation_frame_24/duration = 1.0
+0:1/animation_frame_25/duration = 1.0
+0:1/animation_frame_26/duration = 1.0
+0:1/animation_frame_27/duration = 1.0
+0:1/animation_frame_28/duration = 1.0
+0:1/animation_frame_29/duration = 1.0
+0:1/animation_frame_30/duration = 1.0
+0:1/animation_frame_31/duration = 1.0
+0:1/animation_frame_32/duration = 1.0
+0:1/animation_frame_33/duration = 1.0
+0:1/0 = 0
+1:1/animation_columns = 34
+1:1/animation_separation = Vector2i(1, 0)
+1:1/animation_frame_0/duration = 1.0
+1:1/animation_frame_1/duration = 1.0
+1:1/animation_frame_2/duration = 1.0
+1:1/animation_frame_3/duration = 1.0
+1:1/animation_frame_4/duration = 1.0
+1:1/animation_frame_5/duration = 1.0
+1:1/animation_frame_6/duration = 1.0
+1:1/animation_frame_7/duration = 1.0
+1:1/animation_frame_8/duration = 1.0
+1:1/animation_frame_9/duration = 1.0
+1:1/animation_frame_10/duration = 1.0
+1:1/animation_frame_11/duration = 1.0
+1:1/animation_frame_12/duration = 1.0
+1:1/animation_frame_13/duration = 1.0
+1:1/animation_frame_14/duration = 1.0
+1:1/animation_frame_15/duration = 1.0
+1:1/animation_frame_16/duration = 1.0
+1:1/animation_frame_17/duration = 1.0
+1:1/animation_frame_18/duration = 1.0
+1:1/animation_frame_19/duration = 1.0
+1:1/animation_frame_20/duration = 1.0
+1:1/animation_frame_21/duration = 1.0
+1:1/animation_frame_22/duration = 1.0
+1:1/animation_frame_23/duration = 1.0
+1:1/animation_frame_24/duration = 1.0
+1:1/animation_frame_25/duration = 1.0
+1:1/animation_frame_26/duration = 1.0
+1:1/animation_frame_27/duration = 1.0
+1:1/animation_frame_28/duration = 1.0
+1:1/animation_frame_29/duration = 1.0
+1:1/animation_frame_30/duration = 1.0
+1:1/animation_frame_31/duration = 1.0
+1:1/animation_frame_32/duration = 1.0
+1:1/animation_frame_33/duration = 1.0
+1:1/0 = 0
+1:0/animation_columns = 34
+1:0/animation_separation = Vector2i(1, 0)
+1:0/animation_frame_0/duration = 1.0
+1:0/animation_frame_1/duration = 1.0
+1:0/animation_frame_2/duration = 1.0
+1:0/animation_frame_3/duration = 1.0
+1:0/animation_frame_4/duration = 1.0
+1:0/animation_frame_5/duration = 1.0
+1:0/animation_frame_6/duration = 1.0
+1:0/animation_frame_7/duration = 1.0
+1:0/animation_frame_8/duration = 1.0
+1:0/animation_frame_9/duration = 1.0
+1:0/animation_frame_10/duration = 1.0
+1:0/animation_frame_11/duration = 1.0
+1:0/animation_frame_12/duration = 1.0
+1:0/animation_frame_13/duration = 1.0
+1:0/animation_frame_14/duration = 1.0
+1:0/animation_frame_15/duration = 1.0
+1:0/animation_frame_16/duration = 1.0
+1:0/animation_frame_17/duration = 1.0
+1:0/animation_frame_18/duration = 1.0
+1:0/animation_frame_19/duration = 1.0
+1:0/animation_frame_20/duration = 1.0
+1:0/animation_frame_21/duration = 1.0
+1:0/animation_frame_22/duration = 1.0
+1:0/animation_frame_23/duration = 1.0
+1:0/animation_frame_24/duration = 1.0
+1:0/animation_frame_25/duration = 1.0
+1:0/animation_frame_26/duration = 1.0
+1:0/animation_frame_27/duration = 1.0
+1:0/animation_frame_28/duration = 1.0
+1:0/animation_frame_29/duration = 1.0
+1:0/animation_frame_30/duration = 1.0
+1:0/animation_frame_31/duration = 1.0
+1:0/animation_frame_32/duration = 1.0
+1:0/animation_frame_33/duration = 1.0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vmg1d"]
+sources/0 = SubResource("TileSetAtlasSource_22mqa")
+sources/1 = SubResource("TileSetAtlasSource_6c6bd")
+sources/3 = SubResource("TileSetAtlasSource_2qmps")
+sources/4 = SubResource("TileSetAtlasSource_gtyp3")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tio2m"]
 atlas = ExtResource("14_lgrx1")
@@ -496,14 +781,14 @@ script = ExtResource("1_vmg1d")
 [node name="PointLight2D" type="PointLight2D" parent="Mirror" unique_id=1379135237]
 position = Vector2(208, 136)
 scale = Vector2(0.49999988, 4.25)
-color = Color(0.23529412, 0, 0, 1)
+color = Color(2.466701e-07, 0, 0.2452819, 1)
 energy = 10.0
 texture = SubResource("GradientTexture2D_v8d84")
 
 [node name="PointLight2D_2" type="PointLight2D" parent="Mirror" unique_id=1809783144]
 position = Vector2(240, 136)
 scale = Vector2(0.49999988, 4.25)
-color = Color(0.23529412, 0, 0, 1)
+color = Color(5.5973054e-05, 0.0055973143, 0.0924345, 1)
 energy = 10.0
 texture = SubResource("GradientTexture2D_lkn2k")
 
@@ -516,11 +801,12 @@ board = NodePath("Grid_1")
 player = NodePath("Entities/Player_1")
 
 [node name="TileMap" type="TileMapLayer" parent="Side_1" unique_id=701814804]
-tile_map_data = PackedByteArray("AAAAAAAABAAAAAEAAAABAAAABAABAAEAAAACAAAABAAAAAEAAAADAAAABAABAAEAAAAEAAAABAAAAAEAAAAFAAAABAABAAEAAAAGAAAABAAAAAEAAAAHAAAABAABAAEAAAAIAAAABAAAAAEAAAAJAAAABAABAAEAAAAKAAAABAAAAAEAAAALAAAABAABAAEAAAAMAAAABAAAAAEAAAANAAAABAABAAEAAAAAAAEABAABAAEAAAAAAAIABAAAAAEAAAAAAAMABAABAAEAAAAAAAQABAAAAAEAAAAAAAUABAABAAEAAAAAAAYABAAAAAEAAAAAAAcABAABAAEAAAAAAAgABAAAAAEAAAAAAAkABAABAAEAAAAAAAoABAAAAAEAAAAAAAsABAABAAEAAAAAAAwABAAAAAEAAAAAAA0ABAABAAEAAAAAAA4ABAAAAAEAAAAAAA8ABAABAAEAAAAIAAkABAABAAEAAAAIAAgABAAAAAEAAAAIAAcABAABAAEAAAAIAAYABAAAAAEAAAAIAAUABAABAAEAAAAIAAQABAAAAAEAAAAIAAMABAABAAEAAAAIAAIABAAAAAEAAAAIAAEABAABAAEAAAAHAAEABAAAAAEAAAAGAAEABAABAAEAAAAFAAEABAAAAAEAAAAEAAEABAABAAEAAAADAAEABAAAAAEAAAACAAEABAABAAEAAAABAAEABAAAAAEAAAABAAIABAABAAEAAAABAAMABAAAAAEAAAABAAQABAABAAEAAAABAAUABAAAAAEAAAABAAYABAABAAEAAAABAAcABAAAAAEAAAABAAgABAABAAEAAAABAAkABAAAAAEAAAABAAoABAABAAEAAAABAAsABAAAAAEAAAABAAwABAABAAEAAAABAA0ABAAAAAEAAAABAA4ABAABAAEAAAABAA8ABAAAAAEAAAACAA8ABAABAAEAAAACAA4ABAAAAAEAAAACAA0ABAABAAEAAAACAAwABAAAAAEAAAACAAsABAABAAEAAAACAAoABAAAAAEAAAACAAkABAABAAEAAAACAAgABAAAAAEAAAACAAcABAABAAEAAAACAAYABAAAAAEAAAACAAUABAABAAEAAAACAAQABAAAAAEAAAACAAMABAABAAEAAAACAAIABAAAAAEAAAADAAIABAABAAEAAAADAAMABAAAAAEAAAADAAQABAABAAEAAAADAAUABAAAAAEAAAADAAYABAABAAEAAAADAAcABAAAAAEAAAADAAgABAABAAEAAAADAAkABAAAAAEAAAADAAoABAABAAEAAAADAAsABAAAAAEAAAADAAwABAABAAEAAAADAA0ABAAAAAEAAAADAA4ABAABAAEAAAADAA8ABAAAAAEAAAAEAA8ABAABAAEAAAAEAA4ABAAAAAEAAAAEAA0ABAABAAEAAAAEAAwABAAAAAEAAAAEAAsABAABAAEAAAAEAAoABAAAAAEAAAAEAAkABAABAAEAAAAEAAgABAAAAAEAAAAEAAcABAABAAEAAAAEAAYABAAAAAEAAAAEAAUABAABAAEAAAAEAAQABAAAAAEAAAAEAAMABAABAAEAAAAEAAIABAAAAAEAAAAFAAIABAABAAEAAAAFAAMABAAAAAEAAAAFAAQABAABAAEAAAAFAAUABAAAAAEAAAAFAAYABAABAAEAAAAFAAcABAAAAAEAAAAFAAgABAABAAEAAAAFAAkABAAAAAEAAAAFAAoABAABAAEAAAAFAAsABAAAAAEAAAAFAAwABAABAAEAAAAFAA0ABAAAAAEAAAAFAA4ABAABAAEAAAAFAA8ABAAAAAEAAAAGAA8ABAABAAEAAAAGAA4ABAAAAAEAAAAGAA0ABAABAAEAAAAGAAwABAAAAAEAAAAGAAsABAABAAEAAAAGAAoABAAAAAEAAAAGAAkABAABAAEAAAAGAAgABAAAAAEAAAAGAAcABAABAAEAAAAGAAYABAAAAAEAAAAGAAUABAABAAEAAAAGAAQABAAAAAEAAAAGAAMABAABAAEAAAAGAAIABAAAAAEAAAAHAAIABAABAAEAAAAHAAMABAAAAAEAAAAHAAQABAABAAEAAAAHAAUABAAAAAEAAAAHAAYABAABAAEAAAAHAAcABAAAAAEAAAAHAAgABAABAAEAAAAHAAkABAAAAAEAAAAHAAoABAABAAEAAAAHAAsABAAAAAEAAAAHAAwABAABAAEAAAAHAA0ABAAAAAEAAAAHAA4ABAABAAEAAAAHAA8ABAAAAAEAAAAIAA8ABAABAAEAAAAIAA4ABAAAAAEAAAAIAA0ABAABAAEAAAAIAAwABAAAAAEAAAAIAAsABAABAAEAAAAIAAoABAAAAAEAAAAJAAoABAABAAEAAAAJAAkABAAAAAEAAAAJAAgABAABAAEAAAAJAAcABAAAAAEAAAAJAAYABAABAAEAAAAJAAUABAAAAAEAAAAJAAQABAABAAEAAAAJAAMABAAAAAEAAAAJAAIABAABAAEAAAAJAAEABAAAAAEAAAAKAAEABAABAAEAAAAKAAIABAAAAAEAAAAKAAMABAABAAEAAAAKAAQABAAAAAEAAAAKAAUABAABAAEAAAAKAAYABAAAAAEAAAAKAAcABAABAAEAAAAKAAgABAAAAAEAAAAKAAkABAABAAEAAAAKAAoABAAAAAEAAAAKAAsABAABAAEAAAAJAAsABAAAAAEAAAAJAAwABAABAAEAAAAJAA0ABAAAAAEAAAAJAA4ABAABAAEAAAAJAA8ABAAAAAEAAAAKAA8ABAABAAEAAAAKAA4ABAAAAAEAAAAKAA0ABAABAAEAAAAKAAwABAAAAAEAAAALAAwABAABAAEAAAALAAsABAAAAAEAAAALAAoABAABAAEAAAALAAkABAAAAAEAAAALAAgABAABAAEAAAALAAcABAAAAAEAAAALAAYABAABAAEAAAALAAUABAAAAAEAAAALAAQABAABAAEAAAALAAMABAAAAAEAAAALAAIABAABAAEAAAALAAEABAAAAAEAAAAMAAEABAABAAEAAAAMAAIABAAAAAEAAAAMAAMABAABAAEAAAAMAAQABAAAAAEAAAAMAAUABAABAAEAAAAMAAYABAAAAAEAAAAMAAcABAABAAEAAAAMAAgABAAAAAEAAAAMAAkABAABAAEAAAAMAAoABAAAAAEAAAAMAAsABAABAAEAAAAMAAwABAAAAAEAAAAMAA0ABAABAAEAAAALAA0ABAAAAAEAAAALAA4ABAABAAEAAAALAA8ABAAAAAEAAAAMAA8ABAABAAEAAAAMAA4ABAAAAAEAAAANAA4ABAABAAEAAAANAA0ABAAAAAEAAAANAAwABAABAAEAAAANAAsABAAAAAEAAAANAAoABAABAAEAAAANAAkABAAAAAEAAAANAAgABAABAAEAAAANAAcABAAAAAEAAAANAAYABAABAAEAAAANAAUABAAAAAEAAAANAAQABAABAAEAAAANAAMABAAAAAEAAAANAAIABAABAAEAAAANAAEABAAAAAEAAAANAA8ABAAAAAEAAAANABAABAABAAEAAAAMABAABAAAAAEAAAALABAABAABAAEAAAAKABAABAAAAAEAAAAJABAABAABAAEAAAAIABAABAAAAAEAAAAHABAABAABAAEAAAAGABAABAAAAAEAAAAFABAABAABAAEAAAAEABAABAAAAAEAAAADABAABAABAAEAAAACABAABAAAAAEAAAABABAABAABAAEAAAAAABAABAAAAAEAAAA=")
-tile_set = SubResource("TileSet_js0vw")
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAALAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA8AAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAcAAAAAAAAAAAAIAAYAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAABAAgAAAAAAAAAAAABAAkAAAAAAAAAAAABAAoAAAAAAAAAAAABAAsAAAAAAAAAAAABAAwAAAAAAAAAAAABAA0AAAAAAAAAAAABAA4AAAAAAAAAAAABAA8AAAAAAAAAAAACAA8AAAAAAAAAAAACAA4AAAAAAAAAAAACAA0AAAAAAAAAAAACAAwAAAAAAAAAAAACAAsAAAAAAAAAAAACAAoAAAAAAAAAAAACAAkAAAAAAAAAAAACAAgAAAAAAAAAAAACAAcAAAAAAAAAAAACAAYAAAAAAAAAAAACAAUAAAAAAAAAAAACAAQAAAAAAAAAAAACAAMAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAAAAAAAAAAADAAcAAAAAAAAAAAADAAgAAAAAAAAAAAADAAkAAAAAAAAAAAADAAoAAAAAAAAAAAADAAsAAAAAAAAAAAADAAwAAAAAAAAAAAADAA0AAAAAAAAAAAADAA4AAAAAAAAAAAADAA8AAAAAAAAAAAAEAA8AAAAAAAAAAAAEAA4AAAAAAAAAAAAEAA0AAAAAAAAAAAAEAAwAAAAAAAAAAAAEAAsAAAAAAAAAAAAEAAoAAAAAAAAAAAAEAAkAAAAAAAAAAAAEAAgAAAAAAAAAAAAEAAcAAAAAAAAAAAAEAAYAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAYAAAAAAAAAAAAFAAcAAAAAAAAAAAAFAAgAAAAAAAAAAAAFAAkAAAAAAAAAAAAFAAoAAAAAAAAAAAAFAAsAAAAAAAAAAAAFAAwAAAAAAAAAAAAFAA0AAAAAAAAAAAAFAA4AAAAAAAAAAAAFAA8AAAAAAAAAAAAGAA8AAAAAAAAAAAAGAA4AAAAAAAAAAAAGAA0AAAAAAAAAAAAGAAwAAAAAAAAAAAAGAAsAAAAAAAAAAAAGAAoAAAAAAAAAAAAGAAkAAAAAAAAAAAAGAAgAAAAAAAAAAAAGAAcAAAAAAAAAAAAGAAYAAAAAAAAAAAAGAAUAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAIAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAcAAAAAAAAAAAAHAAgAAAAAAAAAAAAHAAkAAAAAAAAAAAAHAAoAAAAAAAAAAAAHAAsAAAAAAAAAAAAHAAwAAAAAAAAAAAAHAA0AAAAAAAAAAAAHAA4AAAAAAAAAAAAHAA8AAAAAAAAAAAAIAA8AAAAAAAAAAAAIAA4AAAAAAAAAAAAIAA0AAAAAAAAAAAAIAAwAAAAAAAAAAAAIAAsAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAJAAkAAAAAAAAAAAAJAAgAAAAAAAAAAAAJAAcAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAAKAAIAAAAAAAAAAAAKAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAAKAAgAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAoAAAAAAAAAAAAKAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAAJAAwAAAAAAAAAAAAJAA0AAAAAAAAAAAAJAA4AAAAAAAAAAAAJAA8AAAAAAAAAAAAKAA8AAAAAAAAAAAAKAA4AAAAAAAAAAAAKAA0AAAAAAAAAAAAKAAwAAAAAAAAAAAALAAwAAAAAAAAAAAALAAsAAAAAAAAAAAALAAoAAAAAAAAAAAALAAkAAAAAAAAAAAALAAgAAAAAAAAAAAALAAcAAAAAAAAAAAALAAYAAAAAAAAAAAALAAUAAAAAAAAAAAALAAQAAAAAAAAAAAALAAMAAAAAAAAAAAALAAIAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAAMAAIAAAAAAAAAAAAMAAMAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAUAAAAAAAAAAAAMAAYAAAAAAAAAAAAMAAcAAAAAAAAAAAAMAAgAAAAAAAAAAAAMAAkAAAAAAAAAAAAMAAoAAAAAAAAAAAAMAAsAAAAAAAAAAAAMAAwAAAAAAAAAAAAMAA0AAAAAAAAAAAALAA0AAAAAAAAAAAALAA4AAAAAAAAAAAALAA8AAAAAAAAAAAAMAA8AAAAAAAAAAAAMAA4AAAAAAAAAAAANAA4AAAAAAAAAAAANAA0AAAAAAAAAAAANAAwAAAAAAAAAAAANAAsAAAAAAAAAAAANAAoAAAAAAAAAAAANAAkAAAAAAAAAAAANAAgAAAAAAAAAAAANAAcAAAAAAAAAAAANAAYAAAAAAAAAAAANAAUAAAAAAAAAAAANAAQAAAAAAAAAAAANAAMAAAAAAAAAAAANAAIAAAAAAAAAAAANAAEAAAAAAAAAAAANAA8AAAAAAAAAAAANABAAAAAAAAAAAAAMABAAAAAAAAAAAAALABAAAAAAAAAAAAAKABAAAAAAAAAAAAAJABAAAAAAAAAAAAAIABAAAAAAAAAAAAAHABAAAAAAAAAAAAAGABAAAAAAAAAAAAAFABAAAAAAAAAAAAAEABAAAAAAAAAAAAADABAAAAAAAAAAAAACABAAAAAAAAAAAAABABAAAAAAAAAAAAAAABAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_kva3v")
 
 [node name="TileMapObjects" type="TileMapLayer" parent="Side_1" unique_id=41664813]
-tile_map_data = PackedByteArray("AAAMAA4AAQAAAAAAAAALAAsAAQAAAAAAAAACAAcAAQAAAAAAAAAGAAQAAQAAAAAAAAAIAAMAAQAAAAAAAAANAA8AAQABAAEAAAAMAAwAAQABAAEAAAADAAgAAQABAAEAAAAHAAUAAQABAAEAAAAJAAQAAQABAAEAAAAMAA8AAQAAAAEAAAALAAwAAQAAAAEAAAACAAgAAQAAAAEAAAAGAAUAAQAAAAEAAAAIAAQAAQAAAAEAAAANAA4AAQABAAAAAAAMAAsAAQABAAAAAAAJAAMAAQABAAAAAAAHAAQAAQABAAAAAAADAAcAAQABAAAAAAALAAcAAAAAAAAAAAAJAAYAAAAAAAAAAAAKAAYAAAAAAAAAAAAHAAsAAAAAAAAAAAAGAAwAAAAAAAAAAAAFAAwAAAAAAAAAAAAEAAsAAAAAAAAAAAABAAwAAAAAAAAAAAAAAAsAAAAAAAAAAAADAAQAAAAAAAAAAAACAAQAAAAAAAAAAAABAAMAAAAAAAAAAAANAAEAAAAAAAAAAAAMAAIAAAAAAAAAAAAGAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAANAAIAAAAAAAEAAAAMAAMAAAAAAAEAAAAGAAIAAAAAAAEAAAAFAAIAAAAAAAEAAAADAAUAAAAAAAEAAAACAAUAAAAAAAEAAAABAAQAAAAAAAEAAAABAA0AAAAAAAEAAAAAAAwAAAAAAAEAAAAEAAwAAAAAAAEAAAAFAA0AAAAAAAEAAAAGAA0AAAAAAAEAAAAHAAwAAAAAAAEAAAALAAgAAAAAAAEAAAAKAAcAAAAAAAEAAAAJAAcAAAAAAAEAAAAEAAgAAQAAAAAAAAAIAAkAAQAAAAAAAAAJAAkAAQABAAAAAAAFAAgAAQABAAAAAAAEAAkAAQAAAAEAAAAIAAoAAQAAAAEAAAAJAAoAAQABAAEAAAAFAAkAAQABAAEAAAA=")
+tile_map_data = PackedByteArray("AAABAA0AAQAAAAAAAAABAA4AAQAAAAEAAAABAA8AAQAAAAIAAAABABAAAQAAAAMAAAACAA0AAQABAAAAAAACAA4AAQABAAEAAAACAA8AAQABAAIAAAACABAAAQABAAMAAAAIAAAAAQAAAAAAAAAIAAEAAQAAAAEAAAAIAAIAAQAAAAIAAAAIAAMAAQAAAAMAAAAJAAAAAQABAAAAAAAJAAEAAQABAAEAAAAJAAIAAQABAAIAAAAJAAMAAQABAAMAAAAKAA0AAQACAAAAAAAKAA4AAQACAAEAAAALAA0AAQADAAAAAAALAA4AAQADAAEAAAAMAA0AAQAEAAAAAAAMAA4AAQAEAAEAAAANAA0AAQAFAAAAAAANAA4AAQAFAAEAAAABAAcAAQACAAAAAAABAAgAAQACAAEAAAACAAcAAQADAAAAAAACAAgAAQADAAEAAAADAAcAAQAEAAAAAAADAAgAAQAEAAEAAAAEAAgAAQAFAAEAAAAHAAUAAQACAAAAAAAHAAYAAQACAAEAAAAIAAUAAQADAAAAAAAIAAYAAQADAAEAAAAJAAUAAQAEAAAAAAAJAAYAAQAEAAEAAAAKAAUAAQAFAAAAAAAKAAYAAQAFAAEAAAAJAAoAAQACAAIAAAAJAAsAAQACAAMAAAAKAAoAAQADAAIAAAAKAAsAAQADAAMAAAALAAoAAQAEAAIAAAALAAsAAQAEAAMAAAAMAAoAAQAFAAIAAAAMAAsAAQAFAAMAAAAKAAcAAQACAAIAAAAKAAgAAQACAAMAAAALAAcAAQADAAIAAAALAAgAAQADAAMAAAAMAAcAAQAEAAIAAAAMAAgAAQAEAAMAAAANAAcAAQAFAAIAAAANAAgAAQAFAAMAAAACAAsAAQACAAIAAAACAAwAAQACAAMAAAADAAsAAQADAAIAAAADAAwAAQADAAMAAAAEAAsAAQAEAAIAAAAEAAwAAQAEAAMAAAAFAAsAAQAFAAIAAAAFAAwAAQAFAAMAAAAEAAcAAQAFAAAAAAACAAMAAQACAAIAAAACAAQAAQACAAMAAAADAAMAAQADAAIAAAADAAQAAQADAAMAAAAEAAMAAQAEAAIAAAAEAAQAAQAEAAMAAAAFAAMAAQAFAAIAAAAFAAQAAQAFAAMAAAA=")
+tile_set = SubResource("TileSet_fhpes")
 
 [node name="Grid_1" type="Node2D" parent="Side_1" unique_id=1575728120]
 script = ExtResource("8_do6pa")
@@ -539,19 +825,321 @@ frame_progress = 0.938499
 
 [node name="StaticObjects" type="Node2D" parent="Side_1/Entities" unique_id=1612077439]
 
+[node name="Hologram_0" parent="Side_1/Entities/StaticObjects" unique_id=1912285805 instance=ExtResource("10_fhpes")]
+position = Vector2(8, 168)
+
+[node name="Hologram_1" parent="Side_1/Entities/StaticObjects" unique_id=350748317 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 168)
+
+[node name="Hologram_2" parent="Side_1/Entities/StaticObjects" unique_id=1867263998 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 152)
+
+[node name="Hologram_3" parent="Side_1/Entities/StaticObjects" unique_id=87542758 instance=ExtResource("10_fhpes")]
+position = Vector2(8, 152)
+
+[node name="Hologram_4" parent="Side_1/Entities/StaticObjects" unique_id=330780169 instance=ExtResource("10_fhpes")]
+position = Vector2(104, 152)
+
+[node name="Hologram_5" parent="Side_1/Entities/StaticObjects" unique_id=1306580363 instance=ExtResource("10_fhpes")]
+position = Vector2(120, 152)
+
+[node name="Hologram_6" parent="Side_1/Entities/StaticObjects" unique_id=788257388 instance=ExtResource("10_fhpes")]
+position = Vector2(120, 136)
+
+[node name="Hologram_7" parent="Side_1/Entities/StaticObjects" unique_id=281386407 instance=ExtResource("10_fhpes")]
+position = Vector2(104, 136)
+
+[node name="Hologram_8" parent="Side_1/Entities/StaticObjects" unique_id=1691638310 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 264)
+
+[node name="Hologram_9" parent="Side_1/Entities/StaticObjects" unique_id=397252349 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 264)
+
+[node name="Hologram_10" parent="Side_1/Entities/StaticObjects" unique_id=884015909 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 248)
+
+[node name="Hologram_11" parent="Side_1/Entities/StaticObjects" unique_id=163739191 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 248)
+
+[node name="Hologram_12" parent="Side_1/Entities/StaticObjects" unique_id=260209194 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 104)
+
+[node name="Hologram_13" parent="Side_1/Entities/StaticObjects" unique_id=1982712190 instance=ExtResource("10_fhpes")]
+position = Vector2(88, 104)
+
+[node name="Hologram_14" parent="Side_1/Entities/StaticObjects" unique_id=650658127 instance=ExtResource("10_fhpes")]
+position = Vector2(88, 88)
+
+[node name="Hologram_15" parent="Side_1/Entities/StaticObjects" unique_id=1578322041 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 88)
+
+[node name="Hologram_16" parent="Side_1/Entities/StaticObjects" unique_id=85521352 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 72)
+
+[node name="Hologram_17" parent="Side_1/Entities/StaticObjects" unique_id=45950017 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 72)
+
+[node name="Hologram_18" parent="Side_1/Entities/StaticObjects" unique_id=1425663132 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 56)
+
+[node name="Hologram_19" parent="Side_1/Entities/StaticObjects" unique_id=545379858 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 56)
+
+[node name="Hologram_20" parent="Side_1/Entities/StaticObjects" unique_id=1868678709 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 40)
+
+[node name="Hologram_21" parent="Side_1/Entities/StaticObjects" unique_id=1052049819 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 40)
+
+[node name="Hologram_22" parent="Side_1/Entities/StaticObjects" unique_id=1734188815 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 24)
+
+[node name="Hologram_23" parent="Side_1/Entities/StaticObjects" unique_id=1747390590 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 24)
+
+[node name="Bed_0" parent="Side_1/Entities/StaticObjects" unique_id=559117617 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 56)
+
+[node name="Bed_1" parent="Side_1/Entities/StaticObjects" unique_id=1593328338 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 72)
+
+[node name="Bed_2" parent="Side_1/Entities/StaticObjects" unique_id=852220099 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 72)
+
+[node name="Bed_3" parent="Side_1/Entities/StaticObjects" unique_id=799625474 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 56)
+
+[node name="Bed_4" parent="Side_1/Entities/StaticObjects" unique_id=994545424 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 56)
+
+[node name="Bed_5" parent="Side_1/Entities/StaticObjects" unique_id=567562941 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 72)
+
+[node name="Bed_6" parent="Side_1/Entities/StaticObjects" unique_id=598691762 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 88)
+
+[node name="Bed_7" parent="Side_1/Entities/StaticObjects" unique_id=2058643982 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 104)
+
+[node name="Bed_8" parent="Side_1/Entities/StaticObjects" unique_id=1936370804 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 104)
+
+[node name="Bed_9" parent="Side_1/Entities/StaticObjects" unique_id=1764531221 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 88)
+
+[node name="Bed_10" parent="Side_1/Entities/StaticObjects" unique_id=1102314291 instance=ExtResource("10_fhpes")]
+position = Vector2(136, 88)
+
+[node name="Bed_11" parent="Side_1/Entities/StaticObjects" unique_id=770521325 instance=ExtResource("10_fhpes")]
+position = Vector2(136, 104)
+
+[node name="Bed_12" parent="Side_1/Entities/StaticObjects" unique_id=1181685883 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 120)
+
+[node name="Bed_13" parent="Side_1/Entities/StaticObjects" unique_id=757331989 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 136)
+
+[node name="Bed_14" parent="Side_1/Entities/StaticObjects" unique_id=2095248408 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 136)
+
+[node name="Bed_15" parent="Side_1/Entities/StaticObjects" unique_id=482020730 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 120)
+
+[node name="Bed_16" parent="Side_1/Entities/StaticObjects" unique_id=1707168667 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 120)
+
+[node name="Bed_17" parent="Side_1/Entities/StaticObjects" unique_id=821614825 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 136)
+
+[node name="Bed_18" parent="Side_1/Entities/StaticObjects" unique_id=1722153854 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 184)
+
+[node name="Bed_19" parent="Side_1/Entities/StaticObjects" unique_id=672661160 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 200)
+
+[node name="Bed_20" parent="Side_1/Entities/StaticObjects" unique_id=942432594 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 200)
+
+[node name="Bed_21" parent="Side_1/Entities/StaticObjects" unique_id=1710603509 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 184)
+
+[node name="Bed_22" parent="Side_1/Entities/StaticObjects" unique_id=1052965090 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 184)
+
+[node name="Bed_23" parent="Side_1/Entities/StaticObjects" unique_id=589193218 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 200)
+
+[node name="Bed_24" parent="Side_1/Entities/StaticObjects" unique_id=874817005 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 216)
+
+[node name="Bed_25" parent="Side_1/Entities/StaticObjects" unique_id=1434431930 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 232)
+
+[node name="Bed_26" parent="Side_1/Entities/StaticObjects" unique_id=2065409687 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 232)
+
+[node name="Bed_27" parent="Side_1/Entities/StaticObjects" unique_id=1045544613 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 216)
+
+[node name="Bed_28" parent="Side_1/Entities/StaticObjects" unique_id=1926330534 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 216)
+
+[node name="Bed_29" parent="Side_1/Entities/StaticObjects" unique_id=1799908232 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 232)
+
+[node name="Bed_30" parent="Side_1/Entities/StaticObjects" unique_id=1108818957 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 168)
+
+[node name="Bed_31" parent="Side_1/Entities/StaticObjects" unique_id=716807018 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 184)
+
+[node name="Bed_32" parent="Side_1/Entities/StaticObjects" unique_id=243022564 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 184)
+
+[node name="Bed_33" parent="Side_1/Entities/StaticObjects" unique_id=879187988 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 168)
+
+[node name="Bed_34" parent="Side_1/Entities/StaticObjects" unique_id=266590497 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 168)
+
+[node name="Bed_35" parent="Side_1/Entities/StaticObjects" unique_id=1814765666 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 184)
+
+[node name="Bed_36" parent="Side_1/Entities/StaticObjects" unique_id=1409534672 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 120)
+
+[node name="Bed_37" parent="Side_1/Entities/StaticObjects" unique_id=1892639448 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 136)
+
+[node name="Bed_38" parent="Side_1/Entities/StaticObjects" unique_id=1980608870 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 136)
+
+[node name="Bed_39" parent="Side_1/Entities/StaticObjects" unique_id=101649911 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 120)
+
+[node name="Bed_40" parent="Side_1/Entities/StaticObjects" unique_id=1688658598 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 120)
+
+[node name="Bed_41" parent="Side_1/Entities/StaticObjects" unique_id=1082753081 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 136)
+
+[node name="Bed_42" parent="Side_1/Entities/StaticObjects" unique_id=2066560236 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 56)
+
+[node name="Bed_43" parent="Side_1/Entities/StaticObjects" unique_id=333575001 instance=ExtResource("10_fhpes")]
+position = Vector2(136, 56)
+
+[node name="Bed_44" parent="Side_1/Entities/StaticObjects" unique_id=823807159 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 40)
+
+[node name="Bed_45" parent="Side_1/Entities/StaticObjects" unique_id=875962211 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 24)
+
+[node name="Bed_46" parent="Side_1/Entities/StaticObjects" unique_id=476991341 instance=ExtResource("10_fhpes")]
+position = Vector2(136, 24)
+
+[node name="Bed_47" parent="Side_1/Entities/StaticObjects" unique_id=1654664245 instance=ExtResource("10_fhpes")]
+position = Vector2(136, 40)
+
+[node name="Bed_48" parent="Side_1/Entities/StaticObjects" unique_id=1886986726 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 248)
+
+[node name="Bed_49" parent="Side_1/Entities/StaticObjects" unique_id=366947779 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 248)
+
+[node name="Bed_50" parent="Side_1/Entities/StaticObjects" unique_id=2023956777 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 232)
+
+[node name="Bed_51" parent="Side_1/Entities/StaticObjects" unique_id=2041099363 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 216)
+
+[node name="Bed_52" parent="Side_1/Entities/StaticObjects" unique_id=6651066 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 216)
+
+[node name="Bed_53" parent="Side_1/Entities/StaticObjects" unique_id=336765555 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 232)
+
+[node name="Bed_54" parent="Side_1/Entities/StaticObjects" unique_id=2105894815 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 264)
+
+[node name="Bed_55" parent="Side_1/Entities/StaticObjects" unique_id=40913527 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 264)
+
+[node name="Bed_56" parent="Side_1/Entities/StaticObjects" unique_id=1281882743 instance=ExtResource("10_fhpes")]
+position = Vector2(88, 184)
+
+[node name="Bed_57" parent="Side_1/Entities/StaticObjects" unique_id=922014541 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 184)
+
+[node name="Bed_58" parent="Side_1/Entities/StaticObjects" unique_id=1085641186 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 168)
+
+[node name="Bed_59" parent="Side_1/Entities/StaticObjects" unique_id=1505071425 instance=ExtResource("10_fhpes")]
+position = Vector2(216, 136)
+
+[node name="Bed_60" parent="Side_1/Entities/StaticObjects" unique_id=636823580 instance=ExtResource("10_fhpes")]
+position = Vector2(216, 120)
+
+[node name="Bed_61" parent="Side_1/Entities/StaticObjects" unique_id=1355242006 instance=ExtResource("10_fhpes")]
+position = Vector2(120, 88)
+
+[node name="Bed_62" parent="Side_1/Entities/StaticObjects" unique_id=1694672519 instance=ExtResource("10_fhpes")]
+position = Vector2(120, 104)
+
+[node name="Bed_63" parent="Side_1/Entities/StaticObjects" unique_id=1305817100 instance=ExtResource("10_fhpes")]
+position = Vector2(136, 8)
+
+[node name="Bed_64" parent="Side_1/Entities/StaticObjects" unique_id=2076638813 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 8)
+
+[node name="Bed_65" parent="Side_1/Entities/StaticObjects" unique_id=998361455 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 120)
+
+[node name="Bed_66" parent="Side_1/Entities/StaticObjects" unique_id=1603951167 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 136)
+
+[node name="Bed_67" parent="Side_1/Entities/StaticObjects" unique_id=1684326014 instance=ExtResource("10_fhpes")]
+position = Vector2(88, 56)
+
+[node name="Bed_68" parent="Side_1/Entities/StaticObjects" unique_id=362236184 instance=ExtResource("10_fhpes")]
+position = Vector2(88, 72)
+
+[node name="Bed_69" parent="Side_1/Entities/StaticObjects" unique_id=156449204 instance=ExtResource("10_fhpes")]
+position = Vector2(88, 200)
+
+[node name="Bed_70" parent="Side_1/Entities/StaticObjects" unique_id=375735921 instance=ExtResource("10_fhpes")]
+position = Vector2(216, 216)
+
+[node name="Bed_71" parent="Side_1/Entities/StaticObjects" unique_id=589439202 instance=ExtResource("10_fhpes")]
+position = Vector2(216, 232)
+
 [node name="Side_2" type="Node2D" parent="." unique_id=2039548093 node_paths=PackedStringArray("board", "player")]
-modulate = Color(1, 0.599933, 0.540393, 1)
+modulate = Color(0.44523358, 0.561538, 1, 1)
 position = Vector2(224, 0)
 script = ExtResource("2_1nwmf")
 board = NodePath("Grid_2")
 player = NodePath("Entities/Player_2")
 
+[node name="Control" type="Control" parent="Side_2" unique_id=672746796]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 224.0
+offset_bottom = 272.0
+
+[node name="ColorRect" type="ColorRect" parent="Side_2/Control" unique_id=624556571]
+z_index = 1
+material = SubResource("ShaderMaterial_kva3v")
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 272.0
+
 [node name="TileMap" type="TileMapLayer" parent="Side_2" unique_id=777862412]
-tile_map_data = PackedByteArray("AAAAAAAABAAAAAAAAAAAAAEABAABAAAAAAAAAAIABAAAAAAAAAAAAAMABAABAAAAAAAAAAQABAAAAAAAAAAAAAUABAABAAAAAAAAAAYABAAAAAAAAAAAAAcABAABAAAAAAAAAAgABAAAAAAAAAAAAAkABAABAAAAAAAAAAoABAAAAAAAAAAAAAsABAABAAAAAAAAAAwABAAAAAAAAAAAAA0ABAABAAAAAAAAAA4ABAAAAAAAAAAAAA8ABAABAAAAAAAAABAABAAAAAAAAAABAAAABAABAAAAAAABAAEABAAAAAAAAAABAAIABAABAAAAAAABAAMABAAAAAAAAAABAAQABAABAAAAAAABAAUABAAAAAAAAAABAAYABAABAAAAAAABAAcABAAAAAAAAAABAAgABAABAAAAAAABAAkABAAAAAAAAAABAAoABAABAAAAAAABAAsABAAAAAAAAAABAAwABAABAAAAAAABAA0ABAAAAAAAAAABAA4ABAABAAAAAAABAA8ABAAAAAAAAAABABAABAABAAAAAAACAAAABAAAAAAAAAACAAEABAABAAAAAAACAAIABAAAAAAAAAACAAMABAABAAAAAAACAAQABAAAAAAAAAACAAUABAABAAAAAAACAAYABAAAAAAAAAACAAcABAABAAAAAAACAAgABAAAAAAAAAACAAkABAABAAAAAAACAAoABAAAAAAAAAACAAsABAABAAAAAAACAAwABAAAAAAAAAACAA0ABAABAAAAAAACAA4ABAAAAAAAAAACAA8ABAABAAAAAAACABAABAAAAAAAAAADAAAABAABAAAAAAADAAEABAAAAAAAAAADAAIABAABAAAAAAADAAMABAAAAAAAAAADAAQABAABAAAAAAADAAUABAAAAAAAAAADAAYABAABAAAAAAADAAcABAAAAAAAAAADAAgABAABAAAAAAADAAkABAAAAAAAAAADAAoABAABAAAAAAADAAsABAAAAAAAAAADAAwABAABAAAAAAADAA0ABAAAAAAAAAADAA4ABAABAAAAAAADAA8ABAAAAAAAAAADABAABAABAAAAAAAEAAAABAAAAAAAAAAEAAEABAABAAAAAAAEAAIABAAAAAAAAAAEAAMABAABAAAAAAAEAAQABAAAAAAAAAAEAAUABAABAAAAAAAEAAYABAAAAAAAAAAEAAcABAABAAAAAAAEAAgABAAAAAAAAAAEAAkABAABAAAAAAAEAAoABAAAAAAAAAAEAAsABAABAAAAAAAEAAwABAAAAAAAAAAEAA0ABAABAAAAAAAEAA4ABAAAAAAAAAAEAA8ABAABAAAAAAAEABAABAAAAAAAAAAFAAAABAABAAAAAAAFAAEABAAAAAAAAAAFAAIABAABAAAAAAAFAAMABAAAAAAAAAAFAAQABAABAAAAAAAFAAUABAAAAAAAAAAFAAYABAABAAAAAAAFAAcABAAAAAAAAAAFAAgABAABAAAAAAAFAAkABAAAAAAAAAAFAAoABAABAAAAAAAFAAsABAAAAAAAAAAFAAwABAABAAAAAAAFAA0ABAAAAAAAAAAFAA4ABAABAAAAAAAFAA8ABAAAAAAAAAAFABAABAABAAAAAAAGAAAABAAAAAAAAAAGAAEABAABAAAAAAAGAAIABAAAAAAAAAAGAAMABAABAAAAAAAGAAQABAAAAAAAAAAGAAUABAABAAAAAAAGAAYABAAAAAAAAAAGAAcABAABAAAAAAAGAAgABAAAAAAAAAAGAAkABAABAAAAAAAGAAoABAAAAAAAAAAGAAsABAABAAAAAAAGAAwABAAAAAAAAAAGAA0ABAABAAAAAAAGAA4ABAAAAAAAAAAGAA8ABAABAAAAAAAGABAABAAAAAAAAAAHAAAABAABAAAAAAAHAAEABAAAAAAAAAAHAAIABAABAAAAAAAHAAMABAAAAAAAAAAHAAQABAABAAAAAAAHAAUABAAAAAAAAAAHAAYABAABAAAAAAAHAAcABAAAAAAAAAAHAAgABAABAAAAAAAHAAkABAAAAAAAAAAHAAoABAABAAAAAAAHAAsABAAAAAAAAAAHAAwABAABAAAAAAAHAA0ABAAAAAAAAAAHAA4ABAABAAAAAAAHAA8ABAAAAAAAAAAHABAABAABAAAAAAAIAAAABAAAAAAAAAAIAAEABAABAAAAAAAIAAIABAAAAAAAAAAIAAMABAABAAAAAAAIAAQABAAAAAAAAAAIAAUABAABAAAAAAAIAAYABAAAAAAAAAAIAAcABAABAAAAAAAIAAgABAAAAAAAAAAIAAkABAABAAAAAAAIAAoABAAAAAAAAAAIAAsABAABAAAAAAAIAAwABAAAAAAAAAAIAA0ABAABAAAAAAAIAA4ABAAAAAAAAAAIAA8ABAABAAAAAAAIABAABAAAAAAAAAAJAAAABAABAAAAAAAJAAEABAAAAAAAAAAJAAIABAABAAAAAAAJAAMABAAAAAAAAAAJAAQABAABAAAAAAAJAAUABAAAAAAAAAAJAAYABAABAAAAAAAJAAcABAAAAAAAAAAJAAgABAABAAAAAAAJAAkABAAAAAAAAAAJAAoABAABAAAAAAAJAAsABAAAAAAAAAAJAAwABAABAAAAAAAJAA0ABAAAAAAAAAAJAA4ABAABAAAAAAAJAA8ABAAAAAAAAAAJABAABAABAAAAAAAKAAAABAAAAAAAAAAKAAEABAABAAAAAAAKAAIABAAAAAAAAAAKAAMABAABAAAAAAAKAAQABAAAAAAAAAAKAAUABAABAAAAAAAKAAYABAAAAAAAAAAKAAcABAABAAAAAAAKAAgABAAAAAAAAAAKAAkABAABAAAAAAAKAAoABAAAAAAAAAAKAAsABAABAAAAAAAKAAwABAAAAAAAAAAKAA0ABAABAAAAAAAKAA4ABAAAAAAAAAAKAA8ABAABAAAAAAAKABAABAAAAAAAAAALAAAABAABAAAAAAALAAEABAAAAAAAAAALAAIABAABAAAAAAALAAMABAAAAAAAAAALAAQABAABAAAAAAALAAUABAAAAAAAAAALAAYABAABAAAAAAALAAcABAAAAAAAAAALAAgABAABAAAAAAALAAkABAAAAAAAAAALAAoABAABAAAAAAALAAsABAAAAAAAAAALAAwABAABAAAAAAALAA0ABAAAAAAAAAALAA4ABAABAAAAAAALAA8ABAAAAAAAAAALABAABAABAAAAAAAMAAAABAAAAAAAAAAMAAEABAABAAAAAAAMAAIABAAAAAAAAAAMAAMABAABAAAAAAAMAAQABAAAAAAAAAAMAAUABAABAAAAAAAMAAYABAAAAAAAAAAMAAcABAABAAAAAAAMAAgABAAAAAAAAAAMAAkABAABAAAAAAAMAAoABAAAAAAAAAAMAAsABAABAAAAAAAMAAwABAAAAAAAAAAMAA0ABAABAAAAAAAMAA4ABAAAAAAAAAAMAA8ABAABAAAAAAAMABAABAAAAAAAAAANAAAABAABAAAAAAANAAEABAAAAAAAAAANAAIABAABAAAAAAANAAMABAAAAAAAAAANAAQABAABAAAAAAANAAUABAAAAAAAAAANAAYABAABAAAAAAANAAcABAAAAAAAAAANAAgABAABAAAAAAANAAkABAAAAAAAAAANAAoABAABAAAAAAANAAsABAAAAAAAAAANAAwABAABAAAAAAANAA0ABAAAAAAAAAANAA4ABAABAAAAAAANAA8ABAAAAAAAAAANABAABAABAAAAAAA=")
-tile_set = SubResource("TileSet_js0vw")
+tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAAAAAEAAAABAAAAAAAAAAIAAAABAAAAAAAAAAMAAAABAAAAAAAAAAQAAAABAAAAAAAAAAUAAAABAAAAAAAAAAYAAAABAAAAAAAAAAcAAAABAAAAAAAAAAgAAAABAAAAAAAAAAkAAAABAAAAAAAAAAoAAAABAAAAAAAAAAsAAAABAAAAAAAAAAwAAAABAAAAAAAAAA0AAAABAAAAAAAAAA4AAAABAAAAAAAAAA8AAAABAAAAAAAAABAAAAABAAAAAAABAAAAAAABAAAAAAABAAEAAAABAAAAAAABAAIAAAABAAAAAAABAAMAAAABAAAAAAABAAQAAAABAAAAAAABAAUAAAABAAAAAAABAAYAAAABAAAAAAABAAcAAAABAAAAAAABAAgAAAABAAAAAAABAAkAAAABAAAAAAABAAoAAAABAAAAAAABAAsAAAABAAAAAAABAAwAAAABAAAAAAABAA0AAAABAAAAAAABAA4AAAABAAAAAAABAA8AAAABAAAAAAABABAAAAABAAAAAAACAAAAAAABAAAAAAACAAEAAAABAAAAAAACAAIAAAABAAAAAAACAAMAAAABAAAAAAACAAQAAAABAAAAAAACAAUAAAABAAAAAAACAAYAAAABAAAAAAACAAcAAAABAAAAAAACAAgAAAABAAAAAAACAAkAAAABAAAAAAACAAoAAAABAAAAAAACAAsAAAABAAAAAAACAAwAAAABAAAAAAACAA0AAAABAAAAAAACAA4AAAABAAAAAAACAA8AAAABAAAAAAACABAAAAABAAAAAAADAAAAAAABAAAAAAADAAEAAAABAAAAAAADAAIAAAABAAAAAAADAAMAAAABAAAAAAADAAQAAAABAAAAAAADAAUAAAABAAAAAAADAAYAAAABAAAAAAADAAcAAAABAAAAAAADAAgAAAABAAAAAAADAAkAAAABAAAAAAADAAoAAAABAAAAAAADAAsAAAABAAAAAAADAAwAAAABAAAAAAADAA0AAAABAAAAAAADAA4AAAABAAAAAAADAA8AAAABAAAAAAADABAAAAABAAAAAAAEAAAAAAABAAAAAAAEAAEAAAABAAAAAAAEAAIAAAABAAAAAAAEAAMAAAABAAAAAAAEAAQAAAABAAAAAAAEAAUAAAABAAAAAAAEAAYAAAABAAAAAAAEAAcAAAABAAAAAAAEAAgAAAABAAAAAAAEAAkAAAABAAAAAAAEAAoAAAABAAAAAAAEAAsAAAABAAAAAAAEAAwAAAABAAAAAAAEAA0AAAABAAAAAAAEAA4AAAABAAAAAAAEAA8AAAABAAAAAAAEABAAAAABAAAAAAAFAAAAAAABAAAAAAAFAAEAAAABAAAAAAAFAAIAAAABAAAAAAAFAAMAAAABAAAAAAAFAAQAAAABAAAAAAAFAAUAAAABAAAAAAAFAAYAAAABAAAAAAAFAAcAAAABAAAAAAAFAAgAAAABAAAAAAAFAAkAAAABAAAAAAAFAAoAAAABAAAAAAAFAAsAAAABAAAAAAAFAAwAAAABAAAAAAAFAA0AAAABAAAAAAAFAA4AAAABAAAAAAAFAA8AAAABAAAAAAAFABAAAAABAAAAAAAGAAAAAAABAAAAAAAGAAEAAAABAAAAAAAGAAIAAAABAAAAAAAGAAMAAAABAAAAAAAGAAQAAAABAAAAAAAGAAUAAAABAAAAAAAGAAYAAAABAAAAAAAGAAcAAAABAAAAAAAGAAgAAAABAAAAAAAGAAkAAAABAAAAAAAGAAoAAAABAAAAAAAGAAsAAAABAAAAAAAGAAwAAAABAAAAAAAGAA0AAAABAAAAAAAGAA4AAAABAAAAAAAGAA8AAAABAAAAAAAGABAAAAABAAAAAAAHAAAAAAABAAAAAAAHAAEAAAABAAAAAAAHAAIAAAABAAAAAAAHAAMAAAABAAAAAAAHAAQAAAABAAAAAAAHAAUAAAABAAAAAAAHAAYAAAABAAAAAAAHAAcAAAABAAAAAAAHAAgAAAABAAAAAAAHAAkAAAABAAAAAAAHAAoAAAABAAAAAAAHAAsAAAABAAAAAAAHAAwAAAABAAAAAAAHAA0AAAABAAAAAAAHAA4AAAABAAAAAAAHAA8AAAABAAAAAAAHABAAAAABAAAAAAAIAAAAAAABAAAAAAAIAAEAAAABAAAAAAAIAAIAAAABAAAAAAAIAAMAAAABAAAAAAAIAAQAAAABAAAAAAAIAAUAAAABAAAAAAAIAAYAAAABAAAAAAAIAAcAAAABAAAAAAAIAAgAAAABAAAAAAAIAAkAAAABAAAAAAAIAAoAAAABAAAAAAAIAAsAAAABAAAAAAAIAAwAAAABAAAAAAAIAA0AAAABAAAAAAAIAA4AAAABAAAAAAAIAA8AAAABAAAAAAAIABAAAAABAAAAAAAJAAAAAAABAAAAAAAJAAEAAAABAAAAAAAJAAIAAAABAAAAAAAJAAMAAAABAAAAAAAJAAQAAAABAAAAAAAJAAUAAAABAAAAAAAJAAYAAAABAAAAAAAJAAcAAAABAAAAAAAJAAgAAAABAAAAAAAJAAkAAAABAAAAAAAJAAoAAAABAAAAAAAJAAsAAAABAAAAAAAJAAwAAAABAAAAAAAJAA0AAAABAAAAAAAJAA4AAAABAAAAAAAJAA8AAAABAAAAAAAJABAAAAABAAAAAAAKAAAAAAABAAAAAAAKAAEAAAABAAAAAAAKAAIAAAABAAAAAAAKAAMAAAABAAAAAAAKAAQAAAABAAAAAAAKAAUAAAABAAAAAAAKAAYAAAABAAAAAAAKAAcAAAABAAAAAAAKAAgAAAABAAAAAAAKAAkAAAABAAAAAAAKAAoAAAABAAAAAAAKAAsAAAABAAAAAAAKAAwAAAABAAAAAAAKAA0AAAABAAAAAAAKAA4AAAABAAAAAAAKAA8AAAABAAAAAAAKABAAAAABAAAAAAALAAAAAAABAAAAAAALAAEAAAABAAAAAAALAAIAAAABAAAAAAALAAMAAAABAAAAAAALAAQAAAABAAAAAAALAAUAAAABAAAAAAALAAYAAAABAAAAAAALAAcAAAABAAAAAAALAAgAAAABAAAAAAALAAkAAAABAAAAAAALAAoAAAABAAAAAAALAAsAAAABAAAAAAALAAwAAAABAAAAAAALAA0AAAABAAAAAAALAA4AAAABAAAAAAALAA8AAAABAAAAAAALABAAAAABAAAAAAAMAAAAAAABAAAAAAAMAAEAAAABAAAAAAAMAAIAAAABAAAAAAAMAAMAAAABAAAAAAAMAAQAAAABAAAAAAAMAAUAAAABAAAAAAAMAAYAAAABAAAAAAAMAAcAAAABAAAAAAAMAAgAAAABAAAAAAAMAAkAAAABAAAAAAAMAAoAAAABAAAAAAAMAAsAAAABAAAAAAAMAAwAAAABAAAAAAAMAA0AAAABAAAAAAAMAA4AAAABAAAAAAAMAA8AAAABAAAAAAAMABAAAAABAAAAAAANAAAAAAABAAAAAAANAAEAAAABAAAAAAANAAIAAAABAAAAAAANAAMAAAABAAAAAAANAAQAAAABAAAAAAANAAUAAAABAAAAAAANAAYAAAABAAAAAAANAAcAAAABAAAAAAANAAgAAAABAAAAAAANAAkAAAABAAAAAAANAAoAAAABAAAAAAANAAsAAAABAAAAAAANAAwAAAABAAAAAAANAA0AAAABAAAAAAANAA4AAAABAAAAAAANAA8AAAABAAAAAAANABAAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_kdsi4")
 
 [node name="TileMapObjects" type="TileMapLayer" parent="Side_2" unique_id=1620352916]
-tile_set = SubResource("TileSet_7e6ji")
+tile_map_data = PackedByteArray("AAADAA8ABAAAAAAAAAAEAA8ABAABAAAAAAADABAABAAAAAEAAAAEABAABAABAAEAAAAMAAkABAAAAAAAAAAMAAoABAAAAAEAAAANAAkABAABAAAAAAANAAoABAABAAEAAAAGAAgABAAAAAAAAAAGAAkABAAAAAEAAAAHAAgABAABAAAAAAAHAAkABAABAAEAAAACAAMABAAAAAAAAAACAAQABAAAAAEAAAADAAMABAABAAAAAAADAAQABAABAAEAAAALAAEABAAAAAAAAAALAAIABAAAAAEAAAAMAAEABAABAAAAAAAMAAIABAABAAEAAAAIAAUABAAAAAAAAAAIAAYABAAAAAEAAAAJAAUABAABAAAAAAAJAAYABAABAAEAAAALAA0AAQAAAAAAAAALAA4AAQAAAAEAAAALAA8AAQAAAAIAAAALABAAAQAAAAMAAAAMAA0AAQABAAAAAAAMAA4AAQABAAEAAAAMAA8AAQABAAIAAAAMABAAAQABAAMAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAEAAAAEAAIAAQAAAAIAAAAEAAMAAQAAAAMAAAAFAAAAAQABAAAAAAAFAAEAAQABAAEAAAAFAAIAAQABAAIAAAAFAAMAAQABAAMAAAAIAAMAAQACAAAAAAAIAAQAAQACAAEAAAAJAAMAAQADAAAAAAAJAAQAAQADAAEAAAAKAAMAAQAEAAAAAAAKAAQAAQAEAAEAAAALAAMAAQAFAAAAAAALAAQAAQAFAAEAAAAAAAcAAQACAAAAAAAAAAgAAQACAAEAAAABAAcAAQADAAAAAAABAAgAAQADAAEAAAACAAcAAQAEAAAAAAACAAgAAQAEAAEAAAADAAcAAQAFAAAAAAADAAgAAQAFAAEAAAABAAoAAQACAAAAAAABAAsAAQACAAEAAAACAAoAAQADAAAAAAACAAsAAQADAAEAAAADAAoAAQAEAAAAAAADAAsAAQAEAAEAAAAEAAoAAQAFAAAAAAAEAAsAAQAFAAEAAAAAAA0AAQACAAIAAAAAAA4AAQACAAMAAAABAA0AAQADAAIAAAABAA4AAQADAAMAAAACAA0AAQAEAAIAAAACAA4AAQAEAAMAAAADAA0AAQAFAAIAAAADAA4AAQAFAAMAAAAJAAcAAQACAAIAAAAJAAgAAQACAAMAAAAKAAcAAQADAAIAAAAKAAgAAQADAAMAAAALAAcAAQAEAAIAAAALAAgAAQAEAAMAAAAMAAcAAQAFAAIAAAAMAAgAAQAFAAMAAAAIAAsAAQACAAAAAAAIAAwAAQACAAEAAAAJAAsAAQADAAAAAAAJAAwAAQADAAEAAAAKAAsAAQAEAAAAAAAKAAwAAQAEAAEAAAALAAsAAQAFAAAAAAALAAwAAQAFAAEAAAADAAUAAQACAAIAAAADAAYAAQACAAMAAAAEAAUAAQADAAIAAAAEAAYAAQADAAMAAAAFAAUAAQAEAAIAAAAFAAYAAQAEAAMAAAAGAAUAAQAFAAIAAAAGAAYAAQAFAAMAAAA=")
+tile_set = SubResource("TileSet_vmg1d")
 
 [node name="Grid_2" type="Node2D" parent="Side_2" unique_id=2013229783]
 script = ExtResource("8_do6pa")
@@ -569,6 +1157,294 @@ animation = &"move_up"
 [node name="PushableObjects" type="Node2D" parent="Side_2/Entities" unique_id=102929155]
 
 [node name="StaticObjects" type="Node2D" parent="Side_2/Entities" unique_id=1064399378]
+
+[node name="Hologram_0" parent="Side_2/Entities/StaticObjects" unique_id=131112052 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 168)
+
+[node name="Hologram_1" parent="Side_2/Entities/StaticObjects" unique_id=1275694938 instance=ExtResource("10_fhpes")]
+position = Vector2(216, 168)
+
+[node name="Hologram_2" parent="Side_2/Entities/StaticObjects" unique_id=72463946 instance=ExtResource("10_fhpes")]
+position = Vector2(216, 152)
+
+[node name="Hologram_3" parent="Side_2/Entities/StaticObjects" unique_id=1826599437 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 152)
+
+[node name="Hologram_4" parent="Side_2/Entities/StaticObjects" unique_id=1583049140 instance=ExtResource("10_fhpes")]
+position = Vector2(104, 152)
+
+[node name="Hologram_5" parent="Side_2/Entities/StaticObjects" unique_id=1514304739 instance=ExtResource("10_fhpes")]
+position = Vector2(120, 152)
+
+[node name="Hologram_6" parent="Side_2/Entities/StaticObjects" unique_id=1668515834 instance=ExtResource("10_fhpes")]
+position = Vector2(120, 136)
+
+[node name="Hologram_7" parent="Side_2/Entities/StaticObjects" unique_id=1961914934 instance=ExtResource("10_fhpes")]
+position = Vector2(104, 136)
+
+[node name="Hologram_8" parent="Side_2/Entities/StaticObjects" unique_id=660549601 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 264)
+
+[node name="Hologram_9" parent="Side_2/Entities/StaticObjects" unique_id=1813277281 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 264)
+
+[node name="Hologram_10" parent="Side_2/Entities/StaticObjects" unique_id=1322343168 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 248)
+
+[node name="Hologram_11" parent="Side_2/Entities/StaticObjects" unique_id=14972439 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 248)
+
+[node name="Hologram_12" parent="Side_2/Entities/StaticObjects" unique_id=129383181 instance=ExtResource("10_fhpes")]
+position = Vector2(136, 104)
+
+[node name="Hologram_13" parent="Side_2/Entities/StaticObjects" unique_id=830542949 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 104)
+
+[node name="Hologram_14" parent="Side_2/Entities/StaticObjects" unique_id=54442574 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 88)
+
+[node name="Hologram_15" parent="Side_2/Entities/StaticObjects" unique_id=1001913501 instance=ExtResource("10_fhpes")]
+position = Vector2(136, 88)
+
+[node name="Hologram_16" parent="Side_2/Entities/StaticObjects" unique_id=1726693873 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 72)
+
+[node name="Hologram_17" parent="Side_2/Entities/StaticObjects" unique_id=1549785205 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 72)
+
+[node name="Hologram_18" parent="Side_2/Entities/StaticObjects" unique_id=216639067 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 56)
+
+[node name="Hologram_19" parent="Side_2/Entities/StaticObjects" unique_id=265291578 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 56)
+
+[node name="Hologram_20" parent="Side_2/Entities/StaticObjects" unique_id=860625599 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 40)
+
+[node name="Hologram_21" parent="Side_2/Entities/StaticObjects" unique_id=760562832 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 40)
+
+[node name="Hologram_22" parent="Side_2/Entities/StaticObjects" unique_id=523989789 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 24)
+
+[node name="Hologram_23" parent="Side_2/Entities/StaticObjects" unique_id=1936797435 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 24)
+
+[node name="Bed_0" parent="Side_2/Entities/StaticObjects" unique_id=1315968837 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 56)
+
+[node name="Bed_1" parent="Side_2/Entities/StaticObjects" unique_id=1810273276 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 72)
+
+[node name="Bed_2" parent="Side_2/Entities/StaticObjects" unique_id=155450698 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 72)
+
+[node name="Bed_3" parent="Side_2/Entities/StaticObjects" unique_id=1371745886 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 56)
+
+[node name="Bed_4" parent="Side_2/Entities/StaticObjects" unique_id=1902763399 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 56)
+
+[node name="Bed_5" parent="Side_2/Entities/StaticObjects" unique_id=1653900367 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 72)
+
+[node name="Bed_6" parent="Side_2/Entities/StaticObjects" unique_id=409099949 instance=ExtResource("10_fhpes")]
+position = Vector2(88, 88)
+
+[node name="Bed_7" parent="Side_2/Entities/StaticObjects" unique_id=1660596553 instance=ExtResource("10_fhpes")]
+position = Vector2(88, 104)
+
+[node name="Bed_8" parent="Side_2/Entities/StaticObjects" unique_id=919344787 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 104)
+
+[node name="Bed_9" parent="Side_2/Entities/StaticObjects" unique_id=639553559 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 88)
+
+[node name="Bed_10" parent="Side_2/Entities/StaticObjects" unique_id=199449486 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 88)
+
+[node name="Bed_11" parent="Side_2/Entities/StaticObjects" unique_id=8547787 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 104)
+
+[node name="Bed_12" parent="Side_2/Entities/StaticObjects" unique_id=455096844 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 120)
+
+[node name="Bed_13" parent="Side_2/Entities/StaticObjects" unique_id=1106520750 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 136)
+
+[node name="Bed_14" parent="Side_2/Entities/StaticObjects" unique_id=1821904374 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 136)
+
+[node name="Bed_15" parent="Side_2/Entities/StaticObjects" unique_id=512682434 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 120)
+
+[node name="Bed_16" parent="Side_2/Entities/StaticObjects" unique_id=985218952 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 120)
+
+[node name="Bed_17" parent="Side_2/Entities/StaticObjects" unique_id=46935396 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 136)
+
+[node name="Bed_18" parent="Side_2/Entities/StaticObjects" unique_id=1335403547 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 184)
+
+[node name="Bed_19" parent="Side_2/Entities/StaticObjects" unique_id=870604165 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 200)
+
+[node name="Bed_20" parent="Side_2/Entities/StaticObjects" unique_id=1504335646 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 200)
+
+[node name="Bed_21" parent="Side_2/Entities/StaticObjects" unique_id=1815646653 instance=ExtResource("10_fhpes")]
+position = Vector2(168, 184)
+
+[node name="Bed_22" parent="Side_2/Entities/StaticObjects" unique_id=1671491444 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 184)
+
+[node name="Bed_23" parent="Side_2/Entities/StaticObjects" unique_id=2038908825 instance=ExtResource("10_fhpes")]
+position = Vector2(152, 200)
+
+[node name="Bed_24" parent="Side_2/Entities/StaticObjects" unique_id=28337990 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 216)
+
+[node name="Bed_25" parent="Side_2/Entities/StaticObjects" unique_id=509316236 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 232)
+
+[node name="Bed_26" parent="Side_2/Entities/StaticObjects" unique_id=682452087 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 232)
+
+[node name="Bed_27" parent="Side_2/Entities/StaticObjects" unique_id=1216502334 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 216)
+
+[node name="Bed_28" parent="Side_2/Entities/StaticObjects" unique_id=1275038902 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 216)
+
+[node name="Bed_29" parent="Side_2/Entities/StaticObjects" unique_id=1800079799 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 232)
+
+[node name="Bed_30" parent="Side_2/Entities/StaticObjects" unique_id=1551434895 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 168)
+
+[node name="Bed_31" parent="Side_2/Entities/StaticObjects" unique_id=1476229969 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 184)
+
+[node name="Bed_32" parent="Side_2/Entities/StaticObjects" unique_id=1803851587 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 184)
+
+[node name="Bed_33" parent="Side_2/Entities/StaticObjects" unique_id=991976032 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 168)
+
+[node name="Bed_34" parent="Side_2/Entities/StaticObjects" unique_id=557729405 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 168)
+
+[node name="Bed_35" parent="Side_2/Entities/StaticObjects" unique_id=1543499400 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 184)
+
+[node name="Bed_36" parent="Side_2/Entities/StaticObjects" unique_id=2103838411 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 120)
+
+[node name="Bed_37" parent="Side_2/Entities/StaticObjects" unique_id=303235343 instance=ExtResource("10_fhpes")]
+position = Vector2(56, 136)
+
+[node name="Bed_38" parent="Side_2/Entities/StaticObjects" unique_id=120357257 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 136)
+
+[node name="Bed_39" parent="Side_2/Entities/StaticObjects" unique_id=1716061817 instance=ExtResource("10_fhpes")]
+position = Vector2(40, 120)
+
+[node name="Bed_40" parent="Side_2/Entities/StaticObjects" unique_id=531866341 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 120)
+
+[node name="Bed_41" parent="Side_2/Entities/StaticObjects" unique_id=1230263324 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 136)
+
+[node name="Bed_42" parent="Side_2/Entities/StaticObjects" unique_id=1534579350 instance=ExtResource("10_fhpes")]
+position = Vector2(88, 56)
+
+[node name="Bed_43" parent="Side_2/Entities/StaticObjects" unique_id=1612523210 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 56)
+
+[node name="Bed_44" parent="Side_2/Entities/StaticObjects" unique_id=378672807 instance=ExtResource("10_fhpes")]
+position = Vector2(88, 40)
+
+[node name="Bed_45" parent="Side_2/Entities/StaticObjects" unique_id=928382016 instance=ExtResource("10_fhpes")]
+position = Vector2(88, 24)
+
+[node name="Bed_46" parent="Side_2/Entities/StaticObjects" unique_id=2136736230 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 24)
+
+[node name="Bed_47" parent="Side_2/Entities/StaticObjects" unique_id=1385041379 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 40)
+
+[node name="Bed_48" parent="Side_2/Entities/StaticObjects" unique_id=1465051860 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 248)
+
+[node name="Bed_49" parent="Side_2/Entities/StaticObjects" unique_id=1577848274 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 248)
+
+[node name="Bed_50" parent="Side_2/Entities/StaticObjects" unique_id=296775871 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 232)
+
+[node name="Bed_51" parent="Side_2/Entities/StaticObjects" unique_id=13672431 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 216)
+
+[node name="Bed_52" parent="Side_2/Entities/StaticObjects" unique_id=538488915 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 216)
+
+[node name="Bed_53" parent="Side_2/Entities/StaticObjects" unique_id=1454149177 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 232)
+
+[node name="Bed_54" parent="Side_2/Entities/StaticObjects" unique_id=1929523249 instance=ExtResource("10_fhpes")]
+position = Vector2(184, 264)
+
+[node name="Bed_55" parent="Side_2/Entities/StaticObjects" unique_id=937899707 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 264)
+
+[node name="Bed_56" parent="Side_2/Entities/StaticObjects" unique_id=374358278 instance=ExtResource("10_fhpes")]
+position = Vector2(8, 232)
+
+[node name="Bed_57" parent="Side_2/Entities/StaticObjects" unique_id=1370415066 instance=ExtResource("10_fhpes")]
+position = Vector2(8, 216)
+
+[node name="Bed_58" parent="Side_2/Entities/StaticObjects" unique_id=758678385 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 184)
+
+[node name="Bed_59" parent="Side_2/Entities/StaticObjects" unique_id=300270126 instance=ExtResource("10_fhpes")]
+position = Vector2(24, 168)
+
+[node name="Bed_60" parent="Side_2/Entities/StaticObjects" unique_id=572383266 instance=ExtResource("10_fhpes")]
+position = Vector2(8, 136)
+
+[node name="Bed_61" parent="Side_2/Entities/StaticObjects" unique_id=289783705 instance=ExtResource("10_fhpes")]
+position = Vector2(8, 120)
+
+[node name="Bed_62" parent="Side_2/Entities/StaticObjects" unique_id=969581451 instance=ExtResource("10_fhpes")]
+position = Vector2(104, 104)
+
+[node name="Bed_63" parent="Side_2/Entities/StaticObjects" unique_id=1578702412 instance=ExtResource("10_fhpes")]
+position = Vector2(104, 88)
+
+[node name="Bed_64" parent="Side_2/Entities/StaticObjects" unique_id=1693618842 instance=ExtResource("10_fhpes")]
+position = Vector2(88, 8)
+
+[node name="Bed_65" parent="Side_2/Entities/StaticObjects" unique_id=593321581 instance=ExtResource("10_fhpes")]
+position = Vector2(72, 8)
+
+[node name="Bed_66" parent="Side_2/Entities/StaticObjects" unique_id=530886340 instance=ExtResource("10_fhpes")]
+position = Vector2(136, 72)
+
+[node name="Bed_67" parent="Side_2/Entities/StaticObjects" unique_id=1415201344 instance=ExtResource("10_fhpes")]
+position = Vector2(136, 56)
+
+[node name="Bed_68" parent="Side_2/Entities/StaticObjects" unique_id=210142824 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 120)
+
+[node name="Bed_69" parent="Side_2/Entities/StaticObjects" unique_id=1248509707 instance=ExtResource("10_fhpes")]
+position = Vector2(200, 136)
+
+[node name="Bed_70" parent="Side_2/Entities/StaticObjects" unique_id=610072319 instance=ExtResource("10_fhpes")]
+position = Vector2(136, 184)
+
+[node name="Bed_71" parent="Side_2/Entities/StaticObjects" unique_id=119188866 instance=ExtResource("10_fhpes")]
+position = Vector2(136, 200)
 
 [editable path="Side_1/Entities/Player_1"]
 [editable path="Side_2/Entities/Player_2"]
