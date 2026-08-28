@@ -19,7 +19,6 @@
 [ext_resource type="AudioStream" uid="uid://rej51faldbgl" path="res://assets/audio/sounds/menu_button.wav" id="16_menu_button"]
 [ext_resource type="AudioStream" uid="uid://crg8puq8vqb66" path="res://assets/audio/sounds/undo.wav" id="17_undo"]
 [ext_resource type="AudioStream" uid="uid://bc8p6o7dinqun" path="res://assets/audio/sounds/puzzle_finished.wav" id="18_puzzle_finished"]
-[ext_resource type="Theme" uid="uid://cambhqkqxrsmd" path="res://resources/themes/menu_theme.tres" id="20_1kice"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ar1yk"]
 font = ExtResource("7_u5sy4")
@@ -609,26 +608,14 @@ visible = false
 [node name="PanelContainer" parent="UILayers/PauseMenu" index="0" unique_id=320969938]
 modulate = Color(1, 1, 1, 0)
 
-[node name="PauseButtons" parent="UILayers/PauseMenu/PanelContainer" index="0" unique_id=549545562]
-theme = ExtResource("20_1kice")
-
-[node name="ResumeButton" parent="UILayers/PauseMenu/PanelContainer/PauseButtons/Resume/PanelContainer" parent_id_path=PackedInt32Array(2018703224, 928760167) index="0" unique_id=1400188892]
-theme = null
-
-[node name="RetryButton" parent="UILayers/PauseMenu/PanelContainer/PauseButtons/Retry/PanelContainer" parent_id_path=PackedInt32Array(2018703224, 637059992) index="0" unique_id=740717284]
-theme = null
-
-[node name="MainMenuButton" parent="UILayers/PauseMenu/PanelContainer/PauseButtons/MainMenu/PanelContainer" parent_id_path=PackedInt32Array(2018703224, 1865415656) index="0" unique_id=1188717682]
-theme = null
-
 [node name="Audio" type="Node" parent="." unique_id=1579824888]
 process_mode = 3
 
 [node name="Music" type="AudioStreamPlayer" parent="Audio" unique_id=330224502]
-volume_db = -20.0
+volume_db = -6.0206
 
 [node name="Sound" type="AudioStreamPlayer" parent="Audio" unique_id=1941914208]
-volume_db = -10.0
+volume_db = -6.0206
 
 [node name="Camera" type="Node" parent="." unique_id=128163797]
 

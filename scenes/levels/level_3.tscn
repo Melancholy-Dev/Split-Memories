@@ -1140,7 +1140,7 @@ shader_parameter/optics_compensation_b = 0.0
 shader_parameter/aberration = 0.0
 shader_parameter/discolor = true
 shader_parameter/saturation = 0.2
-shader_parameter/contrast = 1.08
+shader_parameter/contrast = 1.06
 shader_parameter/static_noise_intensity = 0.02
 shader_parameter/curve = 0.0
 shader_parameter/aspect = 0.563
@@ -1150,7 +1150,7 @@ shader_parameter/min_scanline_thickness = 0.5
 shader_parameter/wobble_strength = 0.2
 shader_parameter/virtual_scanlines = 324.0
 shader_parameter/mask_type = 6
-shader_parameter/mask_brightness = 1.2
+shader_parameter/mask_brightness = 2.0
 shader_parameter/scanline_brightness = 1.0
 shader_parameter/vignette_intensity = 2.0
 shader_parameter/vignette_opacity = 0.6
@@ -3577,7 +3577,7 @@ objects_to_disable = [NodePath("../../../../Side_2/Entities/StaticObjects/Hologr
 [node name="Sprite2D" parent="Side_1/Entities/Buttons/RedButton" index="0" unique_id=275645397]
 texture = ExtResource("10_n7m6w")
 
-[node name="PointLight2D" parent="Side_1/Entities/Buttons/RedButton" index="1" unique_id=324128134]
+[node name="PointLight2D" parent="Side_1/Entities/Buttons/RedButton" index="2" unique_id=324128134]
 color = Color(0.9165012, 0, 0.12903675, 1)
 
 [node name="PurpleButton" parent="Side_1/Entities/Buttons" unique_id=161842611 node_paths=PackedStringArray("objects_to_disable") instance=ExtResource("11_pressure_button")]
@@ -3588,7 +3588,7 @@ objects_to_disable = [NodePath("../../../../Side_2/Entities/StaticObjects/Hologr
 [node name="Sprite2D" parent="Side_1/Entities/Buttons/PurpleButton" index="0" unique_id=275645397]
 texture = ExtResource("11_ju8vr")
 
-[node name="PointLight2D" parent="Side_1/Entities/Buttons/PurpleButton" index="1" unique_id=324128134]
+[node name="PointLight2D" parent="Side_1/Entities/Buttons/PurpleButton" index="2" unique_id=324128134]
 color = Color(0.91764706, 0, 1, 1)
 
 [node name="Player_1" parent="Side_1/Entities" unique_id=250994355 instance=ExtResource("9_n8qcm")]
@@ -4120,7 +4120,7 @@ objects_to_disable = [NodePath("../../../../Side_1/Entities/StaticObjects/Hologr
 [node name="Sprite2D" parent="Side_2/Entities/Buttons/BlueButton" index="0" unique_id=275645397]
 texture = ExtResource("32_2gq65")
 
-[node name="PointLight2D" parent="Side_2/Entities/Buttons/BlueButton" index="1" unique_id=324128134]
+[node name="PointLight2D" parent="Side_2/Entities/Buttons/BlueButton" index="2" unique_id=324128134]
 color = Color(0, 0, 1, 1)
 
 [node name="GreenButton" parent="Side_2/Entities/Buttons" unique_id=808806640 node_paths=PackedStringArray("objects_to_disable") instance=ExtResource("11_pressure_button")]
@@ -4131,7 +4131,7 @@ objects_to_disable = [NodePath("../../../../Side_1/Entities/StaticObjects/Hologr
 [node name="Sprite2D" parent="Side_2/Entities/Buttons/GreenButton" index="0" unique_id=275645397]
 texture = ExtResource("34_vn4iy")
 
-[node name="PointLight2D" parent="Side_2/Entities/Buttons/GreenButton" index="1" unique_id=324128134]
+[node name="PointLight2D" parent="Side_2/Entities/Buttons/GreenButton" index="2" unique_id=324128134]
 color = Color(1.8770993e-06, 0.7080435, 0.18243778, 1)
 
 [node name="Player_2" parent="Side_2/Entities" unique_id=840756937 instance=ExtResource("9_n8qcm")]

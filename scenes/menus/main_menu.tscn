@@ -361,10 +361,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 55.0
-offset_top = -190.0
-offset_right = 209.0
-offset_bottom = -49.0
+offset_left = 60.0
+offset_top = -195.0
+offset_right = 214.0
+offset_bottom = -54.0
 grow_vertical = 0
 theme = SubResource("Theme_ekxnf")
 text = "Commands:
@@ -382,21 +382,21 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -390.0
-offset_top = -225.0
-offset_right = -37.0
-offset_bottom = -36.0
+offset_left = -405.0
+offset_top = -219.99924
+offset_right = -42.0
+offset_bottom = -30.999237
 grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource("Theme_bqqt6")
-text = "You are a scientist who, using a technology that allows
-you to visualize people's unconscious, has to treat his
- patients by ordering the different objects in the
- rooms, so that they match from both sides of the mirror.
-In the last level there is an additional layer of challenge,
+text = "You are a scientist with a technology that allows you to
+visualize people's subconscious, who has to treat his
+patients by rearranging the different objects in the rooms,
+so they can match one and other in both sides of the mirror.
+In the last level, there's an additional layer of challenge;
 introducing an extra mechanic with colored holograms that
-cannot be crossed, but can be deactivated stepping on
-buttons of the same color in the opposite room."
+can't be gone through, but can be deactivated by stepping
+on the right button of the same color in the opposite side."
 horizontal_alignment = 1
 
 [node name="Credits" type="Control" parent="." unique_id=2003579518]
@@ -446,18 +446,18 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 290.0
+offset_left = 218.02
 offset_top = -177.0
-offset_right = 592.0
+offset_right = 595.02
 offset_bottom = -36.0
 grow_vertical = 0
 theme = SubResource("Theme_ekxnf")
 text = "Coetus Interactive
 Melancholy
-Zaffy (Level 3, UI), Franz (Level 2), Ciuffo (Level 1)
+Zaffy (Level 3, UI), FranzTheMerchant (Level 2), Ciuffo (Level 1)
 Ambit, Melancholy
 Melancholy, Clanvy
-Melancholy, Ambit, Clanvy, Ciuffo, Franz, Zaffy"
+Melancholy, Ambit, Clanvy, Ciuffo, FranzTheMerchant, Zaffy"
 
 [connection signal="pressed" from="BackButton/Back/PanelContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="MenuButtons/Play/PanelContainer/PlayButton" to="." method="_on_play_button_pressed"]

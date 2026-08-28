@@ -10,15 +10,15 @@ signal volumes_changed
 
 # Volumes
 @export_category("Volumes")
-@export_range(-80.0, 6.0, 0.1, "suffix:dB") var sound_volume_db: float = -10.0:
+@export_range(-80.0, 6.0, 0.1, "suffix:dB") var sound_volume_db: float = -6.0206:
 	set(value):
 		sound_volume_db = value
 		_update_volumes()
-@export_range(-80.0, 6.0, 0.1, "suffix:dB") var music_volume_db: float = -20.0:
+@export_range(-80.0, 6.0, 0.1, "suffix:dB") var music_volume_db: float = -6.0206:
 	set(value):
 		music_volume_db = value
 		_update_volumes()
-@export_range(-80.0, 6.0, 0.1, "suffix:dB") var master_volume_db: float = 0.0:
+@export_range(-80.0, 6.0, 0.1, "suffix:dB") var master_volume_db: float = -6.0206:
 	set(value):
 		master_volume_db = value
 		_update_volumes()

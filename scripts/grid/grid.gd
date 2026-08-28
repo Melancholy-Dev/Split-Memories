@@ -106,7 +106,13 @@ func create_snapshot() -> Dictionary:
 	for row in cells:
 		for cell in row:
 			for entity: GridEntity in cell:
-				snapshot[entity] = entity.grid_position
+				var entity_state: Dictionary = {"grid_position": entity.grid_position}
+				if entity is Player:
+					var animation_component := entity.get_node_or_null("Components/AnimationComponent")
+					if animation_component != null:
+						entity_state["animation"] = animation_component.animated_sprite.animation
+						entity_state["last_direction"] = animation_component.last_direction
+				snapshot[entity] = entity_state
 	return snapshot
 
 func restore_snapshot(snapshot: Dictionary) -> void:
@@ -119,12 +125,22 @@ func restore_snapshot(snapshot: Dictionary) -> void:
 			entity = entity_key
 		if entity == null:
 			continue
-		var cell: Vector2i = snapshot[entity_key]
+		var entity_state = snapshot[entity_key]
+		var cell: Vector2i
+		if entity_state is Dictionary:
+			cell = entity_state["grid_position"]
+		else:
+			cell = entity_state
 		if not is_inside_grid(cell):
 			continue
 		cells[cell.y][cell.x].append(entity)
 		entity.set_grid_position(cell)
 		entity.position = cell_to_world(cell)
+		if entity is Player and entity_state is Dictionary and entity_state.has("animation"):
+			var animation_component := entity.get_node_or_null("Components/AnimationComponent")
+			if animation_component != null:
+				animation_component.last_direction = entity_state["last_direction"]
+				animation_component.play_idle_animation()
 
 func _set_entity_cell(entity: GridEntity, new_cell: Vector2i) -> void:
 	var old_cell := entity.grid_position

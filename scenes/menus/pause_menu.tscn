@@ -29,99 +29,50 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PauseButtons" type="VBoxContainer" parent="PanelContainer" unique_id=549545562]
+[node name="PauseButtons" type="VBoxContainer" parent="PanelContainer" unique_id=2083605770]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 16
 alignment = 1
 
-[node name="Label" type="Label" parent="PanelContainer/PauseButtons" unique_id=364783925]
+[node name="Label" type="Label" parent="PanelContainer/PauseButtons" unique_id=2035999148]
 layout_mode = 2
 theme = SubResource("Theme_fwndu")
 text = "Pause"
 horizontal_alignment = 1
 
-[node name="Resume" type="MarginContainer" parent="PanelContainer/PauseButtons" unique_id=1655340863]
+[node name="Resume" type="MarginContainer" parent="PanelContainer/PauseButtons" unique_id=1050231853]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PauseButtons/Resume" unique_id=928760167]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PauseButtons/Resume" unique_id=1637143448]
 layout_mode = 2
 
-[node name="ResumeButton" type="Button" parent="PanelContainer/PauseButtons/Resume/PanelContainer" unique_id=1400188892 groups=["ui_button"]]
+[node name="ResumeButton" type="Button" parent="PanelContainer/PauseButtons/Resume/PanelContainer" unique_id=2023295620 groups=["ui_button"]]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = SubResource("Theme_7unhi")
 text = "Resume"
 
-[node name="Retry" type="MarginContainer" parent="PanelContainer/PauseButtons" unique_id=1505734723]
+[node name="Retry" type="MarginContainer" parent="PanelContainer/PauseButtons" unique_id=1903945885]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PauseButtons/Retry" unique_id=637059992]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PauseButtons/Retry" unique_id=1900707562]
 layout_mode = 2
 
-[node name="RetryButton" type="Button" parent="PanelContainer/PauseButtons/Retry/PanelContainer" unique_id=740717284 groups=["ui_button"]]
+[node name="RetryButton" type="Button" parent="PanelContainer/PauseButtons/Retry/PanelContainer" unique_id=984738712 groups=["ui_button"]]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = SubResource("Theme_7unhi")
 text = "Retry"
 
-[node name="MainMenu" type="MarginContainer" parent="PanelContainer/PauseButtons" unique_id=2114971054]
+[node name="MainMenu" type="MarginContainer" parent="PanelContainer/PauseButtons" unique_id=86953642]
 layout_mode = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PauseButtons/MainMenu" unique_id=1865415656]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PauseButtons/MainMenu" unique_id=666055146]
 layout_mode = 2
 
-[node name="MainMenuButton" type="Button" parent="PanelContainer/PauseButtons/MainMenu/PanelContainer" unique_id=1188717682 groups=["ui_button"]]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme = SubResource("Theme_7unhi")
-text = "Go back to Main Menu"
-
-[node name="PauseButtons2" type="VBoxContainer" parent="PanelContainer" unique_id=2083605770]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 16
-alignment = 1
-
-[node name="Label" type="Label" parent="PanelContainer/PauseButtons2" unique_id=2035999148]
-layout_mode = 2
-theme = SubResource("Theme_fwndu")
-text = "Pause"
-horizontal_alignment = 1
-
-[node name="Resume" type="MarginContainer" parent="PanelContainer/PauseButtons2" unique_id=1050231853]
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PauseButtons2/Resume" unique_id=1637143448]
-layout_mode = 2
-
-[node name="ResumeButton" type="Button" parent="PanelContainer/PauseButtons2/Resume/PanelContainer" unique_id=2023295620 groups=["ui_button"]]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme = SubResource("Theme_7unhi")
-text = "Resume"
-
-[node name="Retry" type="MarginContainer" parent="PanelContainer/PauseButtons2" unique_id=1903945885]
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PauseButtons2/Retry" unique_id=1900707562]
-layout_mode = 2
-
-[node name="RetryButton" type="Button" parent="PanelContainer/PauseButtons2/Retry/PanelContainer" unique_id=984738712 groups=["ui_button"]]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme = SubResource("Theme_7unhi")
-text = "Retry"
-
-[node name="MainMenu" type="MarginContainer" parent="PanelContainer/PauseButtons2" unique_id=86953642]
-layout_mode = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PauseButtons2/MainMenu" unique_id=666055146]
-layout_mode = 2
-
-[node name="MainMenuButton" type="Button" parent="PanelContainer/PauseButtons2/MainMenu/PanelContainer" unique_id=799210475 groups=["ui_button"]]
+[node name="MainMenuButton" type="Button" parent="PanelContainer/PauseButtons/MainMenu/PanelContainer" unique_id=799210475 groups=["ui_button"]]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 theme = SubResource("Theme_7unhi")
@@ -130,6 +81,3 @@ text = "Go back to Main Menu"
 [connection signal="pressed" from="PanelContainer/PauseButtons/Resume/PanelContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PanelContainer/PauseButtons/Retry/PanelContainer/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="PanelContainer/PauseButtons/MainMenu/PanelContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
-[connection signal="pressed" from="PanelContainer/PauseButtons2/Resume/PanelContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="PanelContainer/PauseButtons2/Retry/PanelContainer/RetryButton" to="." method="_on_retry_button_pressed"]
-[connection signal="pressed" from="PanelContainer/PauseButtons2/MainMenu/PanelContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
