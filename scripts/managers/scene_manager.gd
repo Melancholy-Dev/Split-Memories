@@ -37,3 +37,10 @@ func _on_puzzle_completed() -> void:
 		load_level(current_level_index + 1)
 		await %AnimationManager.play_loading_new_level_transition()
 		level_loaded.emit()
+	else:
+		UndoManager.clear_boards()
+		if is_instance_valid(current_level):
+			current_level.queue_free()
+		current_level = null
+		%MainMenu.visible = true
+		%MainMenu._on_back_button_pressed()

@@ -243,21 +243,21 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -340.0
+offset_left = -390.0
 offset_top = -225.0
-offset_right = -57.0
+offset_right = -37.0
 offset_bottom = -36.0
 grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource("Theme_bqqt6")
-text = "You are a scientist who, using a technology
-that allows you to visualize people's
-unconscious, has to treat his patients by
-ordering the different objects in the rooms, so
- that they match from both sides of the mirror.
-Once objects are finally sorted, you will have
-to perform one last operation across the mirror,
-which varies from person to person"
+text = "You are a scientist who, using a technology that allows
+you to visualize people's unconscious, has to treat his
+ patients by ordering the different objects in the
+ rooms, so that they match from both sides of the mirror.
+In the last level there is an additional layer of challenge,
+introducing an extra mechanic with colored holograms that
+cannot be crossed, but can be deactivated stepping on
+buttons of the same color in the opposite room."
 horizontal_alignment = 1
 
 [node name="Credits" type="Control" parent="." unique_id=2003579518]
@@ -269,23 +269,42 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CreditsLabes" type="Label" parent="Credits" unique_id=755749577]
+[node name="Roles" type="Label" parent="Credits" unique_id=755749577]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 58.0
+offset_left = 50.0
 offset_top = -177.0
-offset_right = 421.59497
-offset_bottom = -35.999268
+offset_right = 159.0
+offset_bottom = -36.0
 grow_vertical = 0
 theme = SubResource("Theme_ekxnf")
-text = "Game made by: Coetus Interactive
-Developer: Melancholy
-Graphics: Zaffy (Level 3, UI), Franz (Level 2), Ciuffo (Level 1)
-Level Design: Melancholy, Clanvy
-Narrative: Melancholy, Ambit, Clanvy, Ciuffo, Franz
-Music and sounds: Ambit"
+text = "Game made by:
+Developer:
+Graphics:
+Music and Sounds:
+Level Design:
+Narrative:"
+horizontal_alignment = 2
+
+[node name="Names" type="Label" parent="Credits" unique_id=1989047881]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 290.0
+offset_top = -177.0
+offset_right = 592.0
+offset_bottom = -36.0
+grow_vertical = 0
+theme = SubResource("Theme_ekxnf")
+text = "Coetus Interactive
+Melancholy
+Zaffy (Level 3, UI), Franz (Level 2), Ciuffo (Level 1)
+Ambit, Melancholy
+Melancholy, Clanvy
+Melancholy, Ambit, Clanvy, Ciuffo, Franz, Zaffy"
 
 [connection signal="pressed" from="BackButton/Back/PanelContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="MenuButtons/Play/PanelContainer/PlayButton" to="." method="_on_play_button_pressed"]

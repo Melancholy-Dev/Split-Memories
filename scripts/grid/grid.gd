@@ -17,7 +17,7 @@ func _init() -> void:
 	for y in range(grid_size.y): # Scrolling Matrix
 		var row: Array = []
 		for x in range(grid_size.x):
-			row.append(null)
+			row.append([])
 		cells.append(row)
 
 func is_inside_grid(cell: Vector2i) -> bool:
@@ -40,38 +40,79 @@ func world_to_cell(world_position: Vector2) -> Vector2i:
 		floor(world_position.y / tile_size.y)
 	)
 
-func get_entity_at(cell: Vector2i) -> GridEntity:
+func get_entities_at(cell: Vector2i) -> Array:
 	if not is_inside_grid(cell):
-		return null
+		return []
 	return cells[cell.y][cell.x]
+
+func get_entity_at(cell: Vector2i) -> GridEntity:
+	for entity: GridEntity in get_entities_at(cell):
+		if entity.blocks_movement():
+			return entity
+	return null
+
+func find_nearest_free_cell(origin: Vector2i) -> Vector2i:
+	var nearest_cell := Vector2i(-1, -1)
+	var nearest_distance := grid_size.x + grid_size.y
+	for y in range(grid_size.y):
+		for x in range(grid_size.x):
+			var cell := Vector2i(x, y)
+			if cell == origin or get_entity_at(cell) != null:
+				continue
+			var distance := absi(cell.x - origin.x) + absi(cell.y - origin.y)
+			if distance < nearest_distance:
+				nearest_cell = cell
+				nearest_distance = distance
+	return nearest_cell
+
+func move_entities_out_of_cell(cell: Vector2i, excluded_entity: GridEntity = null) -> void:
+	var entities_inside: Array[GridEntity] = []
+	for entity: GridEntity in get_entities_at(cell):
+		if entity != excluded_entity and entity.blocks_movement():
+			entities_inside.append(entity)
+	for entity in entities_inside:
+		var free_cell := find_nearest_free_cell(cell)
+		if is_inside_grid(free_cell):
+			relocate_entity(entity, free_cell)
+
+func relocate_entity(entity: GridEntity, new_cell: Vector2i) -> bool:
+	if not is_inside_grid(new_cell) or get_entity_at(new_cell) != null:
+		return false
+	_move_entity_in_grid(entity, new_cell)
+	entity.position = cell_to_world(new_cell)
+	return true
 
 func register_entity(entity: GridEntity, cell: Vector2i) -> bool:
 	if not is_inside_grid(cell):
 		print("Outside grid limits")
 		return false
-	if get_entity_at(cell) != null:
+	if get_entities_at(cell).has(entity):
+		print("Entity is already registered")
+		return false
+	if entity.blocks_movement() and get_entity_at(cell) != null:
 		print("Cell %s is already occupied" % cell)
 		return false
-	cells[cell.y][cell.x] = entity
+	cells[cell.y][cell.x].append(entity)
 	entity.init(self, cell)
 	return true
 
 func unregister_entity(entity: GridEntity) -> void:
 	var cell := entity.grid_position
-	if is_inside_grid(cell) and get_entity_at(cell) == entity:
-		cells[cell.y][cell.x] = null
+	if is_inside_grid(cell):
+		cells[cell.y][cell.x].erase(entity)
 
 func create_snapshot() -> Dictionary:
 	var snapshot: Dictionary = {}
 	for row in cells:
-		for entity in row:
-			if entity != null:
+		for cell in row:
+			for entity: GridEntity in cell:
 				snapshot[entity] = entity.grid_position
 	return snapshot
 
 func restore_snapshot(snapshot: Dictionary) -> void:
 	for row in cells:
-		row.fill(null)
+		for entities in row:
+			entities.clear()
 	for entity_key in snapshot:
 		var entity: GridEntity
 		if entity_key is GridEntity:
@@ -81,23 +122,22 @@ func restore_snapshot(snapshot: Dictionary) -> void:
 		var cell: Vector2i = snapshot[entity_key]
 		if not is_inside_grid(cell):
 			continue
-		cells[cell.y][cell.x] = entity
+		cells[cell.y][cell.x].append(entity)
 		entity.set_grid_position(cell)
 		entity.position = cell_to_world(cell)
 
 func _set_entity_cell(entity: GridEntity, new_cell: Vector2i) -> void:
 	var old_cell := entity.grid_position
-	if is_inside_grid(old_cell) and get_entity_at(old_cell) == entity:
-		cells[old_cell.y][old_cell.x] = null
-	cells[new_cell.y][new_cell.x] = entity
+	if is_inside_grid(old_cell):
+		cells[old_cell.y][old_cell.x].erase(entity)
+	cells[new_cell.y][new_cell.x].append(entity)
 	entity.set_grid_position(new_cell)
 
 func _move_entity_in_grid(entity: GridEntity, new_cell: Vector2i) -> void:
 	var old_cell := entity.grid_position
 	if is_inside_grid(old_cell):
-		if get_entity_at(old_cell) == entity:
-			cells[old_cell.y][old_cell.x] = null
-	cells[new_cell.y][new_cell.x] = entity
+		cells[old_cell.y][old_cell.x].erase(entity)
+	cells[new_cell.y][new_cell.x].append(entity)
 	entity.set_grid_position(new_cell)
 
 func try_move_player(player: Player, direction: Vector2i) -> Array[GridEntity]:
@@ -109,13 +149,13 @@ func try_move_player(player: Player, direction: Vector2i) -> Array[GridEntity]:
 	if not is_inside_grid(next_cell):
 		player_step_completed.emit(direction, moved_entities)
 		return moved_entities
-	# Empity cell (only player move)
+	# Empty cell or non-blocking entity (only player move)
 	if entity == null:
 		_move_entity_in_grid(player, next_cell)
 		moved_entities.append(player)
 		player_step_completed.emit(direction, moved_entities)
 		return moved_entities
-	# Static object encountered (player cannot move)
+	# Blocking entity encountered (player cannot move)
 	if not entity.can_be_pushed():
 		player_step_completed.emit(direction, moved_entities)
 		return moved_entities
@@ -127,7 +167,7 @@ func try_move_player(player: Player, direction: Vector2i) -> Array[GridEntity]:
 		var next_entity := get_entity_at(scan_cell)
 		if next_entity == null:
 			break
-		# If static object in front
+		# If another blocking entity is in front
 		if not next_entity.can_be_pushed():
 			player_step_completed.emit(direction, moved_entities)
 			return moved_entities

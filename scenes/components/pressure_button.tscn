@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://buv341givgj8r"]
+
+[ext_resource type="Script" uid="uid://bv37wpsi18pdq" path="res://scripts/entities/pressure_button.gd" id="1_pressure_button"]
+[ext_resource type="Texture2D" uid="uid://bjqv22hjah7t3" path="res://assets/sprites/rooms/prototype/tile.png" id="2_ru0jo"]
+
+[sub_resource type="Gradient" id="Gradient_ps70n"]
+offsets = PackedFloat32Array(0, 0.2764706, 0.7235294)
+colors = PackedColorArray(1, 1, 1, 1, 0.88343555, 0.88343555, 0.88343555, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ru0jo"]
+gradient = SubResource("Gradient_ps70n")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="PressureButton" type="Node2D" unique_id=161842611]
+script = ExtResource("1_pressure_button")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=275645397]
+texture = ExtResource("2_ru0jo")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=324128134]
+color = Color(0.99817103, 0.765535, 0.5508234, 1)
+energy = 1.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_ru0jo")

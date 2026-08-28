@@ -3,6 +3,7 @@ class_name MovementComponent extends Node
 # Signals
 signal movement_started(direction: Vector2i)
 signal movement_finished
+signal movement_blocked
 
 # Nodes
 @export var player: Player
@@ -34,6 +35,7 @@ func _on_direction_pressed(direction: Vector2i) -> void:
 	if not moved_entities.is_empty():
 		UndoManager.commit_state(previous_state)
 	if moved_entities.is_empty():
+		movement_blocked.emit()
 		await get_tree().create_timer(movement_duration).timeout
 		movement_finished.emit()
 	else:

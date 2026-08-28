@@ -12,17 +12,10 @@ var movement_component: MovementComponent
 func _ready() -> void:
 	movement_component = player.get_node("Components/MovementComponent") as MovementComponent
 	movement_component.movement_started.connect(play_move_animation)
+	movement_component.movement_blocked.connect(play_idle_animation)
 	movement_component.movement_finished.connect(_on_movement_finished)
 	last_direction = _get_direction(animated_sprite.animation)
 	play_idle_animation()
-
-func _process(_delta: float) -> void:
-	if movement_component.is_moving:
-		return
-	if _is_direction_held(last_direction):
-		animated_sprite.play(_get_animation_name(last_direction))
-	else:
-		play_idle_animation()
 
 func play_move_animation(direction: Vector2i) -> void:
 	last_direction = direction

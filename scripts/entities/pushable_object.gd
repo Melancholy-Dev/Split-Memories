@@ -6,4 +6,4 @@ func is_pushable() -> bool:
 	return true
 
 func blocks_movement() -> bool:
-	return true
+	return not is_disabled

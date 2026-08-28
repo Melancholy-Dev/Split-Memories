@@ -16,10 +16,17 @@
 [ext_resource type="Texture2D" uid="uid://crpb7obst4kj5" path="res://assets/sprites/entities/pushable_objects/level_2/reality/book.png" id="11_1yj8c"]
 [ext_resource type="Script" uid="uid://csaoahsfl4mw4" path="res://scripts/entities/pushable_object.gd" id="11_5niy6"]
 [ext_resource type="Shader" uid="uid://deuxesjy2fjec" path="res://resources/shaders/pixelated_warped_fractal_noise.gdshader" id="16_sibr7"]
+[ext_resource type="Texture2D" uid="uid://b75m8w0x5vdnu" path="res://assets/sprites/entities/players/level_2/vampire_down.png" id="17_wikm6"]
+[ext_resource type="Texture2D" uid="uid://bmiepbbhcojvq" path="res://assets/sprites/entities/players/level_2/vampire_left.png" id="18_1c1qw"]
 [ext_resource type="Texture2D" uid="uid://coxtopldhghj2" path="res://assets/sprites/entities/pushable_objects/level_2/mirror/bone_pile.png" id="18_lkn2k"]
 [ext_resource type="Texture2D" uid="uid://bbea00oo8rjxm" path="res://assets/sprites/entities/pushable_objects/level_2/mirror/ruined_book_pile.png" id="18_p4se4"]
+[ext_resource type="Texture2D" uid="uid://f82d3jtsoq2y" path="res://assets/sprites/entities/players/level_2/vampire_right.png" id="19_1a10c"]
+[ext_resource type="Texture2D" uid="uid://26grahsp00xl" path="res://assets/sprites/entities/pushable_objects/level_2/reality/rune.png" id="19_mx6s3"]
 [ext_resource type="Texture2D" uid="uid://bh25dfyhlp5p6" path="res://assets/sprites/entities/pushable_objects/level_2/mirror/bone.png" id="19_p4se4"]
+[ext_resource type="Texture2D" uid="uid://7ot0x6lxrtfy" path="res://assets/sprites/entities/players/level_2/vampire_up.png" id="20_mx6s3"]
+[ext_resource type="Shader" uid="uid://b27um14yu0cti" path="res://resources/shaders/vampire_shadow.gdshader" id="21_1c1qw"]
 [ext_resource type="Texture2D" uid="uid://cn60aupj5bg0s" path="res://assets/sprites/entities/pushable_objects/level_2/mirror/ruined_book.png" id="21_lkn2k"]
+[ext_resource type="Texture2D" uid="uid://dha83i65ig7xn" path="res://assets/sprites/entities/pushable_objects/level_2/mirror/rune_mirror.png" id="27_mx6s3"]
 
 [sub_resource type="Gradient" id="Gradient_gw1l3"]
 
@@ -33,7 +40,7 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_v8d84")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fqy8p"]
-polygon = PackedVector2Array(224, 272, 224, 0, 224, 0, 224, 272)
+polygon = PackedVector2Array(223, 0, 225, 0, 225, 272, 223, 272)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3p04p"]
 texture = ExtResource("3_8qukl")
@@ -124,44 +131,184 @@ sources/1 = SubResource("TileSetAtlasSource_gw1l3")
 sources/2 = SubResource("TileSetAtlasSource_p4se4")
 sources/3 = SubResource("TileSetAtlasSource_sibr7")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_p4se4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d3nu"]
+atlas = ExtResource("17_wikm6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6ket"]
+atlas = ExtResource("18_1c1qw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xworo"]
+atlas = ExtResource("19_1a10c")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwjag"]
+atlas = ExtResource("20_mx6s3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvwo1"]
+atlas = ExtResource("17_wikm6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxkvy"]
+atlas = ExtResource("17_wikm6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joiyc"]
+atlas = ExtResource("17_wikm6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn15g"]
+atlas = ExtResource("17_wikm6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oftal"]
+atlas = ExtResource("18_1c1qw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqy8p"]
+atlas = ExtResource("18_1c1qw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7kn7"]
+atlas = ExtResource("18_1c1qw")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk7pi"]
+atlas = ExtResource("18_1c1qw")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqg3d"]
+atlas = ExtResource("19_1a10c")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2e0t0"]
+atlas = ExtResource("19_1a10c")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_keip3"]
+atlas = ExtResource("19_1a10c")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exwx8"]
+atlas = ExtResource("19_1a10c")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17aof"]
+atlas = ExtResource("20_mx6s3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nfno"]
+atlas = ExtResource("20_mx6s3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y23r"]
+atlas = ExtResource("20_mx6s3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrgna"]
+atlas = ExtResource("20_mx6s3")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sibr7"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7d3nu")
+}],
 "loop": 1,
 "name": &"idle_down",
 "speed": 1.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6ket")
+}],
 "loop": 1,
 "name": &"idle_left",
 "speed": 1.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xworo")
+}],
 "loop": 1,
 "name": &"idle_right",
 "speed": 1.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwjag")
+}],
 "loop": 1,
 "name": &"idle_up",
 "speed": 1.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvwo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxkvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joiyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tn15g")
+}],
 "loop": 1,
 "name": &"move_down",
 "speed": 12.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oftal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqy8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7kn7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wk7pi")
+}],
 "loop": 1,
 "name": &"move_left",
 "speed": 12.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqg3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2e0t0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_keip3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exwx8")
+}],
 "loop": 1,
 "name": &"move_right",
 "speed": 12.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17aof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nfno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y23r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wrgna")
+}],
 "loop": 1,
 "name": &"move_up",
 "speed": 12.0
@@ -170,12 +317,12 @@ animations = [{
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7cb0y"]
 polygon = PackedVector2Array(4, 8, 0, 8, 0, 7, -3, 7, -3, 6, -4, 6, -4, 5, -5, 5, -5, 2, -6, 2, -6, 1, -7, 1, -7, 0, -8, 0, -8, -5, -7, -5, -7, -6, -6, -6, -6, -7, -2, -7, -2, -8, 1, -8, 1, -7, 2, -7, 2, -6, 3, -6, 3, -5, 4, -5, 4, -3, 5, -3, 5, -2, 6, -2, 6, -1, 7, -1, 7, 0, 8, 0, 8, 5, 7, 5, 7, 6, 6, 6, 6, 7, 4, 7)
 
-[sub_resource type="Gradient" id="Gradient_v4i73"]
+[sub_resource type="Gradient" id="Gradient_sibr7"]
 offsets = PackedFloat32Array(0, 0.2764706, 0.7235294)
 colors = PackedColorArray(1, 1, 1, 1, 0.88343555, 0.88343555, 0.88343555, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_7cb0y"]
-gradient = SubResource("Gradient_v4i73")
+gradient = SubResource("Gradient_sibr7")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -187,6 +334,59 @@ polygon = PackedVector2Array(3, -6, 3, -2, 7, -2, 7, 7, -7, 7, -7, -1, -5, -1, -
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7e6ji"]
 polygon = PackedVector2Array(-3, -4, 5, -4, 5, 1, 6, 1, 6, 6, -5, 6, -5, 1, -3, 1)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s7kn7"]
+polygon = PackedVector2Array(1, -8, 3, -8, 3, -7, 4, -7, 4, -5, 5, -5, 5, -2, 6, -2, 6, 1, 7, 1, 7, 5, 6, 5, 6, 6, 5, 6, 5, 7, 3, 7, 3, 8, -3, 8, -3, 7, -4, 7, -4, 6, -5, 6, -5, 3, -6, 3, -6, -2, -5, -2, -5, -3, -4, -3, -4, -4, -3, -4, -3, -5, -2, -5, -2, -6, -1, -6, -1, -7, 1, -7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt0v5"]
+atlas = ExtResource("19_mx6s3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_laosj"]
+atlas = ExtResource("19_mx6s3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsjcl"]
+atlas = ExtResource("19_mx6s3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjpyo"]
+atlas = ExtResource("19_mx6s3")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhwnp"]
+atlas = ExtResource("19_mx6s3")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_852cy"]
+atlas = ExtResource("19_mx6s3")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x63fv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt0v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_laosj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsjcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjpyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhwnp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_852cy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lkn2k"]
 shader = ExtResource("16_sibr7")
@@ -201,48 +401,9 @@ shader_parameter/color_low = Color(0.36556464, 0, 0, 0)
 shader_parameter/color_mid = Color(0.07016479, 0, 0, 0.65000004)
 shader_parameter/color_high = Color(0, 0, 0, 1)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_sibr7"]
-animations = [{
-"frames": [],
-"loop": 1,
-"name": &"idle_down",
-"speed": 1.0
-}, {
-"frames": [],
-"loop": 1,
-"name": &"idle_left",
-"speed": 1.0
-}, {
-"frames": [],
-"loop": 1,
-"name": &"idle_right",
-"speed": 1.0
-}, {
-"frames": [],
-"loop": 1,
-"name": &"idle_up",
-"speed": 1.0
-}, {
-"frames": [],
-"loop": 1,
-"name": &"move_down",
-"speed": 12.0
-}, {
-"frames": [],
-"loop": 1,
-"name": &"move_left",
-"speed": 12.0
-}, {
-"frames": [],
-"loop": 1,
-"name": &"move_right",
-"speed": 12.0
-}, {
-"frames": [],
-"loop": 1,
-"name": &"move_up",
-"speed": 12.0
-}]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1a10c"]
+shader = ExtResource("21_1c1qw")
+shader_parameter/shadow_color = Color(0, 0, 0, 0.5)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yxkvy"]
 polygon = PackedVector2Array(8, 1, 7, 1, 7, 0, 6, 0, 6, -1, 5, -1, 5, -2, 2, -2, 2, -4, 1, -4, 1, -5, -1, -5, -1, -6, -5, -6, -5, -5, -6, -5, -6, -4, -7, -4, -7, -2, -8, -2, -8, 0, -7, 0, -7, 5, -6, 5, -6, 6, -2, 6, -2, 5, -1, 5, -1, 4, 0, 4, 0, 3, 1, 3, 1, 4, 2, 4, 2, 5, 3, 5, 3, 6, 4, 6, 4, 7, 6, 7, 6, 6, 7, 6, 7, 4, 8, 4)
@@ -255,6 +416,56 @@ polygon = PackedVector2Array(5, -6, 5, 0, 7, 0, 7, 6, 6, 6, 6, 7, -6, 7, -6, 6, 
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_oftal"]
 polygon = PackedVector2Array(-5, -4, 3, -4, 3, 1, 5, 1, 5, 6, -6, 6, -6, 1, -5, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ghkn"]
+atlas = ExtResource("27_mx6s3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ar51"]
+atlas = ExtResource("27_mx6s3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1k63"]
+atlas = ExtResource("27_mx6s3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_holbn"]
+atlas = ExtResource("27_mx6s3")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px4x2"]
+atlas = ExtResource("27_mx6s3")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5lg2"]
+atlas = ExtResource("27_mx6s3")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7e6ji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ghkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ar51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1k63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_holbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_px4x2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5lg2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
 
 [node name="Level_3" type="Node2D" unique_id=2068148297]
 modulate = Color(0.39215687, 0.39215687, 0.39215687, 1)
@@ -301,7 +512,7 @@ script = ExtResource("5_ndlae")
 position = Vector2(104, 248)
 
 [node name="AnimatedSprite" parent="Side_1/Entities/Player_1" index="0" unique_id=326422892]
-sprite_frames = SubResource("SpriteFrames_p4se4")
+sprite_frames = SubResource("SpriteFrames_sibr7")
 animation = &"move_up"
 
 [node name="PushableObjects" type="Node2D" parent="Side_1/Entities" unique_id=573764610]
@@ -316,8 +527,6 @@ occluder = SubResource("OccluderPolygon2D_7cb0y")
 
 [node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/MaskPile_0" unique_id=2083980201]
 texture = ExtResource("9_1yj8c")
-
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_1/Entities/PushableObjects/MaskPile_0" unique_id=1337857496]
 
 [node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/MaskPile_0" unique_id=2012808985]
 color = Color(1, 0.7647059, 0.54901963, 1)
@@ -335,8 +544,6 @@ occluder = SubResource("OccluderPolygon2D_7cb0y")
 [node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/MaskPile_1" unique_id=1721464365]
 texture = ExtResource("9_1yj8c")
 
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_1/Entities/PushableObjects/MaskPile_1" unique_id=1473077120]
-
 [node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/MaskPile_1" unique_id=18883785]
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
@@ -352,8 +559,6 @@ occluder = SubResource("OccluderPolygon2D_7cb0y")
 
 [node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/MaskPile_2" unique_id=666690641]
 texture = ExtResource("9_1yj8c")
-
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_1/Entities/PushableObjects/MaskPile_2" unique_id=5991673]
 
 [node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/MaskPile_2" unique_id=1771020874]
 color = Color(1, 0.7647059, 0.54901963, 1)
@@ -371,8 +576,6 @@ occluder = SubResource("OccluderPolygon2D_p4se4")
 [node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/Mask_0" unique_id=2073091388]
 texture = ExtResource("10_1yj8c")
 
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_1/Entities/PushableObjects/Mask_0" unique_id=807833842]
-
 [node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/Mask_0" unique_id=1859331603]
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
@@ -388,8 +591,6 @@ occluder = SubResource("OccluderPolygon2D_p4se4")
 
 [node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/Mask_1" unique_id=924318349]
 texture = ExtResource("10_1yj8c")
-
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_1/Entities/PushableObjects/Mask_1" unique_id=731850928]
 
 [node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/Mask_1" unique_id=690120130]
 color = Color(1, 0.7647059, 0.54901963, 1)
@@ -407,8 +608,6 @@ occluder = SubResource("OccluderPolygon2D_s0he0")
 [node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/BookPile_0" unique_id=227309392]
 texture = ExtResource("10_r88tb")
 
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_1/Entities/PushableObjects/BookPile_0" unique_id=966090953]
-
 [node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/BookPile_0" unique_id=348347104]
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
@@ -424,8 +623,6 @@ occluder = SubResource("OccluderPolygon2D_s0he0")
 
 [node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/BookPile_1" unique_id=2120541897]
 texture = ExtResource("10_r88tb")
-
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_1/Entities/PushableObjects/BookPile_1" unique_id=884506560]
 
 [node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/BookPile_1" unique_id=2050857732]
 color = Color(1, 0.7647059, 0.54901963, 1)
@@ -443,8 +640,6 @@ occluder = SubResource("OccluderPolygon2D_s0he0")
 [node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/BookPile_2" unique_id=1798067414]
 texture = ExtResource("10_r88tb")
 
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_1/Entities/PushableObjects/BookPile_2" unique_id=1178700667]
-
 [node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/BookPile_2" unique_id=541829257]
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
@@ -460,8 +655,6 @@ occluder = SubResource("OccluderPolygon2D_7e6ji")
 
 [node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/Book_0" unique_id=1570317659]
 texture = ExtResource("11_1yj8c")
-
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_1/Entities/PushableObjects/Book_0" unique_id=475513337]
 
 [node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/Book_0" unique_id=2092321462]
 color = Color(1, 0.7647059, 0.54901963, 1)
@@ -479,9 +672,24 @@ occluder = SubResource("OccluderPolygon2D_7e6ji")
 [node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/Book_1" unique_id=1504653141]
 texture = ExtResource("11_1yj8c")
 
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_1/Entities/PushableObjects/Book_1" unique_id=1453529221]
-
 [node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/Book_1" unique_id=1015719233]
+color = Color(1, 0.7647059, 0.54901963, 1)
+energy = 0.75
+texture = SubResource("GradientTexture2D_7cb0y")
+
+[node name="Rune" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=919807918]
+position = Vector2(152, 24)
+script = ExtResource("11_5niy6")
+object_type = "rune"
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/Rune" unique_id=1354193795]
+occluder = SubResource("OccluderPolygon2D_s7kn7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Side_1/Entities/PushableObjects/Rune" unique_id=1920101508]
+sprite_frames = SubResource("SpriteFrames_x63fv")
+autoplay = "default"
+
+[node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/Rune" unique_id=2059077738]
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
@@ -706,8 +914,8 @@ position = Vector2(104, 248)
 is_player_one = false
 
 [node name="AnimatedSprite" parent="Side_2/Entities/Player_2" index="0" unique_id=326422892]
+material = SubResource("ShaderMaterial_1a10c")
 sprite_frames = SubResource("SpriteFrames_sibr7")
-animation = &"move_up"
 
 [node name="PushableObjects" type="Node2D" parent="Side_2/Entities" unique_id=102929155]
 
@@ -721,8 +929,6 @@ occluder = SubResource("OccluderPolygon2D_yxkvy")
 
 [node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/MaskPile_0" unique_id=1051769414]
 texture = ExtResource("18_lkn2k")
-
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_2/Entities/PushableObjects/MaskPile_0" unique_id=992033472]
 
 [node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/MaskPile_0" unique_id=263889484]
 color = Color(1, 0.7647059, 0.54901963, 1)
@@ -740,8 +946,6 @@ occluder = SubResource("OccluderPolygon2D_yxkvy")
 [node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/MaskPile_1" unique_id=381214123]
 texture = ExtResource("18_lkn2k")
 
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_2/Entities/PushableObjects/MaskPile_1" unique_id=1106330077]
-
 [node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/MaskPile_1" unique_id=326723049]
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
@@ -757,8 +961,6 @@ occluder = SubResource("OccluderPolygon2D_yxkvy")
 
 [node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/MaskPile_2" unique_id=1998305048]
 texture = ExtResource("18_lkn2k")
-
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_2/Entities/PushableObjects/MaskPile_2" unique_id=1059869088]
 
 [node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/MaskPile_2" unique_id=2126825655]
 color = Color(1, 0.7647059, 0.54901963, 1)
@@ -776,8 +978,6 @@ occluder = SubResource("OccluderPolygon2D_joiyc")
 [node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/Mask_0" unique_id=1840603218]
 texture = ExtResource("19_p4se4")
 
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_2/Entities/PushableObjects/Mask_0" unique_id=1688979390]
-
 [node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/Mask_0" unique_id=214575790]
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
@@ -793,8 +993,6 @@ occluder = SubResource("OccluderPolygon2D_joiyc")
 
 [node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/Mask_1" unique_id=1018163460]
 texture = ExtResource("19_p4se4")
-
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_2/Entities/PushableObjects/Mask_1" unique_id=1358811321]
 
 [node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/Mask_1" unique_id=1945866897]
 color = Color(1, 0.7647059, 0.54901963, 1)
@@ -812,8 +1010,6 @@ occluder = SubResource("OccluderPolygon2D_tn15g")
 [node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/BookPile_0" unique_id=513645294]
 texture = ExtResource("18_p4se4")
 
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_2/Entities/PushableObjects/BookPile_0" unique_id=1742450022]
-
 [node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/BookPile_0" unique_id=1728346889]
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
@@ -829,8 +1025,6 @@ occluder = SubResource("OccluderPolygon2D_tn15g")
 
 [node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/BookPile_1" unique_id=1842092161]
 texture = ExtResource("18_p4se4")
-
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_2/Entities/PushableObjects/BookPile_1" unique_id=335562772]
 
 [node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/BookPile_1" unique_id=1729504746]
 color = Color(1, 0.7647059, 0.54901963, 1)
@@ -848,8 +1042,6 @@ occluder = SubResource("OccluderPolygon2D_tn15g")
 [node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/BookPile_2" unique_id=1155987636]
 texture = ExtResource("18_p4se4")
 
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_2/Entities/PushableObjects/BookPile_2" unique_id=1901285896]
-
 [node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/BookPile_2" unique_id=165355758]
 color = Color(1, 0.7647059, 0.54901963, 1)
 energy = 0.75
@@ -865,8 +1057,6 @@ occluder = SubResource("OccluderPolygon2D_oftal")
 
 [node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/Book_0" unique_id=181840807]
 texture = ExtResource("21_lkn2k")
-
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_2/Entities/PushableObjects/Book_0" unique_id=1408082192]
 
 [node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/Book_0" unique_id=2019682377]
 color = Color(1, 0.7647059, 0.54901963, 1)
@@ -884,10 +1074,26 @@ occluder = SubResource("OccluderPolygon2D_oftal")
 [node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/Book_1" unique_id=1170796380]
 texture = ExtResource("21_lkn2k")
 
-[node name="MoveAudio" type="AudioStreamPlayer2D" parent="Side_2/Entities/PushableObjects/Book_1" unique_id=1771778415]
-
 [node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/Book_1" unique_id=647967679]
 color = Color(1, 0.7647059, 0.54901963, 1)
+texture = SubResource("GradientTexture2D_7cb0y")
+
+[node name="Rune" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=2044387291]
+position = Vector2(216, 104)
+script = ExtResource("11_5niy6")
+object_type = "rune"
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_2/Entities/PushableObjects/Rune" unique_id=684210434]
+occluder = SubResource("OccluderPolygon2D_s7kn7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Side_2/Entities/PushableObjects/Rune" unique_id=1308783489]
+sprite_frames = SubResource("SpriteFrames_7e6ji")
+autoplay = "default"
+frame_progress = 0.44546708
+
+[node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/Rune" unique_id=995723351]
+color = Color(1, 0.7647059, 0.54901963, 1)
+energy = 0.75
 texture = SubResource("GradientTexture2D_7cb0y")
 
 [node name="StaticObjects" type="Node2D" parent="Side_2/Entities" unique_id=1064399378]
