@@ -1,8 +1,9 @@
 # Split Memories
 
-Description of the game
+[![Lumina Nebulae](https://ibb.co/S46RB2mH)](https://melancholydev.itch.io/split-memories)
 
-[Screenshot]
+Split Memories is a game taking place in the deep unconscious. A scientist is capable of making his way inside the brain of his patients with his avant-garde technology, patients whose reality is fractured within two distinct visions. On the left lies the rational and true reality, while on the right, there's a world inside the mirror distorted by emotions. Each level takes place within the mind of different people, with both their reality and the events created by their imagination. So the goal is to match the two visions, moving the objects to be in the same place and time. You'll have to move masks, books, crystals, and sometimes even press buttons. But stay focussed. "Sometimes, even who takes care of others needs to be taken care of."​
+
 
 # How to download the game
 
@@ -28,4 +29,4 @@ Copyright © 2026 Split Memories - Coetus Interactive
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC_BY--SA_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
 - The **source code** is released under the **MIT license**. See [LICENSE](./LICENSE) for details.
-- All **assets**, **lore**, and the **game universe** are released under **Creative Commons Attribution-ShareAlike 4.0 International**. See [LICENSE-CC-BY-SA-4.0](LICENSE-CONTENT).
+- All **assets** are released under **Creative Commons Attribution-ShareAlike 4.0 International**. See [LICENSE-CC-BY-SA-4.0](LICENSE-CONTENT).

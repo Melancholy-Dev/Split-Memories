@@ -20,7 +20,7 @@ script = ExtResource("1_pressure_button")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=275645397]
 texture = ExtResource("2_ru0jo")
 
-[node name="GameButtonAudio" type="AudioStreamPlayer2D" parent="."]
+[node name="GameButtonAudio" type="AudioStreamPlayer2D" parent="." unique_id=197523499]
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=324128134]
 color = Color(0.99817103, 0.765535, 0.5508234, 1)
@@ -28,9 +28,9 @@ energy = 1.5
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_ru0jo")
 
-[node name="Components" type="Node" parent="."]
+[node name="Components" type="Node" parent="." unique_id=2141821450]
 
-[node name="AudioComponent" type="Node" parent="Components" node_paths=PackedStringArray("audio_player") groups=["audio_component"]]
+[node name="AudioComponent" type="Node" parent="Components" unique_id=1765949639 node_paths=PackedStringArray("audio_player") groups=["audio_component"]]
 script = ExtResource("3_audio")
 audio_player = NodePath("../../GameButtonAudio")
 game_button_stream = ExtResource("4_game_button")
