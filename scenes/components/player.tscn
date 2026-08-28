@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://buu41lb7k67mg" path="res://scripts/components/movement_component.gd" id="2_h3cwf"]
 [ext_resource type="Texture2D" uid="uid://cgtrlfa066ibn" path="res://assets/sprites/entities/players/prototype/player_1.png" id="2_ps70n"]
 [ext_resource type="Script" uid="uid://dp5t7ho3j25f4" path="res://scripts/components/audio_component.gd" id="2_sjsxr"]
+[ext_resource type="AudioStream" uid="uid://df14jovuewp6w" path="res://assets/audio/sounds/footstep.wav" id="3_footstep"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_acvb7"]
 animations = [{
@@ -106,9 +107,11 @@ script = ExtResource("2_acvb7")
 player = NodePath("../..")
 animated_sprite = NodePath("../../AnimatedSprite")
 
-[node name="AudioComponent" type="Node" parent="Components" unique_id=1976647451 groups=["audio_component"]]
+[node name="AudioComponent" type="Node" parent="Components" unique_id=1976647451 node_paths=PackedStringArray("audio_player") groups=["audio_component"]]
 unique_name_in_owner = true
 script = ExtResource("2_sjsxr")
+audio_player = NodePath("../../MoveAudio")
+footstep_stream = ExtResource("3_footstep")
 
 [node name="MovementComponent" type="Node" parent="Components" unique_id=962384229 node_paths=PackedStringArray("player") groups=["movement_components"]]
 unique_name_in_owner = true

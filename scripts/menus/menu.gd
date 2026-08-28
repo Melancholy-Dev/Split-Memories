@@ -15,12 +15,15 @@ var _last_focused: Control = null
 func _ready() -> void:
 	for node in find_children("*", "Button", true, false):
 		if node.is_in_group("ui_button"):
-			buttons.append(node as Button)
+			var button := node as Button
+			buttons.append(button)
+			button.focus_entered.connect(_on_button_focus_entered)
 	call_deferred("_focus_initial_node")
 	_last_focused = get_viewport().gui_get_focus_owner()
 
 func _focus_initial_node() -> void:
 	if visible and initial_focus:
+		_last_focused = initial_focus
 		initial_focus.grab_focus()
 
 func _focus_button(index: int) -> void:

@@ -222,18 +222,18 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 58.0
+offset_left = 50.0
 offset_top = -177.0
-offset_right = 190.00024
+offset_right = 202.0
 offset_bottom = -35.999603
 grow_vertical = 0
 theme = SubResource("Theme_ekxnf")
 text = "Commands:
 
-Wasd:    Move Player1
-Arrows:  Move Player2
-Space:              Undo
-Esc:               Pause"
+Wasd:        Move Player1
+Arrows:      Move Player2
+Space:                  Undo
+Esc:                    Pause"
 horizontal_alignment = 1
 
 [node name="Explanations" type="Label" parent="Tutorial" unique_id=905193784]

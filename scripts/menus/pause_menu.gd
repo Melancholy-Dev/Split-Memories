@@ -38,9 +38,11 @@ func _pause() -> void:
 
 ## Buttons
 func _on_resume_button_pressed() -> void:
+	_button_selected()
 	_pause_pressed()
 
 func _on_retry_button_pressed() -> void:
+	_button_selected()
 	_resume()
 	visible = false
 	await %AnimationManager.play_scene_change_transition()
@@ -49,6 +51,7 @@ func _on_retry_button_pressed() -> void:
 	is_paused = false
 
 func _on_main_menu_button_pressed() -> void:
+	_button_selected()
 	_resume()
 	visible = false
 	await %AnimationManager.play_scene_change_transition()
@@ -56,7 +59,10 @@ func _on_main_menu_button_pressed() -> void:
 	if is_instance_valid(scene_manager.current_level):
 		scene_manager.current_level.queue_free()
 		await get_tree().process_frame
+	var audio_manager := get_tree().get_first_node_in_group("audio_manager") as AudioManager
+	if audio_manager != null:
+		audio_manager.play_main_menu_music()
 	%MainMenu.visible = true
-	%MainMenu._on_back_button_pressed()
+	%MainMenu._on_back_button_pressed(false)
 	await %AnimationManager.play_reset()
 	is_paused = false

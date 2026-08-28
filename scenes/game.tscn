@@ -8,9 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://b6sojuor5hju" path="res://scenes/levels/level_1.tscn" id="5_p57ef"]
 [ext_resource type="PackedScene" uid="uid://bal572pfoyik1" path="res://scenes/menus/pause_menu.tscn" id="6_0tnpc"]
 [ext_resource type="Shader" uid="uid://5j4b7huve2c8" path="res://resources/shaders/glass_broken.gdshader" id="6_p57ef"]
+[ext_resource type="AudioStream" uid="uid://w08dbquxlnnf" path="res://assets/audio/music/background_sounds.wav" id="7_ir15t"]
 [ext_resource type="FontFile" uid="uid://vl6gdjtt57vw" path="res://assets/fonts/pixelplay.ttf" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://cg8jqxcxs834c" path="res://scenes/menus/main_menu.tscn" id="8_gee14"]
+[ext_resource type="AudioStream" uid="uid://b6uyp1xrm3xj0" path="res://assets/audio/sounds/glass_broken.wav" id="11_ca42v"]
 [ext_resource type="Shader" uid="uid://dk234sdgbaibi" path="res://resources/shaders/pause_menu.gdshader" id="11_kvpfn"]
+[ext_resource type="AudioStream" uid="uid://rej51faldbgl" path="res://assets/audio/sounds/menu_button.wav" id="16_menu_button"]
+[ext_resource type="AudioStream" uid="uid://crg8puq8vqb66" path="res://assets/audio/sounds/undo.wav" id="17_undo"]
+[ext_resource type="AudioStream" uid="uid://bc8p6o7dinqun" path="res://assets/audio/sounds/puzzle_finished.wav" id="18_puzzle_finished"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ar1yk"]
 font = ExtResource("7_u5sy4")
@@ -522,6 +527,14 @@ unique_name_in_owner = true
 script = ExtResource("3_lbhrr")
 _sound_player = NodePath("../../Audio/Sound")
 _music_player = NodePath("../../Audio/Music")
+main_menu_music = ExtResource("7_ir15t")
+level_1_music = ExtResource("7_ir15t")
+level_2_music = ExtResource("7_ir15t")
+level_3_music = ExtResource("7_ir15t")
+menu_button_stream = ExtResource("16_menu_button")
+undo_stream = ExtResource("17_undo")
+puzzle_finished_stream = ExtResource("18_puzzle_finished")
+scene_change_glass = ExtResource("11_ca42v")
 
 [node name="Levels" type="Node2D" parent="." unique_id=916306363]
 
@@ -593,10 +606,13 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 
 [node name="Audio" type="Node" parent="." unique_id=1579824888]
+process_mode = 3
 
 [node name="Music" type="AudioStreamPlayer" parent="Audio" unique_id=330224502]
+volume_db = -20.0
 
 [node name="Sound" type="AudioStreamPlayer" parent="Audio" unique_id=1941914208]
+volume_db = -10.0
 
 [node name="Camera" type="Node" parent="." unique_id=128163797]
 

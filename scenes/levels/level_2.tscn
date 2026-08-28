@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bc3gweejimojt" path="res://scenes/components/static_object.tscn" id="10_lkn2k"]
 [ext_resource type="Texture2D" uid="uid://dtxhkjlk506vq" path="res://assets/sprites/entities/pushable_objects/level_2/reality/book_pile.png" id="10_r88tb"]
 [ext_resource type="Texture2D" uid="uid://crpb7obst4kj5" path="res://assets/sprites/entities/pushable_objects/level_2/reality/book.png" id="11_1yj8c"]
-[ext_resource type="Script" uid="uid://csaoahsfl4mw4" path="res://scripts/entities/pushable_object.gd" id="11_5niy6"]
+[ext_resource type="PackedScene" uid="uid://dfo7hk2la7evv" path="res://scenes/components/pushable_object.tscn" id="11_5niy6"]
 [ext_resource type="Shader" uid="uid://deuxesjy2fjec" path="res://resources/shaders/pixelated_warped_fractal_noise.gdshader" id="16_sibr7"]
 [ext_resource type="Texture2D" uid="uid://b75m8w0x5vdnu" path="res://assets/sprites/entities/players/level_2/vampire_down.png" id="17_wikm6"]
 [ext_resource type="Texture2D" uid="uid://bmiepbbhcojvq" path="res://assets/sprites/entities/players/level_2/vampire_left.png" id="18_1c1qw"]
@@ -517,182 +517,152 @@ animation = &"move_up"
 
 [node name="PushableObjects" type="Node2D" parent="Side_1/Entities" unique_id=573764610]
 
-[node name="MaskPile_0" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=2011022084]
+[node name="MaskPile_0" parent="Side_1/Entities/PushableObjects" unique_id=2011022084 instance=ExtResource("11_5niy6")]
 position = Vector2(136, 216)
-script = ExtResource("11_5niy6")
 object_type = "mask_pile"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/MaskPile_0" unique_id=1086606746]
+[node name="LightOccluder2D" parent="Side_1/Entities/PushableObjects/MaskPile_0" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_7cb0y")
 
-[node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/MaskPile_0" unique_id=2083980201]
+[node name="Sprite" parent="Side_1/Entities/PushableObjects/MaskPile_0" index="1" unique_id=2083980201]
 texture = ExtResource("9_1yj8c")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/MaskPile_0" unique_id=2012808985]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_1/Entities/PushableObjects/MaskPile_0" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="MaskPile_1" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=643120304]
+[node name="MaskPile_1" parent="Side_1/Entities/PushableObjects" unique_id=643120304 instance=ExtResource("11_5niy6")]
 position = Vector2(24, 120)
-script = ExtResource("11_5niy6")
 object_type = "mask_pile"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/MaskPile_1" unique_id=1342147296]
+[node name="LightOccluder2D" parent="Side_1/Entities/PushableObjects/MaskPile_1" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_7cb0y")
 
-[node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/MaskPile_1" unique_id=1721464365]
+[node name="Sprite" parent="Side_1/Entities/PushableObjects/MaskPile_1" index="1" unique_id=2083980201]
 texture = ExtResource("9_1yj8c")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/MaskPile_1" unique_id=18883785]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_1/Entities/PushableObjects/MaskPile_1" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="MaskPile_2" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=1276701561]
+[node name="MaskPile_2" parent="Side_1/Entities/PushableObjects" unique_id=1276701561 instance=ExtResource("11_5niy6")]
 position = Vector2(56, 40)
-script = ExtResource("11_5niy6")
 object_type = "mask_pile"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/MaskPile_2" unique_id=220742177]
+[node name="LightOccluder2D" parent="Side_1/Entities/PushableObjects/MaskPile_2" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_7cb0y")
 
-[node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/MaskPile_2" unique_id=666690641]
+[node name="Sprite" parent="Side_1/Entities/PushableObjects/MaskPile_2" index="1" unique_id=2083980201]
 texture = ExtResource("9_1yj8c")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/MaskPile_2" unique_id=1771020874]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_1/Entities/PushableObjects/MaskPile_2" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Mask_0" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=879858468]
+[node name="Mask_0" parent="Side_1/Entities/PushableObjects" unique_id=879858468 instance=ExtResource("11_5niy6")]
 position = Vector2(88, 88)
-script = ExtResource("11_5niy6")
 object_type = "mask"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/Mask_0" unique_id=470309711]
+[node name="LightOccluder2D" parent="Side_1/Entities/PushableObjects/Mask_0" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_p4se4")
 
-[node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/Mask_0" unique_id=2073091388]
+[node name="Sprite" parent="Side_1/Entities/PushableObjects/Mask_0" index="1" unique_id=2083980201]
 texture = ExtResource("10_1yj8c")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/Mask_0" unique_id=1859331603]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_1/Entities/PushableObjects/Mask_0" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Mask_1" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=1993134779]
+[node name="Mask_1" parent="Side_1/Entities/PushableObjects" unique_id=1993134779 instance=ExtResource("11_5niy6")]
 position = Vector2(24, 232)
-script = ExtResource("11_5niy6")
 object_type = "mask"
 
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/Mask_1" unique_id=1464019204]
+[node name="LightOccluder2D" parent="Side_1/Entities/PushableObjects/Mask_1" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_p4se4")
 
-[node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/Mask_1" unique_id=924318349]
+[node name="Sprite" parent="Side_1/Entities/PushableObjects/Mask_1" index="1" unique_id=2083980201]
 texture = ExtResource("10_1yj8c")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/Mask_1" unique_id=690120130]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_1/Entities/PushableObjects/Mask_1" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="BookPile_0" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=741332491]
+[node name="BookPile_0" parent="Side_1/Entities/PushableObjects" unique_id=741332491 instance=ExtResource("11_5niy6")]
 position = Vector2(184, 232)
-script = ExtResource("11_5niy6")
 object_type = "book_pile"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/BookPile_0" unique_id=1291817781]
+[node name="LightOccluder2D" parent="Side_1/Entities/PushableObjects/BookPile_0" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_s0he0")
 
-[node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/BookPile_0" unique_id=227309392]
+[node name="Sprite" parent="Side_1/Entities/PushableObjects/BookPile_0" index="1" unique_id=2083980201]
 texture = ExtResource("10_r88tb")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/BookPile_0" unique_id=348347104]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_1/Entities/PushableObjects/BookPile_0" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="BookPile_1" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=332406510]
+[node name="BookPile_1" parent="Side_1/Entities/PushableObjects" unique_id=332406510 instance=ExtResource("11_5niy6")]
 position = Vector2(104, 104)
-script = ExtResource("11_5niy6")
 object_type = "book_pile"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/BookPile_1" unique_id=543428797]
+[node name="LightOccluder2D" parent="Side_1/Entities/PushableObjects/BookPile_1" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_s0he0")
 
-[node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/BookPile_1" unique_id=2120541897]
+[node name="Sprite" parent="Side_1/Entities/PushableObjects/BookPile_1" index="1" unique_id=2083980201]
 texture = ExtResource("10_r88tb")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/BookPile_1" unique_id=2050857732]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_1/Entities/PushableObjects/BookPile_1" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="BookPile_2" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=637241307]
+[node name="BookPile_2" parent="Side_1/Entities/PushableObjects" unique_id=637241307 instance=ExtResource("11_5niy6")]
 position = Vector2(184, 56)
-script = ExtResource("11_5niy6")
 object_type = "book_pile"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/BookPile_2" unique_id=2076470744]
+[node name="LightOccluder2D" parent="Side_1/Entities/PushableObjects/BookPile_2" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_s0he0")
 
-[node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/BookPile_2" unique_id=1798067414]
+[node name="Sprite" parent="Side_1/Entities/PushableObjects/BookPile_2" index="1" unique_id=2083980201]
 texture = ExtResource("10_r88tb")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/BookPile_2" unique_id=541829257]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_1/Entities/PushableObjects/BookPile_2" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Book_0" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=1830003162]
+[node name="Book_0" parent="Side_1/Entities/PushableObjects" unique_id=1830003162 instance=ExtResource("11_5niy6")]
 position = Vector2(24, 24)
-script = ExtResource("11_5niy6")
 object_type = "book"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/Book_0" unique_id=732860309]
+[node name="LightOccluder2D" parent="Side_1/Entities/PushableObjects/Book_0" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_7e6ji")
 
-[node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/Book_0" unique_id=1570317659]
+[node name="Sprite" parent="Side_1/Entities/PushableObjects/Book_0" index="1" unique_id=2083980201]
 texture = ExtResource("11_1yj8c")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/Book_0" unique_id=2092321462]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_1/Entities/PushableObjects/Book_0" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Book_1" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=551277175]
+[node name="Book_1" parent="Side_1/Entities/PushableObjects" unique_id=551277175 instance=ExtResource("11_5niy6")]
 position = Vector2(104, 152)
-script = ExtResource("11_5niy6")
 object_type = "book"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/Book_1" unique_id=416020361]
+[node name="LightOccluder2D" parent="Side_1/Entities/PushableObjects/Book_1" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_7e6ji")
 
-[node name="Sprite" type="Sprite2D" parent="Side_1/Entities/PushableObjects/Book_1" unique_id=1504653141]
+[node name="Sprite" parent="Side_1/Entities/PushableObjects/Book_1" index="1" unique_id=2083980201]
 texture = ExtResource("11_1yj8c")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/Book_1" unique_id=1015719233]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_1/Entities/PushableObjects/Book_1" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Rune" type="Node2D" parent="Side_1/Entities/PushableObjects" unique_id=919807918]
+[node name="Rune" parent="Side_1/Entities/PushableObjects" unique_id=919807918 instance=ExtResource("11_5niy6")]
 position = Vector2(152, 24)
-script = ExtResource("11_5niy6")
 object_type = "rune"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_1/Entities/PushableObjects/Rune" unique_id=1354193795]
+[node name="LightOccluder2D" parent="Side_1/Entities/PushableObjects/Rune" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_s7kn7")
+
+[node name="Sprite" parent="Side_1/Entities/PushableObjects/Rune" index="1" unique_id=2083980201]
+visible = false
+
+[node name="PointLight2D" parent="Side_1/Entities/PushableObjects/Rune" index="3" unique_id=2012808985]
+texture = SubResource("GradientTexture2D_7cb0y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Side_1/Entities/PushableObjects/Rune" unique_id=1920101508]
 sprite_frames = SubResource("SpriteFrames_x63fv")
 autoplay = "default"
-
-[node name="PointLight2D" type="PointLight2D" parent="Side_1/Entities/PushableObjects/Rune" unique_id=2059077738]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
-texture = SubResource("GradientTexture2D_7cb0y")
 
 [node name="StaticObjects" type="Node2D" parent="Side_1/Entities" unique_id=1612077439]
 
@@ -919,182 +889,154 @@ sprite_frames = SubResource("SpriteFrames_sibr7")
 
 [node name="PushableObjects" type="Node2D" parent="Side_2/Entities" unique_id=102929155]
 
-[node name="MaskPile_0" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=1099249306]
+[node name="MaskPile_0" parent="Side_2/Entities/PushableObjects" unique_id=1099249306 instance=ExtResource("11_5niy6")]
 position = Vector2(40, 56)
-script = ExtResource("11_5niy6")
 object_type = "mask_pile"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_2/Entities/PushableObjects/MaskPile_0" unique_id=121980210]
+[node name="LightOccluder2D" parent="Side_2/Entities/PushableObjects/MaskPile_0" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_yxkvy")
 
-[node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/MaskPile_0" unique_id=1051769414]
+[node name="Sprite" parent="Side_2/Entities/PushableObjects/MaskPile_0" index="1" unique_id=2083980201]
 texture = ExtResource("18_lkn2k")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/MaskPile_0" unique_id=263889484]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/MaskPile_0" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="MaskPile_1" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=791394458]
+[node name="MaskPile_1" parent="Side_2/Entities/PushableObjects" unique_id=791394458 instance=ExtResource("11_5niy6")]
 position = Vector2(24, 216)
-script = ExtResource("11_5niy6")
 object_type = "mask_pile"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_2/Entities/PushableObjects/MaskPile_1" unique_id=604614039]
+[node name="LightOccluder2D" parent="Side_2/Entities/PushableObjects/MaskPile_1" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_yxkvy")
 
-[node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/MaskPile_1" unique_id=381214123]
+[node name="Sprite" parent="Side_2/Entities/PushableObjects/MaskPile_1" index="1" unique_id=2083980201]
 texture = ExtResource("18_lkn2k")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/MaskPile_1" unique_id=326723049]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/MaskPile_1" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="MaskPile_2" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=1474825999]
+[node name="MaskPile_2" parent="Side_2/Entities/PushableObjects" unique_id=1474825999 instance=ExtResource("11_5niy6")]
 position = Vector2(120, 136)
-script = ExtResource("11_5niy6")
 object_type = "mask_pile"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_2/Entities/PushableObjects/MaskPile_2" unique_id=1218789441]
+[node name="LightOccluder2D" parent="Side_2/Entities/PushableObjects/MaskPile_2" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_yxkvy")
 
-[node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/MaskPile_2" unique_id=1998305048]
+[node name="Sprite" parent="Side_2/Entities/PushableObjects/MaskPile_2" index="1" unique_id=2083980201]
 texture = ExtResource("18_lkn2k")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/MaskPile_2" unique_id=2126825655]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/MaskPile_2" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Mask_0" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=906274635]
+[node name="Mask_0" parent="Side_2/Entities/PushableObjects" unique_id=906274635 instance=ExtResource("11_5niy6")]
 position = Vector2(56, 72)
-script = ExtResource("11_5niy6")
 object_type = "mask"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_2/Entities/PushableObjects/Mask_0" unique_id=495861353]
+[node name="LightOccluder2D" parent="Side_2/Entities/PushableObjects/Mask_0" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_joiyc")
 
-[node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/Mask_0" unique_id=1840603218]
+[node name="Sprite" parent="Side_2/Entities/PushableObjects/Mask_0" index="1" unique_id=2083980201]
 texture = ExtResource("19_p4se4")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/Mask_0" unique_id=214575790]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/Mask_0" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Mask_1" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=438565340]
+[node name="Mask_1" parent="Side_2/Entities/PushableObjects" unique_id=438565340 instance=ExtResource("11_5niy6")]
 position = Vector2(8, 88)
-script = ExtResource("11_5niy6")
 object_type = "mask"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_2/Entities/PushableObjects/Mask_1" unique_id=2048268793]
+[node name="LightOccluder2D" parent="Side_2/Entities/PushableObjects/Mask_1" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_joiyc")
 
-[node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/Mask_1" unique_id=1018163460]
+[node name="Sprite" parent="Side_2/Entities/PushableObjects/Mask_1" index="1" unique_id=2083980201]
 texture = ExtResource("19_p4se4")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/Mask_1" unique_id=1945866897]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/Mask_1" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="BookPile_0" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=1197640493]
+[node name="BookPile_0" parent="Side_2/Entities/PushableObjects" unique_id=1197640493 instance=ExtResource("11_5niy6")]
 position = Vector2(168, 200)
-script = ExtResource("11_5niy6")
 object_type = "book_pile"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_2/Entities/PushableObjects/BookPile_0" unique_id=1512986851]
+[node name="LightOccluder2D" parent="Side_2/Entities/PushableObjects/BookPile_0" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_tn15g")
 
-[node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/BookPile_0" unique_id=513645294]
+[node name="Sprite" parent="Side_2/Entities/PushableObjects/BookPile_0" index="1" unique_id=2083980201]
 texture = ExtResource("18_p4se4")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/BookPile_0" unique_id=1728346889]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/BookPile_0" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="BookPile_1" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=518349746]
+[node name="BookPile_1" parent="Side_2/Entities/PushableObjects" unique_id=518349746 instance=ExtResource("11_5niy6")]
 position = Vector2(120, 104)
-script = ExtResource("11_5niy6")
 object_type = "book_pile"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_2/Entities/PushableObjects/BookPile_1" unique_id=2128619359]
+[node name="LightOccluder2D" parent="Side_2/Entities/PushableObjects/BookPile_1" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_tn15g")
 
-[node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/BookPile_1" unique_id=1842092161]
+[node name="Sprite" parent="Side_2/Entities/PushableObjects/BookPile_1" index="1" unique_id=2083980201]
 texture = ExtResource("18_p4se4")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/BookPile_1" unique_id=1729504746]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/BookPile_1" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="BookPile_2" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=940944519]
+[node name="BookPile_2" parent="Side_2/Entities/PushableObjects" unique_id=940944519 instance=ExtResource("11_5niy6")]
 position = Vector2(200, 88)
-script = ExtResource("11_5niy6")
 object_type = "book_pile"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_2/Entities/PushableObjects/BookPile_2" unique_id=4044739]
+[node name="LightOccluder2D" parent="Side_2/Entities/PushableObjects/BookPile_2" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_tn15g")
 
-[node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/BookPile_2" unique_id=1155987636]
+[node name="Sprite" parent="Side_2/Entities/PushableObjects/BookPile_2" index="1" unique_id=2083980201]
 texture = ExtResource("18_p4se4")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/BookPile_2" unique_id=165355758]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/BookPile_2" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Book_0" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=721280341]
+[node name="Book_0" parent="Side_2/Entities/PushableObjects" unique_id=721280341 instance=ExtResource("11_5niy6")]
 position = Vector2(24, 104)
-script = ExtResource("11_5niy6")
 object_type = "book"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_2/Entities/PushableObjects/Book_0" unique_id=1105261007]
+[node name="LightOccluder2D" parent="Side_2/Entities/PushableObjects/Book_0" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_oftal")
 
-[node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/Book_0" unique_id=181840807]
+[node name="Sprite" parent="Side_2/Entities/PushableObjects/Book_0" index="1" unique_id=2083980201]
 texture = ExtResource("21_lkn2k")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/Book_0" unique_id=2019682377]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/Book_0" index="3" unique_id=2012808985]
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Book_1" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=502526471]
+[node name="Book_1" parent="Side_2/Entities/PushableObjects" unique_id=502526471 instance=ExtResource("11_5niy6")]
 position = Vector2(72, 200)
-script = ExtResource("11_5niy6")
 object_type = "book"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_2/Entities/PushableObjects/Book_1" unique_id=1231739278]
+[node name="LightOccluder2D" parent="Side_2/Entities/PushableObjects/Book_1" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_oftal")
 
-[node name="Sprite" type="Sprite2D" parent="Side_2/Entities/PushableObjects/Book_1" unique_id=1170796380]
+[node name="Sprite" parent="Side_2/Entities/PushableObjects/Book_1" index="1" unique_id=2083980201]
 texture = ExtResource("21_lkn2k")
 
-[node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/Book_1" unique_id=647967679]
-color = Color(1, 0.7647059, 0.54901963, 1)
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/Book_1" index="3" unique_id=2012808985]
+energy = 1.0
 texture = SubResource("GradientTexture2D_7cb0y")
 
-[node name="Rune" type="Node2D" parent="Side_2/Entities/PushableObjects" unique_id=2044387291]
+[node name="Rune" parent="Side_2/Entities/PushableObjects" unique_id=2044387291 instance=ExtResource("11_5niy6")]
 position = Vector2(216, 104)
-script = ExtResource("11_5niy6")
 object_type = "rune"
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="Side_2/Entities/PushableObjects/Rune" unique_id=684210434]
+[node name="LightOccluder2D" parent="Side_2/Entities/PushableObjects/Rune" index="0" unique_id=121980210]
 occluder = SubResource("OccluderPolygon2D_s7kn7")
+
+[node name="Sprite" parent="Side_2/Entities/PushableObjects/Rune" index="1" unique_id=2083980201]
+visible = false
+
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/Rune" index="3" unique_id=2012808985]
+texture = SubResource("GradientTexture2D_7cb0y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Side_2/Entities/PushableObjects/Rune" unique_id=1308783489]
 sprite_frames = SubResource("SpriteFrames_7e6ji")
 autoplay = "default"
 frame_progress = 0.44546708
-
-[node name="PointLight2D" type="PointLight2D" parent="Side_2/Entities/PushableObjects/Rune" unique_id=995723351]
-color = Color(1, 0.7647059, 0.54901963, 1)
-energy = 0.75
-texture = SubResource("GradientTexture2D_7cb0y")
 
 [node name="StaticObjects" type="Node2D" parent="Side_2/Entities" unique_id=1064399378]
 
@@ -1279,4 +1221,26 @@ position = Vector2(24, 232)
 position = Vector2(8, 232)
 
 [editable path="Side_1/Entities/Player_1"]
+[editable path="Side_1/Entities/PushableObjects/MaskPile_0"]
+[editable path="Side_1/Entities/PushableObjects/MaskPile_1"]
+[editable path="Side_1/Entities/PushableObjects/MaskPile_2"]
+[editable path="Side_1/Entities/PushableObjects/Mask_0"]
+[editable path="Side_1/Entities/PushableObjects/Mask_1"]
+[editable path="Side_1/Entities/PushableObjects/BookPile_0"]
+[editable path="Side_1/Entities/PushableObjects/BookPile_1"]
+[editable path="Side_1/Entities/PushableObjects/BookPile_2"]
+[editable path="Side_1/Entities/PushableObjects/Book_0"]
+[editable path="Side_1/Entities/PushableObjects/Book_1"]
+[editable path="Side_1/Entities/PushableObjects/Rune"]
 [editable path="Side_2/Entities/Player_2"]
+[editable path="Side_2/Entities/PushableObjects/MaskPile_0"]
+[editable path="Side_2/Entities/PushableObjects/MaskPile_1"]
+[editable path="Side_2/Entities/PushableObjects/MaskPile_2"]
+[editable path="Side_2/Entities/PushableObjects/Mask_0"]
+[editable path="Side_2/Entities/PushableObjects/Mask_1"]
+[editable path="Side_2/Entities/PushableObjects/BookPile_0"]
+[editable path="Side_2/Entities/PushableObjects/BookPile_1"]
+[editable path="Side_2/Entities/PushableObjects/BookPile_2"]
+[editable path="Side_2/Entities/PushableObjects/Book_0"]
+[editable path="Side_2/Entities/PushableObjects/Book_1"]
+[editable path="Side_2/Entities/PushableObjects/Rune"]

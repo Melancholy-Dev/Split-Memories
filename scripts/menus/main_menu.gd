@@ -46,8 +46,9 @@ func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 
 # Sub-Menu Buttons
-func _on_back_button_pressed() -> void:
-	_button_selected()
+func _on_back_button_pressed(play_sound := true) -> void:
+	if play_sound:
+		_button_selected()
 	back_button.visible = false
 	menu_buttons.visible = true
 	level_buttons.visible = false

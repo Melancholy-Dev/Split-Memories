@@ -1,5 +1,8 @@
 class_name PressureButton extends GridEntity
 
+# Signals
+signal pressed_changed(is_pressed: bool)
+
 # Variables
 @export var is_pressed_texture: Texture2D
 @export var objects_to_disable: Array[GridEntity] = []
@@ -54,3 +57,4 @@ func _refresh_state() -> void:
 			object.disable()
 		else:
 			object.enable()
+	pressed_changed.emit(is_pressed)

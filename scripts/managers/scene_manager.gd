@@ -24,6 +24,9 @@ func load_level(index: int) -> void:
 	current_level = level_scenes[index].instantiate()
 	levels_root.add_child(current_level)
 	current_level_index = index
+	var audio_manager := get_tree().get_first_node_in_group("audio_manager") as AudioManager
+	if audio_manager != null:
+		audio_manager.play_level_music(index)
 	var puzzle_manager: PuzzleManager = null
 	if current_level is PuzzleManager:
 		puzzle_manager = current_level
@@ -42,5 +45,8 @@ func _on_puzzle_completed() -> void:
 		if is_instance_valid(current_level):
 			current_level.queue_free()
 		current_level = null
+		var audio_manager := get_tree().get_first_node_in_group("audio_manager") as AudioManager
+		if audio_manager != null:
+			audio_manager.play_main_menu_music()
 		%MainMenu.visible = true
-		%MainMenu._on_back_button_pressed()
+		%MainMenu._on_back_button_pressed(false)

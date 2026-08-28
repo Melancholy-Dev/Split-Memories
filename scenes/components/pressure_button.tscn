@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bv37wpsi18pdq" path="res://scripts/entities/pressure_button.gd" id="1_pressure_button"]
 [ext_resource type="Texture2D" uid="uid://bjqv22hjah7t3" path="res://assets/sprites/rooms/prototype/tile.png" id="2_ru0jo"]
+[ext_resource type="Script" uid="uid://dp5t7ho3j25f4" path="res://scripts/components/audio_component.gd" id="3_audio"]
+[ext_resource type="AudioStream" uid="uid://ccge38lhbdjxt" path="res://assets/audio/sounds/game_button.wav" id="4_game_button"]
 
 [sub_resource type="Gradient" id="Gradient_ps70n"]
 offsets = PackedFloat32Array(0, 0.2764706, 0.7235294)
@@ -18,8 +20,17 @@ script = ExtResource("1_pressure_button")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=275645397]
 texture = ExtResource("2_ru0jo")
 
+[node name="GameButtonAudio" type="AudioStreamPlayer2D" parent="."]
+
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=324128134]
 color = Color(0.99817103, 0.765535, 0.5508234, 1)
 energy = 1.5
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_ru0jo")
+
+[node name="Components" type="Node" parent="."]
+
+[node name="AudioComponent" type="Node" parent="Components" node_paths=PackedStringArray("audio_player") groups=["audio_component"]]
+script = ExtResource("3_audio")
+audio_player = NodePath("../../GameButtonAudio")
+game_button_stream = ExtResource("4_game_button")
