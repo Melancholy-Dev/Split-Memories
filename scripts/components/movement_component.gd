@@ -32,7 +32,7 @@ func _on_direction_pressed(direction: Vector2i) -> void:
 	is_moving = true
 	var previous_state := UndoManager.capture_state()
 	var moved_entities := board.try_move_player(player, direction)
-	if not moved_entities.is_empty():
+	if moved_entities.size() > 1:
 		UndoManager.commit_state(previous_state)
 	if moved_entities.is_empty():
 		movement_blocked.emit()
