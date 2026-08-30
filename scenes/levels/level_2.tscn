@@ -398,7 +398,7 @@ shader_parameter/background_threshold = 0.0
 shader_parameter/color_low_threshold = 0.050000002375
 shader_parameter/color_mid_threshold = 0.50000002375
 shader_parameter/color_low = Color(0.36556464, 0, 0, 0)
-shader_parameter/color_mid = Color(0.07016479, 0, 0, 0.65000004)
+shader_parameter/color_mid = Color(0.07016479, 0, 0, 0.55)
 shader_parameter/color_high = Color(0, 0, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1a10c"]
@@ -847,7 +847,7 @@ position = Vector2(216, 232)
 position = Vector2(200, 232)
 
 [node name="Side_2" type="Node2D" parent="." unique_id=2039548093 node_paths=PackedStringArray("board", "player")]
-modulate = Color(1, 0.599933, 0.540393, 1)
+modulate = Color(0.99999994, 0.73413527, 0.69142294, 1)
 position = Vector2(224, 0)
 script = ExtResource("4_1yj8c")
 board = NodePath("Grid_2")

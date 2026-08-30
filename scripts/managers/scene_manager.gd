@@ -50,3 +50,5 @@ func _on_puzzle_completed() -> void:
 			audio_manager.play_main_menu_music()
 		%MainMenu.visible = true
 		%MainMenu._on_back_button_pressed(false)
+		await %AnimationManager.play_reset()
+		level_loaded.emit()

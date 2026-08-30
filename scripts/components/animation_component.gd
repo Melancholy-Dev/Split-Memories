@@ -17,6 +17,12 @@ func _ready() -> void:
 	last_direction = _get_direction(animated_sprite.animation)
 	play_idle_animation()
 
+func _process(_delta: float) -> void:
+	if movement_component.is_moving:
+		return
+	if not _is_direction_held(last_direction):
+		play_idle_animation()
+
 func play_move_animation(direction: Vector2i) -> void:
 	last_direction = direction
 	var animation_name := _get_animation_name(direction)

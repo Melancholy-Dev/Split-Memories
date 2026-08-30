@@ -65,6 +65,7 @@ func _on_quit_button_pressed() -> void:
 func _on_back_button_pressed(play_sound := true) -> void:
 	if play_sound:
 		_button_selected()
+	_set_buttons_enabled(true)
 	$Logo.visible = true
 	back_button.visible = false
 	back_button.position.x = 48.0
@@ -118,7 +119,15 @@ func _on_sound_volume_changed(value: float) -> void:
 	if audio_manager != null:
 		audio_manager.sound_volume_db = _slider_to_db(value)
 
+func _set_buttons_enabled(enabled: bool) -> void:
+	for button in buttons:
+		button.disabled = not enabled
+		button.focus_mode = Control.FOCUS_ALL if enabled else Control.FOCUS_NONE
+	if not enabled:
+		get_viewport().gui_release_focus()
+
 func _game_started(level: int) -> void:
+	_set_buttons_enabled(false)
 	await %AnimationManager.play_scene_change_transition()
 	scene_manager.load_level(level)
 	visible = false
