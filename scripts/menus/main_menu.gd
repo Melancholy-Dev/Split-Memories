@@ -17,6 +17,14 @@ class_name MainMenu extends Menu
 func _ready() -> void:
 	super._ready()
 	_setup_audio_sliders()
+	var animation_manager := get_tree().get_first_node_in_group("animation_manager")
+	if animation_manager != null and animation_manager.is_animating:
+		_set_buttons_enabled(false)
+		animation_manager.initial_animation_finished.connect(_on_initial_animation_finished)
+
+func _on_initial_animation_finished() -> void:
+	_set_buttons_enabled(true)
+	_focus_initial_node()
 
 ### Menu Buttons pressed
 func _on_play_button_pressed() -> void:

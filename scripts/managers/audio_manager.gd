@@ -36,14 +36,21 @@ signal volumes_changed
 @export var puzzle_finished_stream: AudioStream
 @export var scene_change_glass: AudioStream
 
+# Variables
+var _audio_enabled := false
+
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	UndoManager.is_undoing_started.connect(play_undo_sound)
 	%SceneManager.loading_level.connect(play_puzzle_finished_sound)
 	%AnimationManager.animation_player.animation_started.connect(_on_animation_started)
+	%AnimationManager.initial_animation_finished.connect(_on_initial_animation_finished)
 	call_deferred("_connect_menus")
 	_update_volumes()
+
+func _on_initial_animation_finished() -> void:
+	_audio_enabled = true
 	play_main_menu_music()
 
 func _update_volumes() -> void:
@@ -81,7 +88,7 @@ func play_level_music(level: int) -> void:
 			play_music(level_3_music)
 
 func play_music(stream: AudioStream) -> void:
-	if stream == null or _music_player == null:
+	if not _audio_enabled or stream == null or _music_player == null:
 		return
 	if _music_player.stream == stream and _music_player.playing:
 		return
@@ -102,7 +109,7 @@ func play_scene_change_sound() -> void:
 	_play_sound(scene_change_glass)
 
 func _play_sound(stream: AudioStream) -> void:
-	if stream == null or _sound_player == null:
+	if not _audio_enabled or stream == null or _sound_player == null:
 		return
 	_sound_player.stream = stream
 	_sound_player.play()

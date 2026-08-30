@@ -1,13 +1,25 @@
 class_name AnimationManager extends Node
 
+# Signals
+signal initial_animation_finished
+
 # Nodes
 @export var animation_player: AnimationPlayer
-var is_animating := false
+
+# Variables
+var is_animating := true
 
 
 func _ready() -> void:
 	animation_player.process_mode = Node.PROCESS_MODE_ALWAYS
+	animation_player.animation_finished.connect(_on_animation_finished)
 	UndoManager.is_undoing_started.connect(play_undo_transition)
+
+func _on_animation_finished(animation_name: StringName) -> void:
+	if animation_name != &"game_started":
+		return
+	is_animating = false
+	initial_animation_finished.emit()
 
 func play_reset() -> void:
 	is_animating = true
