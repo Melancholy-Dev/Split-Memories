@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://rej51faldbgl" path="res://assets/audio/sounds/menu_button.wav" id="16_menu_button"]
 [ext_resource type="AudioStream" uid="uid://crg8puq8vqb66" path="res://assets/audio/sounds/undo.wav" id="17_undo"]
 [ext_resource type="AudioStream" uid="uid://bc8p6o7dinqun" path="res://assets/audio/sounds/puzzle_finished.wav" id="18_puzzle_finished"]
+[ext_resource type="Texture2D" uid="uid://b2dcbwcv6gbmi" path="res://assets/sprites/ui/final_screen.png" id="19_1kice"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ar1yk"]
 font = ExtResource("7_u5sy4")
@@ -177,7 +178,59 @@ tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../FinalScreen:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../FinalScreen:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1kice"]
+resource_name = "final_screen"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FinalScreen:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FinalScreen:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.01, 9, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_264po"]
@@ -554,6 +607,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p57ef"]
 _data = {
 &"RESET": SubResource("Animation_lbhrr"),
+&"final_screen": SubResource("Animation_1kice"),
 &"game_started": SubResource("Animation_264po"),
 &"loading_new_level": SubResource("Animation_kvpfn"),
 &"pause_menu": SubResource("Animation_vtaks"),
@@ -623,6 +677,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="EpilessyWarning" type="Label" parent="UILayers/Transitions" unique_id=91913078]
+visible = false
 z_index = 2
 anchors_preset = 8
 anchor_left = 0.5
@@ -669,6 +724,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="FinalScreen" type="TextureRect" parent="UILayers/Transitions" unique_id=663619458]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_1kice")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UILayers/Transitions" unique_id=625704565]
 root_node = NodePath("../ColorRect")

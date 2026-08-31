@@ -348,9 +348,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 32.0
-offset_top = 112.0
+offset_top = 129.0
 offset_right = -28.0
-offset_bottom = -3.0
+offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -446,15 +446,15 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 218.02
+offset_left = 168.0
 offset_top = -177.0
-offset_right = 595.02
+offset_right = 600.0
 offset_bottom = -36.0
 grow_vertical = 0
 theme = SubResource("Theme_ekxnf")
 text = "Coetus Interactive
 Melancholy
-Zaffy (Level 3, UI), FranzTheMerchant (Level 2), Ciuffo (Level 1)
+Zaffy (Level 3, UI), FranzTheMerchant (Level 2), Ciuffo (Level 1, Artwork)
 Ambit, Melancholy
 Melancholy, Clanvy
 Melancholy, Ambit, Clanvy, Ciuffo, FranzTheMerchant, Zaffy"

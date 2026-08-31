@@ -45,6 +45,7 @@ func _on_puzzle_completed() -> void:
 		if is_instance_valid(current_level):
 			current_level.queue_free()
 		current_level = null
+		await %AnimationManager.play_final_screen()
 		var audio_manager := get_tree().get_first_node_in_group("audio_manager") as AudioManager
 		if audio_manager != null:
 			audio_manager.play_main_menu_music()

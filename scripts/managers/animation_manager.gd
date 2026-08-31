@@ -52,6 +52,13 @@ func play_loading_new_level_transition() -> void:
 	await animation_player.animation_finished
 	is_animating = false
 
+func play_final_screen() -> void:
+	await play_reset()
+	is_animating = true
+	animation_player.play("final_screen")
+	await animation_player.animation_finished
+	is_animating = false
+
 func play_pause_menu_transition(show_menu: bool) -> void:
 	is_animating = true
 	if show_menu:
