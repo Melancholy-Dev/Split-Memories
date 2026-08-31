@@ -78,8 +78,14 @@ func move_entities_out_of_cell(cell: Vector2i, excluded_entity: GridEntity = nul
 func relocate_entity(entity: GridEntity, new_cell: Vector2i) -> bool:
 	if not is_inside_grid(new_cell) or get_entity_at(new_cell) != null:
 		return false
+	var old_cell := entity.grid_position
 	_move_entity_in_grid(entity, new_cell)
 	entity.position = cell_to_world(new_cell)
+	for cell: Vector2i in [old_cell, new_cell]:
+		for occupant: GridEntity in get_entities_at(cell):
+			var button := occupant as PressureButton
+			if button != null:
+				button.check_players()
 	return true
 
 func register_entity(entity: GridEntity, cell: Vector2i) -> bool:

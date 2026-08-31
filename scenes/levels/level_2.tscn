@@ -52,66 +52,66 @@ texture = ExtResource("3_8qukl")
 [sub_resource type="TileSet" id="TileSet_js0vw"]
 sources/4 = SubResource("TileSetAtlasSource_3p04p")
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lkn2k"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_exwx8"]
+polygon = PackedVector2Array(6, -8, 6, -7, 7, -7, 7, -6, 8, -6, 8, 8, -8, 8, -8, -6, -7, -6, -7, -7, -6, -7, -6, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sbygb"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, 6.2222223, 6.2222223, 8, -6.2222223, 8, -8, 6.2222223)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_17aof"]
+polygon = PackedVector2Array(8, -8, 8, 6, 7, 6, 7, 7, 6, 7, 6, 8, -6, 8, -6, 7, -7, 7, -7, 6, -8, 6, -8, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v8d84"]
 texture = ExtResource("3_1yj8c")
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_lkn2k")
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_exwx8")
 0:1/0 = 0
-0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_sbygb")
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_17aof")
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5niy6"]
-polygon = PackedVector2Array(-8, -4.4444447, -4.4444447, -8, 8, -8, 8, 8, -8, 8)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7d3nu"]
+polygon = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -5, -7, -5, -7, -6, -6, -6, -6, -7, -5, -7, -5, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wikm6"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, -0.88888884, 0.8888893, -0.88888884, 0.8888893, 4.4444447, -4.4444447, 8, -4.4444447, -0.88888884, -8, -0.88888884)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_yqg3d"]
+polygon = PackedVector2Array(8, -8, 8, -1, 1, -1, 1, 4, 0, 4, 0, 5, -1, 5, -1, 7, -2, 7, -2, 8, -4, 8, -4, 7, -5, 7, -5, -2, -6, -2, -6, -3, -7, -3, -7, -4, -8, -4, -8, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1c1qw"]
-polygon = PackedVector2Array(-8, -8, 4.4444447, -8, 8, -4.4444447, 8, 8, -8, 8)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2e0t0"]
+polygon = PackedVector2Array(5, -8, 5, -7, 6, -7, 6, -6, 7, -6, 7, -5, 8, -5, 8, 8, -8, 8, -8, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1a10c"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, -4.4444447, 4.4444447, -0.88888884, 4.4444447, 8, -0.88888884, 4.4444447, -0.88888884, -0.88888884, -8, -0.88888884)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_keip3"]
+polygon = PackedVector2Array(8, -8, 8, -4, 7, -4, 7, -3, 6, -3, 6, -2, 5, -2, 5, 7, 4, 7, 4, 8, 2, 8, 2, 7, 1, 7, 1, 5, 0, 5, 0, 4, -1, 4, -1, -1, -8, -1, -8, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gw1l3"]
 texture = ExtResource("4_ndlae")
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_5niy6")
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_7d3nu")
 1:0/0 = 0
-1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_1c1qw")
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_2e0t0")
 0:1/0 = 0
-0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_wikm6")
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_yqg3d")
 1:1/0 = 0
-1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_1a10c")
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_keip3")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mx6s3"]
-polygon = PackedVector2Array(-6.2222223, -8, 6.2222223, -8, 8, -6.2222223, 8, 8, -8, 8, -8, -6.2222223)
+polygon = PackedVector2Array(6, -8, 6, -7, 7, -7, 7, -6, 8, -6, 8, 8, -8, 8, -8, -6, -7, -6, -7, -7, -6, -7, -6, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7d3nu"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, 6.2222223, 6.2222223, 8, -6.2222223, 8, -8, 6.2222223)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wk7pi"]
+polygon = PackedVector2Array(8, -8, 8, 6, 7, 6, 7, 7, 6, 7, 6, 8, -6, 8, -6, 7, -7, 7, -7, 6, -8, 6, -8, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p4se4"]
 texture = ExtResource("5_v8d84")
 0:0/0 = 0
 0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_mx6s3")
 0:1/0 = 0
-0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_7d3nu")
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_wk7pi")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_r6ket"]
-polygon = PackedVector2Array(-8, -4.4444447, -4.4444447, -8, 8, -8, 8, 8, -8, 8)
+polygon = PackedVector2Array(8, 8, -8, 8, -8, -5, -7, -5, -7, -6, -6, -6, -6, -7, -5, -7, -5, -8, 8, -8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xworo"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, -0.88888884, 0.8888893, -0.88888884, 0.8888893, 4.4444447, -4.4444447, 8, -4.4444447, -0.88888884, -8, -0.88888884)
+polygon = PackedVector2Array(8, -8, 8, -1, 1, -1, 1, 4, 0, 4, 0, 5, -1, 5, -1, 7, -2, 7, -2, 8, -4, 8, -4, 7, -5, 7, -5, -2, -6, -2, -6, -3, -7, -3, -7, -4, -8, -4, -8, -8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wwjag"]
-polygon = PackedVector2Array(-8, -8, 4.4444447, -8, 8, -4.4444447, 8, 8, -8, 8)
+polygon = PackedVector2Array(-8, -8, 5, -8, 5, -7, 6, -7, 6, -6, 7, -6, 7, -5, 8, -5, 8, 8, -8, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rvwo1"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, -4.4444447, 4.4444447, -0.88888884, 4.4444447, 8, -0.88888884, 4.4444447, -0.88888884, -0.88888884, -8, -0.88888884)
+polygon = PackedVector2Array(8, -8, 8, -4, 7, -4, 7, -3, 6, -3, 6, -2, 5, -2, 5, 7, 4, 7, 4, 8, 2, 8, 2, 7, 1, 7, 1, 5, 0, 5, 0, 4, -1, 4, -1, -1, -8, -1, -8, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sibr7"]
 texture = ExtResource("6_gw1l3")

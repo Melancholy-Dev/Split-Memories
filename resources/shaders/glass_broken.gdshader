@@ -33,6 +33,7 @@ uniform float alpha_fade_start : hint_range(0.0, 1.0) = 1.0;
 
 const int SEARCH_RADIUS = 1;
 const int MAX_ROWS = 32; // Safety limit for the row search loop
+const int MAX_COLUMNS = 32; // Safety limit for the column search loop
 
 float hash12(vec2 p) {
 	vec3 p3 = fract(vec3(p.xyx) * 0.1031);
@@ -126,21 +127,21 @@ void piece_transform(
 
 vec4 sample_screen(vec2 uv, vec2 pixel_size) {
 	if (blur_lod <= 0.001) {
-		vec4 source = texture(screen_tex, uv);
+		vec4 source = texture(screen_tex, uv, 0.0);
 		source.a = 1.0;
 		return source;
 	}
 
 	vec2 offset = pixel_size * (1.0 + blur_lod * 2.0);
-	vec4 color = texture(screen_tex, uv) * 0.25;
-	color += texture(screen_tex, uv + vec2(offset.x, 0.0)) * 0.125;
-	color += texture(screen_tex, uv - vec2(offset.x, 0.0)) * 0.125;
-	color += texture(screen_tex, uv + vec2(0.0, offset.y)) * 0.125;
-	color += texture(screen_tex, uv - vec2(0.0, offset.y)) * 0.125;
-	color += texture(screen_tex, uv + offset) * 0.0625;
-	color += texture(screen_tex, uv - offset) * 0.0625;
-	color += texture(screen_tex, uv + vec2(offset.x, -offset.y)) * 0.0625;
-	color += texture(screen_tex, uv + vec2(-offset.x, offset.y)) * 0.0625;
+	vec4 color = texture(screen_tex, uv, blur_lod) * 0.25;
+	color += texture(screen_tex, uv + vec2(offset.x, 0.0), blur_lod) * 0.125;
+	color += texture(screen_tex, uv - vec2(offset.x, 0.0), blur_lod) * 0.125;
+	color += texture(screen_tex, uv + vec2(0.0, offset.y), blur_lod) * 0.125;
+	color += texture(screen_tex, uv - vec2(0.0, offset.y), blur_lod) * 0.125;
+	color += texture(screen_tex, uv + offset, blur_lod) * 0.0625;
+	color += texture(screen_tex, uv - offset, blur_lod) * 0.0625;
+	color += texture(screen_tex, uv + vec2(offset.x, -offset.y), blur_lod) * 0.0625;
+	color += texture(screen_tex, uv + vec2(-offset.x, offset.y), blur_lod) * 0.0625;
 	color.a = 1.0;
 	return color;
 }
@@ -149,27 +150,22 @@ void fragment() {
 	vec2 uv = SCREEN_UV;
 	vec2 pixel_size = SCREEN_PIXEL_SIZE;
 	vec2 grid = vec2(float(pieces_x), float(pieces_y));
-	vec2 p_now = uv * grid;
-	vec2 base_cell = floor(p_now);
 
 	vec4 result = vec4(0.0);
 	bool found = false;
 	float found_edge = 0.0;
 	float found_t = 0.0;
 
-	// Horizontal drift is small (limited by "scatter"),
-	// so only neighboring columns need to be checked.
-	// Vertical movement, however, can be large, so we scan
-	// every row to determine which transformed piece
-	// actually covers this pixel.
+	// Scan every piece so the candidate set stays the same across
+	// the original grid boundaries. This avoids straight seams when
+	// overlapping falling pieces are resolved in a different order.
 	for (int iy = 0; iy < MAX_ROWS; iy++) {
 		if (iy >= pieces_y) break;
 
-		for (int dx = -1; dx <= 1; dx++) {
-			float cx = base_cell.x + float(dx);
-			if (cx < 0.0 || cx >= grid.x) continue;
+		for (int ix = 0; ix < MAX_COLUMNS; ix++) {
+			if (ix >= pieces_x) break;
 
-			vec2 cell_id = vec2(cx, float(iy));
+			vec2 cell_id = vec2(float(ix), float(iy));
 			vec2 point = cell_point(cell_id);
 			vec2 piece_center_uv = point / grid;
 
