@@ -8,6 +8,7 @@
 // c64cosmin - Realistic CRT Shader - https://godotshaders.com/shader/realistic-crt-shader/
 
 shader_type canvas_item;
+render_mode unshaded;
 
 // ===== Source (screen texture) =====
 uniform sampler2D tex : hint_screen_texture, repeat_disable, filter_nearest;

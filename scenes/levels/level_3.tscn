@@ -1119,19 +1119,19 @@ shader_parameter/roll_speed = 1.6
 shader_parameter/roll_size = 2.0
 shader_parameter/roll_variation = 0.919
 shader_parameter/distort_intensity = 0.005
-shader_parameter/breathing_strength = 0.02
+shader_parameter/breathing_strength = 0.0
 shader_parameter/breathing_softness = 1.0
 shader_parameter/breathing_bias = 0.0
 shader_parameter/vhs_crease_smear = 0.2
 shader_parameter/vhs_crease_intensity = 0.2
 shader_parameter/vhs_crease_jitter = 0.1
 shader_parameter/vhs_crease_speed = 0.5
-shader_parameter/vhs_crease_discolor_amt = 1.0
+shader_parameter/vhs_crease_discolor_amt = 1.3
 shader_parameter/vhs_bottom_thickness = 0.025
 shader_parameter/vhs_bottom_jitter_px = 6.0
 shader_parameter/vhs_mtap_strength = 0.8
 shader_parameter/vhs_chroma_twist = 0.0
-shader_parameter/vhs_tap_spread_px = 1.0
+shader_parameter/vhs_tap_spread_px = 1.2
 shader_parameter/vhs_samples = 3
 shader_parameter/sparkle_intensity = 0.0
 shader_parameter/optics_compensation_r = -0.01
@@ -1141,7 +1141,7 @@ shader_parameter/aberration = -0.01
 shader_parameter/discolor = true
 shader_parameter/saturation = 0.1
 shader_parameter/contrast = 1.06
-shader_parameter/static_noise_intensity = 0.01
+shader_parameter/static_noise_intensity = 0.02
 shader_parameter/curve = 0.0
 shader_parameter/aspect = 0.563
 shader_parameter/sharpness = 0.667
@@ -1150,7 +1150,7 @@ shader_parameter/min_scanline_thickness = 0.5
 shader_parameter/wobble_strength = 0.2
 shader_parameter/virtual_scanlines = 324.0
 shader_parameter/mask_type = 6
-shader_parameter/mask_brightness = 2.0
+shader_parameter/mask_brightness = 2.5
 shader_parameter/scanline_brightness = 1.0
 shader_parameter/vignette_intensity = 2.0
 shader_parameter/vignette_opacity = 0.6
@@ -3592,7 +3592,7 @@ texture = ExtResource("11_ju8vr")
 color = Color(0.91764706, 0, 1, 1)
 
 [node name="Player_1" parent="Side_1/Entities" unique_id=250994355 instance=ExtResource("9_n8qcm")]
-position = Vector2(104, 248)
+position = Vector2(120, 248)
 
 [node name="AnimatedSprite" parent="Side_1/Entities/Player_1" index="0" unique_id=326422892]
 sprite_frames = SubResource("SpriteFrames_tio2m")
@@ -4122,6 +4122,7 @@ texture = ExtResource("32_2gq65")
 
 [node name="PointLight2D" parent="Side_2/Entities/Buttons/BlueButton" index="2" unique_id=324128134]
 color = Color(0, 0, 1, 1)
+energy = 2.0
 
 [node name="GreenButton" parent="Side_2/Entities/Buttons" unique_id=808806640 node_paths=PackedStringArray("objects_to_disable") instance=ExtResource("11_pressure_button")]
 position = Vector2(120, 200)
@@ -4133,6 +4134,7 @@ texture = ExtResource("34_vn4iy")
 
 [node name="PointLight2D" parent="Side_2/Entities/Buttons/GreenButton" index="2" unique_id=324128134]
 color = Color(1.8770993e-06, 0.7080435, 0.18243778, 1)
+energy = 2.0
 
 [node name="Player_2" parent="Side_2/Entities" unique_id=840756937 instance=ExtResource("9_n8qcm")]
 position = Vector2(104, 248)
@@ -4140,9 +4142,6 @@ is_player_one = false
 
 [node name="AnimatedSprite" parent="Side_2/Entities/Player_2" index="0" unique_id=326422892]
 sprite_frames = SubResource("SpriteFrames_m7ofi")
-
-[node name="PointLight2D" parent="Side_2/Entities/Player_2" index="2" unique_id=326461918]
-energy = 2.0
 
 [node name="PushableObjects" type="Node2D" parent="Side_2/Entities" unique_id=102929155]
 
@@ -4156,6 +4155,9 @@ occluder = SubResource("OccluderPolygon2D_aey3y")
 [node name="Sprite" parent="Side_2/Entities/PushableObjects/Robot" index="1" unique_id=2083980201]
 texture = ExtResource("16_do6pa")
 
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/Robot" index="3" unique_id=2012808985]
+energy = 1.25
+
 [node name="Arm" parent="Side_2/Entities/PushableObjects" unique_id=1728998054 instance=ExtResource("15_n8qcm")]
 position = Vector2(24, 24)
 object_type = "arm"
@@ -4165,6 +4167,9 @@ occluder = SubResource("OccluderPolygon2D_6c6bd")
 
 [node name="Sprite" parent="Side_2/Entities/PushableObjects/Arm" index="1" unique_id=2083980201]
 texture = ExtResource("14_kva3v")
+
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/Arm" index="3" unique_id=2012808985]
+energy = 1.25
 
 [node name="CrystalBlue_1" parent="Side_2/Entities/PushableObjects" unique_id=1826505311 instance=ExtResource("15_n8qcm")]
 position = Vector2(200, 56)
@@ -4176,6 +4181,9 @@ occluder = SubResource("OccluderPolygon2D_o5em7")
 [node name="Sprite" parent="Side_2/Entities/PushableObjects/CrystalBlue_1" index="1" unique_id=2083980201]
 texture = ExtResource("28_aey3y")
 
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/CrystalBlue_1" index="3" unique_id=2012808985]
+energy = 1.25
+
 [node name="CrystalBlue_2" parent="Side_2/Entities/PushableObjects" unique_id=1824946030 instance=ExtResource("15_n8qcm")]
 position = Vector2(200, 184)
 object_type = "crystal_blue_2"
@@ -4185,6 +4193,9 @@ occluder = SubResource("OccluderPolygon2D_2qmps")
 
 [node name="Sprite" parent="Side_2/Entities/PushableObjects/CrystalBlue_2" index="1" unique_id=2083980201]
 texture = ExtResource("29_k0dme")
+
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/CrystalBlue_2" index="3" unique_id=2012808985]
+energy = 1.25
 
 [node name="CrystalGreen_1" parent="Side_2/Entities/PushableObjects" unique_id=150401439 instance=ExtResource("15_n8qcm")]
 position = Vector2(72, 232)
@@ -4197,6 +4208,9 @@ occluder = SubResource("OccluderPolygon2D_vn4iy")
 texture = ExtResource("32_6c6bd")
 flip_h = true
 
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/CrystalGreen_1" index="3" unique_id=2012808985]
+energy = 1.25
+
 [node name="CrystalGreen_2" parent="Side_2/Entities/PushableObjects" unique_id=373644137 instance=ExtResource("15_n8qcm")]
 position = Vector2(168, 24)
 object_type = "crystal_green_2"
@@ -4206,6 +4220,9 @@ occluder = SubResource("OccluderPolygon2D_n7m6w")
 
 [node name="Sprite" parent="Side_2/Entities/PushableObjects/CrystalGreen_2" index="1" unique_id=2083980201]
 texture = ExtResource("42_vn4iy")
+
+[node name="PointLight2D" parent="Side_2/Entities/PushableObjects/CrystalGreen_2" index="3" unique_id=2012808985]
+energy = 1.25
 
 [node name="LightOccluder2D_2" type="LightOccluder2D" parent="Side_2/Entities/PushableObjects/CrystalGreen_2" unique_id=1343330563]
 occluder = SubResource("OccluderPolygon2D_ju8vr")

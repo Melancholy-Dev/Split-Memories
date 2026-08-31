@@ -509,7 +509,7 @@ script = ExtResource("5_ndlae")
 [node name="Entities" type="Node2D" parent="Side_1" unique_id=652481978]
 
 [node name="Player_1" parent="Side_1/Entities" unique_id=250994355 instance=ExtResource("6_v8d84")]
-position = Vector2(104, 248)
+position = Vector2(120, 248)
 
 [node name="AnimatedSprite" parent="Side_1/Entities/Player_1" index="0" unique_id=326422892]
 sprite_frames = SubResource("SpriteFrames_sibr7")
