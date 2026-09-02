@@ -1,8 +1,8 @@
 class_name MainMenu extends Menu
 
 # Nodes
-@onready var scene_manager := get_tree().get_first_node_in_group("scene_manager")
-@onready var audio_manager := get_tree().get_first_node_in_group("audio_manager")
+@onready var scene_manager: SceneManager = %SceneManager
+@onready var audio_manager: AudioManager = %AudioManager
 @onready var master_slider: HSlider = %MasterSlider
 @onready var music_slider: HSlider = %MusicSlider
 @onready var sound_slider: HSlider = %SoundSlider
@@ -16,15 +16,20 @@ class_name MainMenu extends Menu
 
 func _ready() -> void:
 	super._ready()
+	scene_manager.main_menu_requested.connect(_show_main_menu)
 	_setup_audio_sliders()
-	var animation_manager := get_tree().get_first_node_in_group("animation_manager")
-	if animation_manager != null and animation_manager.is_animating:
+	var animation_manager: AnimationManager = %AnimationManager
+	if animation_manager.is_animating:
 		_set_buttons_enabled(false)
 		animation_manager.initial_animation_finished.connect(_on_initial_animation_finished)
 
 func _on_initial_animation_finished() -> void:
 	_set_buttons_enabled(true)
 	_focus_initial_node()
+
+func _show_main_menu() -> void:
+	visible = true
+	_on_back_button_pressed(false)
 
 ### Menu Buttons pressed
 func _on_play_button_pressed() -> void:
@@ -116,16 +121,13 @@ func _slider_to_db(value: float) -> float:
 	return linear_to_db(value / 100.0)
 
 func _on_master_volume_changed(value: float) -> void:
-	if audio_manager != null:
-		audio_manager.master_volume_db = _slider_to_db(value)
+	audio_manager.master_volume_db = _slider_to_db(value)
 
 func _on_music_volume_changed(value: float) -> void:
-	if audio_manager != null:
-		audio_manager.music_volume_db = _slider_to_db(value)
+	audio_manager.music_volume_db = _slider_to_db(value)
 
 func _on_sound_volume_changed(value: float) -> void:
-	if audio_manager != null:
-		audio_manager.sound_volume_db = _slider_to_db(value)
+	audio_manager.sound_volume_db = _slider_to_db(value)
 
 func _set_buttons_enabled(enabled: bool) -> void:
 	for button in buttons:

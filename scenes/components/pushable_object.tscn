@@ -35,3 +35,5 @@ texture = SubResource("GradientTexture2D_7cb0y")
 script = ExtResource("3_audio")
 audio_player = NodePath("../../PushAudio")
 push_stream = ExtResource("4_push")
+
+[connection signal="grid_position_changed" from="." to="Components/AudioComponent" method="_on_pushable_moved"]

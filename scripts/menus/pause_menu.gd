@@ -1,7 +1,7 @@
 class_name PauseMenu extends Menu
 
 # Nodes
-@onready var scene_manager := get_tree().get_first_node_in_group("scene_manager")
+@onready var scene_manager: SceneManager = %SceneManager
 
 # Variables
 var is_paused := false
@@ -59,10 +59,6 @@ func _on_main_menu_button_pressed() -> void:
 	if is_instance_valid(scene_manager.current_level):
 		scene_manager.current_level.queue_free()
 		await get_tree().process_frame
-	var audio_manager := get_tree().get_first_node_in_group("audio_manager") as AudioManager
-	if audio_manager != null:
-		audio_manager.play_main_menu_music()
-	%MainMenu.visible = true
-	%MainMenu._on_back_button_pressed(false)
+	scene_manager.request_main_menu()
 	await %AnimationManager.play_reset()
 	is_paused = false

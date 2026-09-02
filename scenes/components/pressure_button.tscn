@@ -34,3 +34,5 @@ texture = SubResource("GradientTexture2D_ru0jo")
 script = ExtResource("3_audio")
 audio_player = NodePath("../../GameButtonAudio")
 game_button_stream = ExtResource("4_game_button")
+
+[connection signal="pressed_changed" from="." to="Components/AudioComponent" method="_on_game_button_pressed"]

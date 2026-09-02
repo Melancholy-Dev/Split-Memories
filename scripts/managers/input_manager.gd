@@ -7,9 +7,23 @@ signal undo_pressed
 signal pause_pressed
 
 # Nodes
-@onready var pm := get_tree().get_first_node_in_group("pause_menu")
-@onready var main_menu := get_tree().get_first_node_in_group("main_menu")
+@onready var pause_menu: PauseMenu = get_tree().get_first_node_in_group("pause_menu")
+@onready var main_menu: MainMenu = get_tree().get_first_node_in_group("main_menu")
+@onready var animation_manager: AnimationManager = get_tree().get_first_node_in_group("animation_manager")
+@onready var scene_manager: SceneManager = get_tree().get_first_node_in_group("scene_manager")
 var _input_reading_enabled := true
+
+# Input Costants
+const MOVE_UP_P1: StringName = &"move_up_p1"
+const MOVE_DOWN_P1: StringName = &"move_down_p1"
+const MOVE_LEFT_P1: StringName = &"move_left_p1"
+const MOVE_RIGHT_P1: StringName = &"move_right_p1"
+const MOVE_UP_P2: StringName = &"move_up_p2"
+const MOVE_DOWN_P2: StringName = &"move_down_p2"
+const MOVE_LEFT_P2: StringName = &"move_left_p2"
+const MOVE_RIGHT_P2: StringName = &"move_right_p2"
+const UNDO: StringName = &"undo"
+const PAUSE: StringName = &"pause"
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -18,15 +32,14 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if not _can_move():
 		return
-	var direction_p1 := _get_held_direction("p1")
+	var direction_p1 := _get_held_direction(true)
 	if direction_p1 != Vector2i.ZERO:
 		direction_pressed_p1.emit(direction_p1)
-	var direction_p2 := _get_held_direction("p2")
+	var direction_p2 := _get_held_direction(false)
 	if direction_p2 != Vector2i.ZERO:
 		direction_pressed_p2.emit(direction_p2)
 
 func _connect_scene_manager() -> void:
-	var scene_manager := get_tree().get_first_node_in_group("scene_manager")
 	scene_manager.loading_level.connect(_disable_input_reading)
 	scene_manager.level_loaded.connect(_enabling_input_reading)
 
@@ -41,40 +54,36 @@ func _enabling_input_reading() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if main_menu != null and main_menu.visible:
 		return
-	if event.is_action_pressed("pause"):
+	if event.is_action_pressed(PAUSE):
 		if _can_pause():
 			pause_pressed.emit()
 		return
 	if not _can_move():
 		return
-	if event.is_action_pressed("move_up_p1"):
-		direction_pressed_p1.emit(Vector2i.UP)
-	elif event.is_action_pressed("move_down_p1"):
-		direction_pressed_p1.emit(Vector2i.DOWN)
-	elif event.is_action_pressed("move_left_p1"):
-		direction_pressed_p1.emit(Vector2i.LEFT)
-	elif event.is_action_pressed("move_right_p1"):
-		direction_pressed_p1.emit(Vector2i.RIGHT)
-	if event.is_action_pressed("move_up_p2"):
-		direction_pressed_p2.emit(Vector2i.UP)
-	elif event.is_action_pressed("move_down_p2"):
-		direction_pressed_p2.emit(Vector2i.DOWN)
-	elif event.is_action_pressed("move_left_p2"):
-		direction_pressed_p2.emit(Vector2i.LEFT)
-	elif event.is_action_pressed("move_right_p2"):
-		direction_pressed_p2.emit(Vector2i.RIGHT)
-
-	if event.is_action_pressed("undo"):
+	if event.is_action_pressed(UNDO):
 		undo_pressed.emit()
 
-func _get_held_direction(player_suffix: String) -> Vector2i:
-	if Input.is_action_pressed("move_up_" + player_suffix):
+func is_direction_pressed(player_one: bool, direction: Vector2i) -> bool:
+	match direction:
+		Vector2i.UP:
+			return Input.is_action_pressed(MOVE_UP_P1 if player_one else MOVE_UP_P2)
+		Vector2i.DOWN:
+			return Input.is_action_pressed(MOVE_DOWN_P1 if player_one else MOVE_DOWN_P2)
+		Vector2i.LEFT:
+			return Input.is_action_pressed(MOVE_LEFT_P1 if player_one else MOVE_LEFT_P2)
+		Vector2i.RIGHT:
+			return Input.is_action_pressed(MOVE_RIGHT_P1 if player_one else MOVE_RIGHT_P2)
+		_:
+			return false
+
+func _get_held_direction(player_one: bool) -> Vector2i:
+	if is_direction_pressed(player_one, Vector2i.UP):
 		return Vector2i.UP
-	if Input.is_action_pressed("move_down_" + player_suffix):
+	if is_direction_pressed(player_one, Vector2i.DOWN):
 		return Vector2i.DOWN
-	if Input.is_action_pressed("move_left_" + player_suffix):
+	if is_direction_pressed(player_one, Vector2i.LEFT):
 		return Vector2i.LEFT
-	if Input.is_action_pressed("move_right_" + player_suffix):
+	if is_direction_pressed(player_one, Vector2i.RIGHT):
 		return Vector2i.RIGHT
 	return Vector2i.ZERO
 
@@ -83,15 +92,13 @@ func _can_move() -> bool:
 		return false
 	if main_menu != null and main_menu.visible:
 		return false
-	if pm != null and pm.is_paused:
+	if pause_menu != null and pause_menu.is_paused:
 		return false
-	var animation_manager := get_tree().get_first_node_in_group("animation_manager")
 	return animation_manager == null or not animation_manager.is_animating
 
 func _can_pause() -> bool:
 	if not _input_reading_enabled:
 		return false
-	var animation_manager := get_tree().get_first_node_in_group("animation_manager")
 	if animation_manager != null and animation_manager.is_animating:
 		return false
 	for movement_component in get_tree().get_nodes_in_group("movement_components"):

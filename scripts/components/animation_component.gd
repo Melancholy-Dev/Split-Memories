@@ -3,14 +3,23 @@ class_name AnimationComponent extends Node
 # Nodes
 @export var player: Player
 @export var animated_sprite: AnimatedSprite2D
+@export var movement_component: MovementComponent
+
+# Animations Costants
+const IDLE_UP: StringName = &"idle_up"
+const IDLE_DOWN: StringName = &"idle_down"
+const IDLE_LEFT: StringName = &"idle_left"
+const IDLE_RIGHT: StringName = &"idle_right"
+const MOVE_UP: StringName = &"move_up"
+const MOVE_DOWN: StringName = &"move_down"
+const MOVE_LEFT: StringName = &"move_left"
+const MOVE_RIGHT: StringName = &"move_right"
 
 # Variables
 var last_direction := Vector2i.DOWN
-var movement_component: MovementComponent
 
 
 func _ready() -> void:
-	movement_component = player.get_node("Components/MovementComponent") as MovementComponent
 	movement_component.movement_started.connect(play_move_animation)
 	movement_component.movement_blocked.connect(play_idle_animation)
 	movement_component.movement_finished.connect(_on_movement_finished)
@@ -26,58 +35,41 @@ func _process(_delta: float) -> void:
 func play_move_animation(direction: Vector2i) -> void:
 	last_direction = direction
 	var animation_name := _get_animation_name(direction)
-	animated_sprite.play(animation_name)
+	if animated_sprite.animation != animation_name:
+		animated_sprite.play(animation_name)
 
 func play_idle_animation() -> void:
-	animated_sprite.play(_get_animation_name(last_direction, true))
+	var animation_name := _get_animation_name(last_direction, true)
+	if animated_sprite.animation != animation_name:
+		animated_sprite.play(animation_name)
 
 func _on_movement_finished() -> void:
 	if not _is_direction_held(last_direction):
 		play_idle_animation()
 
 func _is_direction_held(direction: Vector2i) -> bool:
-	var player_suffix: String
-	if player.is_player_one:
-		player_suffix = "p1"
-	else:
-		player_suffix = "p2"
-	match direction:
-		Vector2i.UP:
-			return Input.is_action_pressed("move_up_" + player_suffix)
-		Vector2i.DOWN:
-			return Input.is_action_pressed("move_down_" + player_suffix)
-		Vector2i.LEFT:
-			return Input.is_action_pressed("move_left_" + player_suffix)
-		Vector2i.RIGHT:
-			return Input.is_action_pressed("move_right_" + player_suffix)
-		_:
-			return false
+	return InputManager.is_direction_pressed(player.is_player_one, direction)
 
 func _get_animation_name(direction: Vector2i, idle: bool = false) -> StringName:
-	var prefix: StringName
-	if idle:
-		prefix = "idle_"
-	else:
-		prefix = "move_"
 	match direction:
 		Vector2i.UP:
-			return StringName(prefix + "up")
+			return IDLE_UP if idle else MOVE_UP
 		Vector2i.DOWN:
-			return StringName(prefix + "down")
+			return IDLE_DOWN if idle else MOVE_DOWN
 		Vector2i.LEFT:
-			return StringName(prefix + "left")
+			return IDLE_LEFT if idle else MOVE_LEFT
 		Vector2i.RIGHT:
-			return StringName(prefix + "right")
+			return IDLE_RIGHT if idle else MOVE_RIGHT
 		_:
 			return &"RESET"
 
 func _get_direction(animation_name: StringName) -> Vector2i:
 	match animation_name:
-		&"idle_up", &"move_up":
+		IDLE_UP, MOVE_UP:
 			return Vector2i.UP
-		&"idle_left", &"move_left":
+		IDLE_LEFT, MOVE_LEFT:
 			return Vector2i.LEFT
-		&"idle_right", &"move_right":
+		IDLE_RIGHT, MOVE_RIGHT:
 			return Vector2i.RIGHT
 		_:
 			return Vector2i.DOWN

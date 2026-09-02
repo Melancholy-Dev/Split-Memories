@@ -25,5 +25,4 @@ func _ready() -> void:
 
 func _register_entity_at_editor_position(entity: GridEntity) -> void:
 	var board_position := board.to_local(entity.global_position)
-	entity.initial_grid_position = board.world_to_cell(board_position)
-	board.register_entity(entity, entity.initial_grid_position)
+	board.register_entity(entity, board.world_to_cell(board_position))

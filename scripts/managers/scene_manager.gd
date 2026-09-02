@@ -3,6 +3,8 @@ class_name SceneManager extends Node
 # Signals
 signal loading_level()
 signal level_loaded()
+signal main_menu_requested()
+signal level_started(level: int)
 
 # Nodes
 @export var levels_root: Node2D
@@ -12,8 +14,10 @@ signal level_loaded()
 # Variables
 var current_level: Node
 var current_level_index := 0
-var is_changing_level := false
 
+
+func request_main_menu() -> void:
+	main_menu_requested.emit()
 
 func load_level(index: int) -> void:
 	if index < 0 or index >= level_scenes.size():
@@ -24,13 +28,9 @@ func load_level(index: int) -> void:
 	current_level = level_scenes[index].instantiate()
 	levels_root.add_child(current_level)
 	current_level_index = index
-	var audio_manager := get_tree().get_first_node_in_group("audio_manager") as AudioManager
-	if audio_manager != null:
-		audio_manager.play_level_music(index)
-	var puzzle_manager: PuzzleManager = null
+	level_started.emit(index)
 	if current_level is PuzzleManager:
-		puzzle_manager = current_level
-	if puzzle_manager != null:
+		var puzzle_manager := current_level as PuzzleManager
 		puzzle_manager.puzzle_completed.connect(_on_puzzle_completed)
 
 func _on_puzzle_completed() -> void:
@@ -46,10 +46,6 @@ func _on_puzzle_completed() -> void:
 			current_level.queue_free()
 		current_level = null
 		await %AnimationManager.play_final_screen()
-		var audio_manager := get_tree().get_first_node_in_group("audio_manager") as AudioManager
-		if audio_manager != null:
-			audio_manager.play_main_menu_music()
-		%MainMenu.visible = true
-		%MainMenu._on_back_button_pressed(false)
+		request_main_menu()
 		await %AnimationManager.play_reset()
 		level_loaded.emit()

@@ -15,12 +15,6 @@ var is_moving := false
 
 
 func _ready() -> void:
-	var board_name: String
-	if player.is_player_one:
-		board_name = "Grid_1"
-	else:
-		board_name = "Grid_2"
-	board = player.get_parent().get_parent().get_node(board_name)
 	if player.is_player_one:
 		InputManager.direction_pressed_p1.connect(_on_direction_pressed)
 	else:
@@ -28,6 +22,9 @@ func _ready() -> void:
 
 func _on_direction_pressed(direction: Vector2i) -> void:
 	if is_moving or UndoManager.is_undoing():
+		return
+	board = player.board
+	if board == null:
 		return
 	is_moving = true
 	var previous_state := UndoManager.capture_state()
@@ -37,11 +34,11 @@ func _on_direction_pressed(direction: Vector2i) -> void:
 	if moved_entities.is_empty():
 		movement_blocked.emit()
 		await get_tree().create_timer(movement_duration).timeout
-		movement_finished.emit()
 	else:
 		movement_started.emit(direction)
 		await _animate_entities(moved_entities)
-		movement_finished.emit()
+	board.notify_player_step_completed()
+	movement_finished.emit()
 	is_moving = false
 
 func _animate_entities(entities: Array[GridEntity]) -> void:

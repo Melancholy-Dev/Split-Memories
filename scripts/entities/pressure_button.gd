@@ -17,9 +17,8 @@ func _ready() -> void:
 func init(_board: Grid, _position: Vector2i) -> void:
 	super.init(_board, _position)
 	board.player_step_completed.connect(_on_player_step_completed)
-
-func is_pushable() -> bool:
-	return false
+	board.entity_relocated.connect(_on_entity_relocated)
+	board.state_restored.connect(_refresh_state)
 
 func blocks_movement() -> bool:
 	return false
@@ -27,15 +26,12 @@ func blocks_movement() -> bool:
 func check_players() -> void:
 	_refresh_state()
 
-func _on_player_step_completed(_direction: Vector2i, moved_entities: Array[GridEntity]) -> void:
-	for entity: GridEntity in moved_entities:
-		if not entity is Player:
-			continue
-		var movement_component := entity.get_node_or_null("Components/MovementComponent")
-		if movement_component == null:
-			_refresh_state()
-		else:
-			movement_component.movement_finished.connect(_refresh_state, CONNECT_ONE_SHOT)
+func _on_player_step_completed() -> void:
+	_refresh_state()
+
+func _on_entity_relocated(entity: GridEntity, old_position: Vector2i, new_position: Vector2i) -> void:
+	if entity is Player and (old_position == grid_position or new_position == grid_position):
+		_refresh_state()
 
 func _refresh_state() -> void:
 	var pressed := false

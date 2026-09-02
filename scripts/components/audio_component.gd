@@ -1,7 +1,7 @@
 class_name AudioComponent extends Node
 
 # Nodes
-@onready var audio_manager: AudioManager = get_tree().get_first_node_in_group("audio_manager")
+var audio_manager: AudioManager
 
 # Files
 @export_category("Audio player")
@@ -13,22 +13,12 @@ class_name AudioComponent extends Node
 @export var game_button_stream: AudioStream
 
 
-func _ready() -> void:
-	if audio_manager != null:
-		audio_manager.volumes_changed.connect(_update_volume)
-		_update_volume()
-	var entity := get_parent().get_parent() as GridEntity
-	if entity == null or audio_player == null:
+func set_audio_manager(manager: AudioManager) -> void:
+	if audio_manager == manager:
 		return
-	if entity is Player:
-		var movement_component := entity.get_node_or_null("Components/MovementComponent")
-		if movement_component != null:
-			movement_component.movement_started.connect(_on_player_movement_started)
-	elif entity is PushableObject:
-		entity.grid_position_changed.connect(_on_pushable_moved)
-	elif entity is PressureButton:
-		var button := entity as PressureButton
-		button.pressed_changed.connect(_on_game_button_pressed)
+	audio_manager = manager
+	audio_manager.volumes_changed.connect(_update_volume)
+	_update_volume()
 
 func _update_volume() -> void:
 	if audio_player == null or audio_manager == null:
@@ -48,7 +38,7 @@ func _on_game_button_pressed(is_pressed: bool) -> void:
 		_play(game_button_stream)
 
 func _play(stream: AudioStream) -> void:
-	if stream == null:
+	if stream == null or audio_player == null:
 		return
 	audio_player.stream = stream
 	audio_player.play()

@@ -101,11 +101,12 @@ texture = SubResource("GradientTexture2D_v4i73")
 
 [node name="Components" type="Node" parent="." unique_id=1212383466]
 
-[node name="AnimationComponent" type="Node" parent="Components" unique_id=1117744600 node_paths=PackedStringArray("player", "animated_sprite") groups=["animation_component"]]
+[node name="AnimationComponent" type="Node" parent="Components" unique_id=1117744600 node_paths=PackedStringArray("player", "animated_sprite", "movement_component") groups=["animation_component"]]
 unique_name_in_owner = true
 script = ExtResource("2_acvb7")
 player = NodePath("../..")
 animated_sprite = NodePath("../../AnimatedSprite")
+movement_component = NodePath("../MovementComponent")
 
 [node name="AudioComponent" type="Node" parent="Components" unique_id=1976647451 node_paths=PackedStringArray("audio_player") groups=["audio_component"]]
 unique_name_in_owner = true
@@ -117,3 +118,5 @@ footstep_stream = ExtResource("3_footstep")
 unique_name_in_owner = true
 script = ExtResource("2_h3cwf")
 player = NodePath("../..")
+
+[connection signal="movement_started" from="Components/MovementComponent" to="Components/AudioComponent" method="_on_player_movement_started"]

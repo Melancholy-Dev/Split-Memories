@@ -44,9 +44,12 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	UndoManager.is_undoing_started.connect(play_undo_sound)
 	%SceneManager.loading_level.connect(play_puzzle_finished_sound)
+	%SceneManager.level_started.connect(_on_level_started)
+	%SceneManager.main_menu_requested.connect(play_main_menu_music)
 	%AnimationManager.animation_player.animation_started.connect(_on_animation_started)
 	%AnimationManager.initial_animation_finished.connect(_on_initial_animation_finished)
 	call_deferred("_connect_menus")
+	call_deferred("_connect_audio_components")
 	_update_volumes()
 
 func _on_initial_animation_finished() -> void:
@@ -61,22 +64,26 @@ func _update_volumes() -> void:
 	volumes_changed.emit()
 
 func _connect_menus() -> void:
-	for group in ["main_menu", "pause_menu"]:
-		for node in get_tree().get_nodes_in_group(group):
-			var menu := node as Menu
-			if menu == null:
-				continue
-			if not menu.button_focus_entered.is_connected(play_menu_button_sound):
-				menu.button_focus_entered.connect(play_menu_button_sound)
-			if not menu.button_selected.is_connected(play_menu_button_sound):
-				menu.button_selected.connect(play_menu_button_sound)
+	for menu in [%MainMenu, %PauseMenu]:
+		menu.button_focus_entered.connect(play_menu_button_sound)
+		menu.button_selected.connect(play_menu_button_sound)
+
+func _connect_audio_components() -> void:
+	for node in get_tree().get_nodes_in_group("audio_component"):
+		var component := node as AudioComponent
+		if component != null:
+			component.set_audio_manager(self)
 
 func _on_animation_started(animation_name: StringName) -> void:
-	if animation_name == &"scene_change_glass":
+	if animation_name == AnimationManager.SCENE_CHANGE_GLASS:
 		play_scene_change_sound()
 
 func play_main_menu_music() -> void:
 	play_music(main_menu_music)
+
+func _on_level_started(level: int) -> void:
+	play_level_music(level)
+	_connect_audio_components()
 
 func play_level_music(level: int) -> void:
 	match level:

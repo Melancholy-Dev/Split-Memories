@@ -15,10 +15,8 @@ var puzzle_solved := false
 func _ready() -> void:
 	for container in [objects_1, objects_2]:
 		for child in container.get_children():
-			var object: PushableObject = null
 			if child is PushableObject:
-				object = child
-			if object != null:
+				var object := child as PushableObject
 				object.grid_position_changed.connect(_on_object_position_changed)
 
 func _on_object_position_changed(_old_position: Vector2i, _new_position: Vector2i) -> void:
