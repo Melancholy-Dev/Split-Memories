@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcwjsskdhi0uf"
-path="res://.godot/imported/crystal_blue_3.png-3f35e68b376269c93f08d368c84bc10c.ctex"
+uid="uid://c4u6sfmrxjdbh"
+path="res://.godot/imported/patient_monitor_mirror.png-06ad2e27afc09496aa0152f1d0fe79ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/unused/crystal_blue_3.png"
-dest_files=["res://.godot/imported/crystal_blue_3.png-3f35e68b376269c93f08d368c84bc10c.ctex"]
+source_file="res://assets/sprites/unused/patient_monitor_mirror.png"
+dest_files=["res://.godot/imported/patient_monitor_mirror.png-06ad2e27afc09496aa0152f1d0fe79ac.ctex"]
 
 [params]
 

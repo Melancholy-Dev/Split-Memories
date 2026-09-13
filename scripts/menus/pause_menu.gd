@@ -46,7 +46,7 @@ func _on_retry_button_pressed() -> void:
 	_resume()
 	visible = false
 	await %AnimationManager.play_scene_change_transition()
-	await scene_manager.load_level(scene_manager.current_level_index)
+	scene_manager.load_level(scene_manager.current_level_index)
 	await %AnimationManager.play_loading_new_level_transition()
 	is_paused = false
 
