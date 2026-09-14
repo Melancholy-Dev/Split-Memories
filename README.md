@@ -9,7 +9,7 @@ Split Memories is a game taking place in the deep subconscious​. A scientist i
 
 The game can be downloaded in two ways:
 
-1. **Official method** — Download the game from GitHub on the releases section or Itch.io
+1. **Official method** — Download the game from GitHub on the releases section or Itch.io: https://melancholydev.itch.io/split-memories
 
 2. **Source method** — Download the project source code from this repository and export the game with Godot 4.7 (or play it straight from the engine).
 
