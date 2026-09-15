@@ -658,6 +658,8 @@ occluder = SubResource("OccluderPolygon2D_s7kn7")
 visible = false
 
 [node name="PointLight2D" parent="Side_1/Entities/PushableObjects/Rune" index="3" unique_id=2012808985]
+color = Color(1, 0.7647059, 0, 1)
+energy = 1.0
 texture = SubResource("GradientTexture2D_7cb0y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Side_1/Entities/PushableObjects/Rune" unique_id=1920101508]
@@ -1031,12 +1033,15 @@ occluder = SubResource("OccluderPolygon2D_s7kn7")
 visible = false
 
 [node name="PointLight2D" parent="Side_2/Entities/PushableObjects/Rune" index="3" unique_id=2012808985]
+color = Color(0.80126345, 4.1151793e-06, 8.663535e-07, 1)
+energy = 1.5
 texture = SubResource("GradientTexture2D_7cb0y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Side_2/Entities/PushableObjects/Rune" unique_id=1308783489]
 sprite_frames = SubResource("SpriteFrames_7e6ji")
 autoplay = "default"
 frame_progress = 0.44546708
+flip_h = true
 
 [node name="StaticObjects" type="Node2D" parent="Side_2/Entities" unique_id=1064399378]
 

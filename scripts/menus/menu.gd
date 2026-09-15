@@ -5,7 +5,7 @@ signal button_focus_entered
 signal button_selected
 
 # Nodes
-@export var initial_focus: Control
+@export var initial_focus: Button
 @onready var buttons: Array[Button] = []
 
 # Variables
@@ -22,9 +22,12 @@ func _ready() -> void:
 	_last_focused = get_viewport().gui_get_focus_owner()
 
 func _focus_initial_node() -> void:
-	if visible and initial_focus:
+	if visible and is_instance_valid(initial_focus):
+		initial_focus.focus_mode = Control.FOCUS_ALL
+		initial_focus.focus_behavior_recursive = Control.FOCUS_BEHAVIOR_ENABLED
 		_last_focused = initial_focus
 		initial_focus.grab_focus()
+
 
 func _focus_button(index: int) -> void:
 	if index >= 0 and index < buttons.size():
