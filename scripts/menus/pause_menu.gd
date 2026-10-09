@@ -12,6 +12,14 @@ func _ready() -> void:
 	super._ready()
 	InputManager.pause_pressed.connect(_pause_pressed)
 
+func _unhandled_input(event: InputEvent) -> void:
+	if not is_paused or not event.is_action_pressed(&"ui_cancel"):
+		return
+	if event.is_action_pressed(&"pause"):
+		return
+	get_viewport().set_input_as_handled()
+	_pause_pressed()
+
 func _pause_pressed() -> void:
 	if _transitioning or %AnimationManager.is_animating:
 		return

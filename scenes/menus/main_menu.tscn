@@ -26,7 +26,7 @@ default_font_size = 16
 default_font = ExtResource("1_l6cm7")
 default_font_size = 16
 
-[node name="MainMenu" type="Control" unique_id=949514378 node_paths=PackedStringArray("menu_buttons", "level_buttons", "tutorial", "credits", "options_menu", "back_button", "initial_focus")]
+[node name="MainMenu" type="Control" unique_id=949514378 node_paths=PackedStringArray("command_values", "menu_buttons", "level_buttons", "tutorial", "credits", "options_menu", "back_button", "commands_list", "initial_focus")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,12 +35,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_menu_theme")
 script = ExtResource("1_ekxnf")
+command_values = NodePath("Tutorial/Commands/CommandsRow/CommandValues")
 menu_buttons = NodePath("MenuButtons")
 level_buttons = NodePath("LevelsButtons")
 tutorial = NodePath("Tutorial")
 credits = NodePath("Credits")
 options_menu = NodePath("SettingsMenu")
 back_button = NodePath("BackButton")
+commands_list = NodePath("Tutorial/Commands/CommandsRow/CommandsList")
 initial_focus = NodePath("MenuButtons/Play/PanelContainer/PlayButton")
 
 [node name="Background" type="TextureRect" parent="." unique_id=572157750]
@@ -356,24 +358,56 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_text_panel")
 
-[node name="Comands" type="Label" parent="Tutorial" unique_id=1693612519]
+[node name="Commands" type="Control" parent="Tutorial" unique_id=1526693765]
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 41.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Tutorial/Commands" unique_id=1693612519]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 58.0
+offset_top = 125.0
+offset_right = 212.0
+offset_bottom = 157.0
+grow_vertical = 0
+theme = SubResource("Theme_ekxnf")
+text = "Commands:"
+horizontal_alignment = 1
+
+[node name="CommandsRow" type="HBoxContainer" parent="Tutorial/Commands" unique_id=249299547]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 60.0
-offset_top = -195.0
-offset_right = 214.0
-offset_bottom = -54.0
+offset_top = 173.0
+offset_right = 208.0
+offset_bottom = 266.0
 grow_vertical = 0
-theme = SubResource("Theme_ekxnf")
-text = "Commands:
+theme_override_constants/separation = 8
 
-Wasd:        Move Player1
-Arrows:      Move Player2
-Space:                  Undo
-Esc:                    Pause"
-horizontal_alignment = 1
+[node name="CommandsList" type="Label" parent="Tutorial/Commands/CommandsRow" unique_id=865049789]
+custom_minimum_size = Vector2(65, 0)
+layout_mode = 2
+theme = SubResource("Theme_ekxnf")
+text = "Move P1:
+Move P2:
+Undo:
+Pause:"
+
+[node name="CommandValues" type="Label" parent="Tutorial/Commands/CommandsRow" unique_id=191924842]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme = SubResource("Theme_ekxnf")
+text = "WASD
+Arrows
+Space
+Esc"
+horizontal_alignment = 2
 
 [node name="Explanations" type="Label" parent="Tutorial" unique_id=905193784]
 layout_mode = 1

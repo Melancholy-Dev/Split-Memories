@@ -6,22 +6,42 @@ class_name MainMenu extends Menu
 @onready var master_slider: HSlider = %MasterSlider
 @onready var music_slider: HSlider = %MusicSlider
 @onready var sound_slider: HSlider = %SoundSlider
+@export var command_values: Label
 @export var menu_buttons: Container
 @export var level_buttons: GridContainer
 @export var tutorial: Control
 @export var credits: Control
 @export var options_menu: Control
 @export var back_button: VBoxContainer
+@export var commands_list: Label
 
 
 func _ready() -> void:
 	super._ready()
 	scene_manager.main_menu_requested.connect(_show_main_menu)
 	_setup_audio_sliders()
+	InputManager.input_method_changed.connect(_update_tutorial_commands)
+	_update_tutorial_commands()
 	var animation_manager: AnimationManager = %AnimationManager
 	if animation_manager.is_animating:
 		_set_buttons_enabled(false)
 		animation_manager.initial_animation_finished.connect(_on_initial_animation_finished)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not back_button.visible or not event.is_action_pressed(&"ui_cancel"):
+		return
+	get_viewport().set_input_as_handled()
+	_on_back_button_pressed()
+
+func _update_tutorial_commands() -> void:
+	commands_list.text = "Move P1:\nMove P2:\nUndo:\nPause:"
+	if InputManager.is_controller_active():
+		command_values.text = "Joystick left\nJoystick right\n%s\n%s" % [
+			InputManager.get_controller_undo_label(),
+			InputManager.get_controller_pause_label()
+		]
+	else:
+		command_values.text = "WASD\nArrows\nSpace\nEsc"
 
 func _on_initial_animation_finished() -> void:
 	_set_buttons_enabled(true)

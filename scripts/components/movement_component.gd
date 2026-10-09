@@ -12,6 +12,8 @@ var board: Grid
 # Variables
 var movement_duration := 0.2
 var is_moving := false
+var _active_direction := Vector2i.ZERO
+var _pending_direction := Vector2i.ZERO
 
 
 func _ready() -> void:
@@ -21,11 +23,19 @@ func _ready() -> void:
 		InputManager.direction_pressed_p2.connect(_on_direction_pressed)
 
 func _on_direction_pressed(direction: Vector2i) -> void:
-	if is_moving or UndoManager.is_undoing():
+	if not InputManager.can_move():
+		_pending_direction = Vector2i.ZERO
+		return
+	if UndoManager.is_undoing():
+		_pending_direction = Vector2i.ZERO
+		return
+	if is_moving:
+		_pending_direction = direction if direction != _active_direction else Vector2i.ZERO
 		return
 	board = player.board
 	if board == null:
 		return
+	_active_direction = direction
 	is_moving = true
 	var previous_state := UndoManager.capture_state()
 	var moved_entities := board.try_move_player(player, direction)
@@ -40,6 +50,10 @@ func _on_direction_pressed(direction: Vector2i) -> void:
 	board.notify_player_step_completed()
 	movement_finished.emit()
 	is_moving = false
+	var buffered_direction := _pending_direction
+	_pending_direction = Vector2i.ZERO
+	if buffered_direction != Vector2i.ZERO and not UndoManager.is_undoing():
+		call_deferred("_on_direction_pressed", buffered_direction)
 
 func _animate_entities(entities: Array[GridEntity]) -> void:
 	for entity in entities:
