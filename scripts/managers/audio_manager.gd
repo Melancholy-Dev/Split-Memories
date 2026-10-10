@@ -1,5 +1,6 @@
 class_name AudioManager extends Node
 
+
 # Signals
 signal volumes_changed
 
@@ -38,7 +39,7 @@ signal volumes_changed
 
 # Variables
 var _audio_enabled := false
-
+const SETTINGS_PATH := "user://audio_settings.cfg"
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -50,6 +51,7 @@ func _ready() -> void:
 	%AnimationManager.initial_animation_finished.connect(_on_initial_animation_finished)
 	call_deferred("_connect_menus")
 	call_deferred("_connect_audio_components")
+	_load_audio_settings()
 	_update_volumes()
 
 func _on_initial_animation_finished() -> void:
@@ -62,6 +64,23 @@ func _update_volumes() -> void:
 	if _sound_player != null:
 		_sound_player.volume_db = sound_volume_db + master_volume_db
 	volumes_changed.emit()
+
+func save_audio_settings() -> void:
+	var settings := ConfigFile.new()
+	settings.set_value("audio", "master_volume_db", master_volume_db)
+	settings.set_value("audio", "music_volume_db", music_volume_db)
+	settings.set_value("audio", "sound_volume_db", sound_volume_db)
+	var error := settings.save(SETTINGS_PATH)
+	if error != OK:
+		push_error("Unable to save audio settings: %s" % error_string(error))
+
+func _load_audio_settings() -> void:
+	var settings := ConfigFile.new()
+	if settings.load(SETTINGS_PATH) != OK:
+		return
+	master_volume_db = settings.get_value("audio", "master_volume_db", master_volume_db)
+	music_volume_db = settings.get_value("audio", "music_volume_db", music_volume_db)
+	sound_volume_db = settings.get_value("audio", "sound_volume_db", sound_volume_db)
 
 func _connect_menus() -> void:
 	for menu in [%MainMenu, %PauseMenu]:

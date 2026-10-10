@@ -35,7 +35,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _update_tutorial_commands() -> void:
 	commands_list.text = "Move P1:\nMove P2:\nUndo:\nPause:"
-	if InputManager.is_controller_active():
+	if InputManager.is_touch_active():
+		command_values.text = "Tap dir left\nTap dir right\nUndo Button\nPause Button"
+	elif InputManager.is_controller_active():
 		command_values.text = "Joystick left\nJoystick right\n%s\n%s" % [
 			InputManager.get_controller_undo_label(),
 			InputManager.get_controller_pause_label()
@@ -48,6 +50,7 @@ func _on_initial_animation_finished() -> void:
 	_focus_initial_node()
 
 func _show_main_menu() -> void:
+	InputManager.set_level_touch_buttons_visible(false)
 	visible = true
 	_on_back_button_pressed(false)
 
@@ -72,6 +75,7 @@ func _on_options_button_pressed() -> void:
 
 func _on_tutorial_button_pressed() -> void:
 	_button_selected()
+	_update_tutorial_commands()
 	$Logo.visible = false
 	menu_buttons.visible = false
 	back_button.visible = true
@@ -142,23 +146,31 @@ func _slider_to_db(value: float) -> float:
 
 func _on_master_volume_changed(value: float) -> void:
 	audio_manager.master_volume_db = _slider_to_db(value)
+	audio_manager.save_audio_settings()
 
 func _on_music_volume_changed(value: float) -> void:
 	audio_manager.music_volume_db = _slider_to_db(value)
+	audio_manager.save_audio_settings()
 
 func _on_sound_volume_changed(value: float) -> void:
 	audio_manager.sound_volume_db = _slider_to_db(value)
+	audio_manager.save_audio_settings()
 
 func _set_buttons_enabled(enabled: bool) -> void:
 	for button in buttons:
 		button.disabled = not enabled
-		button.focus_mode = Control.FOCUS_ALL if enabled else Control.FOCUS_NONE
+		if not enabled:
+			button.focus_mode = Control.FOCUS_NONE
+		else:
+			button.focus_mode = Control.FOCUS_ALL if _focus_navigation_enabled else Control.FOCUS_NONE
 	if not enabled:
 		get_viewport().gui_release_focus()
 
 func _game_started(level: int) -> void:
+	InputManager.set_level_touch_buttons_visible(false)
 	_set_buttons_enabled(false)
 	await %AnimationManager.play_scene_change_transition()
 	scene_manager.load_level(level)
 	visible = false
 	await %AnimationManager.play_loading_new_level_transition()
+	InputManager.set_level_touch_buttons_visible(true)

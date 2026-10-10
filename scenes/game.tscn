@@ -16,10 +16,11 @@
 [ext_resource type="AudioStream" uid="uid://bmsp5qssql6qk" path="res://assets/audio/music/level_3.wav" id="10_37s47"]
 [ext_resource type="AudioStream" uid="uid://b6uyp1xrm3xj0" path="res://assets/audio/sounds/glass_broken.wav" id="11_ca42v"]
 [ext_resource type="Shader" uid="uid://dk234sdgbaibi" path="res://resources/shaders/pause_menu.gdshader" id="11_kvpfn"]
-[ext_resource type="AudioStream" uid="uid://rej51faldbgl" path="res://assets/audio/sounds/menu_button.wav" id="16_menu_button"]
-[ext_resource type="AudioStream" uid="uid://crg8puq8vqb66" path="res://assets/audio/sounds/undo.wav" id="17_undo"]
-[ext_resource type="AudioStream" uid="uid://bc8p6o7dinqun" path="res://assets/audio/sounds/puzzle_finished.wav" id="18_puzzle_finished"]
+[ext_resource type="AudioStream" uid="uid://rej51faldbgl" path="res://assets/audio/sounds/menu_button.wav" id="16_oz0ds"]
+[ext_resource type="AudioStream" uid="uid://crg8puq8vqb66" path="res://assets/audio/sounds/undo.wav" id="17_otpyr"]
+[ext_resource type="AudioStream" uid="uid://bc8p6o7dinqun" path="res://assets/audio/sounds/puzzle_finished.wav" id="18_hk1rk"]
 [ext_resource type="Texture2D" uid="uid://b2dcbwcv6gbmi" path="res://assets/sprites/ui/final_artwork.png" id="19_1kice"]
+[ext_resource type="Texture2D" uid="uid://brix8hiqbv7rk" path="res://assets/sprites/ui/ui_slider_grabber.png" id="21_5newe"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ar1yk"]
 font = ExtResource("7_u5sy4")
@@ -352,7 +353,7 @@ tracks/2/keys = {
 "values": [0.0, 1.0000000475]
 }
 
-[sub_resource type="Animation" id="Animation_scene_change_blur"]
+[sub_resource type="Animation" id="Animation_3w6zx"]
 resource_name = "scene_change_blur"
 length = 1.2
 tracks/0/type = "value"
@@ -464,7 +465,7 @@ tracks/8/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_scene_change_glass"]
+[sub_resource type="Animation" id="Animation_q3uaj"]
 resource_name = "scene_change_glass"
 length = 2.0
 tracks/0/type = "value"
@@ -611,9 +612,100 @@ _data = {
 &"game_started": SubResource("Animation_264po"),
 &"loading_new_level": SubResource("Animation_kvpfn"),
 &"pause_menu": SubResource("Animation_vtaks"),
-&"scene_change_blur": SubResource("Animation_scene_change_blur"),
-&"scene_change_glass": SubResource("Animation_scene_change_glass"),
+&"scene_change_blur": SubResource("Animation_3w6zx"),
+&"scene_change_glass": SubResource("Animation_q3uaj"),
 &"undo_transition": SubResource("Animation_iywne")
+}
+
+[sub_resource type="Theme" id="Theme_5newe"]
+default_font = ExtResource("7_u5sy4")
+
+[sub_resource type="Animation" id="Animation_bt5mj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Undo/UndoButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pause/PauseButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_37s47"]
+resource_name = "buttons_disabled"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pause/PauseButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Undo/UndoButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_5newe"]
+resource_name = "buttons_enabled"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Undo/UndoButton:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pause/PauseButton:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_touch"]
+_data = {
+&"RESET": SubResource("Animation_bt5mj"),
+&"buttons_disabled": SubResource("Animation_37s47"),
+&"buttons_enabled": SubResource("Animation_5newe")
 }
 
 [node name="Game" type="Node2D" unique_id=1715201550]
@@ -641,9 +733,9 @@ main_menu_music = ExtResource("7_264po")
 level_1_music = ExtResource("8_1kice")
 level_2_music = ExtResource("9_5newe")
 level_3_music = ExtResource("10_37s47")
-menu_button_stream = ExtResource("16_menu_button")
-undo_stream = ExtResource("17_undo")
-puzzle_finished_stream = ExtResource("18_puzzle_finished")
+menu_button_stream = ExtResource("16_oz0ds")
+undo_stream = ExtResource("17_otpyr")
+puzzle_finished_stream = ExtResource("18_hk1rk")
 scene_change_glass = ExtResource("11_ca42v")
 
 [node name="Levels" type="Node2D" parent="." unique_id=916306363]
@@ -715,6 +807,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="BlurRect" type="ColorRect" parent="UILayers/Transitions" unique_id=802474241]
 visible = false
@@ -747,6 +840,96 @@ visible = false
 [node name="PanelContainer" parent="UILayers/PauseMenu" index="0" unique_id=320969938]
 modulate = Color(1, 1, 1, 0)
 
+[node name="TouchInputs" type="Node2D" parent="UILayers" unique_id=554407656]
+
+[node name="P1" type="Node2D" parent="UILayers/TouchInputs" unique_id=2052796415]
+position = Vector2(80, 44)
+
+[node name="Up" type="TouchScreenButton" parent="UILayers/TouchInputs/P1" unique_id=88452805 groups=["level_touch_buttons", "movement_touch_buttons"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-17, -44)
+scale = Vector2(15.0625, 7)
+texture_normal = ExtResource("21_5newe")
+action = "move_up_p1"
+
+[node name="Down" type="TouchScreenButton" parent="UILayers/TouchInputs/P1" unique_id=1739643954 groups=["level_touch_buttons", "movement_touch_buttons"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-80, 230)
+scale = Vector2(19, 5.375)
+texture_normal = ExtResource("21_5newe")
+action = "move_down_p1"
+
+[node name="Left" type="TouchScreenButton" parent="UILayers/TouchInputs/P1" unique_id=1302878559 groups=["level_touch_buttons", "movement_touch_buttons"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-80, 68)
+scale = Vector2(9.562499, 10.124999)
+texture_normal = ExtResource("21_5newe")
+action = "move_left_p1"
+
+[node name="Right" type="TouchScreenButton" parent="UILayers/TouchInputs/P1" unique_id=1515588690 groups=["level_touch_buttons", "movement_touch_buttons"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(73, 68)
+scale = Vector2(9.4375, 10.125001)
+texture_normal = ExtResource("21_5newe")
+action = "move_right_p1"
+
+[node name="P2" type="Node2D" parent="UILayers/TouchInputs" unique_id=346204648]
+position = Vector2(304, 44)
+
+[node name="Up" type="TouchScreenButton" parent="UILayers/TouchInputs/P2" unique_id=1539605510 groups=["level_touch_buttons", "movement_touch_buttons"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1.8954277e-05, -44)
+scale = Vector2(21.000006, 7)
+texture_normal = ExtResource("21_5newe")
+action = "move_up_p2"
+
+[node name="Down" type="TouchScreenButton" parent="UILayers/TouchInputs/P2" unique_id=806771870 groups=["level_touch_buttons", "movement_touch_buttons"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 230.00002)
+scale = Vector2(21.000002, 5.375)
+texture_normal = ExtResource("21_5newe")
+action = "move_down_p2"
+
+[node name="Left" type="TouchScreenButton" parent="UILayers/TouchInputs/P2" unique_id=1260698782 groups=["level_touch_buttons", "movement_touch_buttons"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-3.0517578e-05, 68)
+scale = Vector2(10.5, 10.1255)
+texture_normal = ExtResource("21_5newe")
+action = "move_left_p2"
+
+[node name="Right" type="TouchScreenButton" parent="UILayers/TouchInputs/P2" unique_id=1978433906 groups=["level_touch_buttons", "movement_touch_buttons"]]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(167.99997, 68.00001)
+scale = Vector2(10.5, 10.1245)
+texture_normal = ExtResource("21_5newe")
+action = "move_right_p2"
+
+[node name="Pause" type="Node2D" parent="UILayers/TouchInputs" unique_id=2080888821]
+position = Vector2(18, 9)
+
+[node name="PauseButton" type="Button" parent="UILayers/TouchInputs/Pause" unique_id=282571108 groups=["pause_control_button", "ui_button"]]
+modulate = Color(1, 1, 1, 0)
+offset_right = 42.0
+offset_bottom = 29.0
+focus_mode = 0
+theme = SubResource("Theme_5newe")
+text = "Pause"
+
+[node name="Undo" type="Node2D" parent="UILayers/TouchInputs" unique_id=38790155]
+position = Vector2(18, 49)
+
+[node name="UndoButton" type="Button" parent="UILayers/TouchInputs/Undo" unique_id=927093408 groups=["ui_button", "undo_control_button"]]
+modulate = Color(1, 1, 1, 0)
+offset_right = 42.0
+offset_bottom = 29.0
+focus_mode = 0
+theme = SubResource("Theme_5newe")
+text = "Undo"
+
+[node name="TouchAnimationPlayer" type="AnimationPlayer" parent="UILayers/TouchInputs" unique_id=580093256 groups=["touch_animation_player"]]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_touch")
+
 [node name="Audio" type="Node" parent="." unique_id=1579824888]
 process_mode = 3
 
@@ -756,9 +939,7 @@ volume_db = -6.0206
 [node name="Sound" type="AudioStreamPlayer" parent="Audio" unique_id=1941914208]
 volume_db = -6.0206
 
-[node name="Camera" type="Node" parent="." unique_id=128163797]
-
-[node name="Camera2D" type="Camera2D" parent="Camera" unique_id=1664677405]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1664677405]
 position = Vector2(240, 136)
 
 [editable path="UILayers/PauseMenu"]

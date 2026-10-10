@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://c7klu3ggtvfta" path="res://scripts/menus/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://vl6gdjtt57vw" path="res://assets/fonts/pixelplay.ttf" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://1loppmp50j2g" path="res://assets/sprites/ui/background.png" id="2_2o76q"]
-[ext_resource type="Theme" uid="uid://cambhqkqxrsmd" path="res://resources/themes/menu_theme.tres" id="3_menu_theme"]
+[ext_resource type="Theme" uid="uid://cambhqkqxrsmd" path="res://resources/themes/menu_theme.tres" id="3_wyhv7"]
 [ext_resource type="Texture2D" uid="uid://c7uae5s18orcr" path="res://assets/sprites/ui/logo.png" id="5_imvie"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_text_panel"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_527lp"]
 bg_color = Color(0.0901961, 0.0784314, 0.109804, 0.88)
 border_width_left = 2
 border_width_top = 2
@@ -33,7 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("3_menu_theme")
+theme = ExtResource("3_wyhv7")
 script = ExtResource("1_ekxnf")
 command_values = NodePath("Tutorial/Commands/CommandsRow/CommandValues")
 menu_buttons = NodePath("MenuButtons")
@@ -184,6 +184,7 @@ offset_top = -15.0
 offset_right = 216.0
 offset_bottom = 127.0
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 2
@@ -191,6 +192,7 @@ columns = 2
 [node name="Spacer1" type="Control" parent="LevelsButtons" unique_id=1058716715]
 custom_minimum_size = Vector2(116, 60)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Level1" type="MarginContainer" parent="LevelsButtons" unique_id=1641581159]
 layout_mode = 2
@@ -207,6 +209,7 @@ alignment = 0
 [node name="Spacer2" type="Control" parent="LevelsButtons" unique_id=2040355985]
 custom_minimum_size = Vector2(116, 60)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Level2" type="MarginContainer" parent="LevelsButtons" unique_id=14130655]
 layout_mode = 2
@@ -223,6 +226,7 @@ alignment = 0
 [node name="Spacer3" type="Control" parent="LevelsButtons" unique_id=730257327]
 custom_minimum_size = Vector2(116, 60)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Level3" type="MarginContainer" parent="LevelsButtons" unique_id=1370425694]
 layout_mode = 2
@@ -244,6 +248,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TextPanel" type="Panel" parent="SettingsMenu" unique_id=1929922076]
 layout_mode = 1
@@ -257,7 +262,7 @@ offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_text_panel")
+theme_override_styles/panel = SubResource("StyleBoxFlat_527lp")
 
 [node name="SettingsPanel" type="VBoxContainer" parent="SettingsMenu" unique_id=1752712555]
 layout_mode = 1
@@ -343,6 +348,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TextPanel" type="Panel" parent="Tutorial" unique_id=274779282]
 layout_mode = 1
@@ -356,7 +362,7 @@ offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_text_panel")
+theme_override_styles/panel = SubResource("StyleBoxFlat_527lp")
 
 [node name="Commands" type="Control" parent="Tutorial" unique_id=1526693765]
 anchors_preset = 0
@@ -385,7 +391,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 60.0
 offset_top = 173.0
-offset_right = 208.0
+offset_right = 241.0
 offset_bottom = 266.0
 grow_vertical = 0
 theme_override_constants/separation = 8
@@ -441,6 +447,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TextPanel" type="Panel" parent="Credits" unique_id=778562777]
 layout_mode = 1
@@ -454,7 +461,7 @@ offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_text_panel")
+theme_override_styles/panel = SubResource("StyleBoxFlat_527lp")
 
 [node name="Roles" type="Label" parent="Credits" unique_id=755749577]
 layout_mode = 1
@@ -468,8 +475,8 @@ offset_bottom = -36.0
 grow_vertical = 0
 theme = SubResource("Theme_ekxnf")
 text = "Game made by:
-Developer:
-Graphics:
+Programming:
+Visuals:
 Music and Sounds:
 Level Design:
 Narrative:"

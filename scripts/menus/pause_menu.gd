@@ -29,7 +29,9 @@ func _pause_pressed() -> void:
 		await %AnimationManager.play_pause_menu_transition(false)
 		visible = false
 		is_paused = false
+		InputManager.set_level_touch_buttons_visible(true)
 	else:
+		InputManager.set_level_touch_buttons_visible(false)
 		visible = true
 		is_paused = true
 		_pause()
@@ -51,15 +53,18 @@ func _on_resume_button_pressed() -> void:
 
 func _on_retry_button_pressed() -> void:
 	_button_selected()
+	InputManager.set_level_touch_buttons_visible(false)
 	_resume()
 	visible = false
 	await %AnimationManager.play_scene_change_transition()
 	scene_manager.load_level(scene_manager.current_level_index)
 	await %AnimationManager.play_loading_new_level_transition()
 	is_paused = false
+	InputManager.set_level_touch_buttons_visible(true)
 
 func _on_main_menu_button_pressed() -> void:
 	_button_selected()
+	InputManager.set_level_touch_buttons_visible(false)
 	_resume()
 	visible = false
 	await %AnimationManager.play_scene_change_transition()

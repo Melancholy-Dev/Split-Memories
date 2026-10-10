@@ -63,16 +63,16 @@ sources/0 = SubResource("TileSetAtlasSource_dnkej")
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4yk0h"]
 polygon = PackedVector2Array(-4, -8, 4, -8, 4, -7, 5, -7, 5, 2, 4, 2, 4, 3, 1, 3, 1, 4, 7, 4, 7, 5, 8, 5, 8, 6, 7, 6, 7, 7, 3, 7, 3, 8, -3, 8, -3, 7, -7, 7, -7, 6, -8, 6, -8, 5, -7, 5, -7, 4, -2, 4, -2, 3, -5, 3, -5, 2, -6, 2, -6, -7, -5, -7, -5, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_side1_patient_0_1"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_djnk8"]
 polygon = PackedVector2Array(2, -8, 2, 8, -2, 8, -2, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_side1_patient_0_2"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ztigd"]
 polygon = PackedVector2Array(2, -8, 2, -4, 4, -4, 4, -3, 5, -3, 5, 0, 2, 0, 2, 1, 1, 1, 1, 2, -1, 2, -1, 1, -2, 1, -2, 0, -5, 0, -5, -3, -4, -3, -4, -4, -2, -4, -2, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_side1_patient_1_1"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5s5nz"]
 polygon = PackedVector2Array(4, -8, 4, -7, 6, -7, 6, -6, 7, -6, 7, -5, 8, -5, 8, 8, -8, 8, -8, -5, -7, -5, -7, -6, -6, -6, -6, -7, -4, -7, -4, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_side1_patient_1_2"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_76ji6"]
 polygon = PackedVector2Array(8, -8, 8, 6.985956, 7, 7, 7, 8, 4.9256897, 8, 5, 7, -5, 7, -5, 8, -7, 8, -7, 7, -8, 7, -8, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0qwwm"]
@@ -81,15 +81,15 @@ texture = ExtResource("5_31oqk")
 0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_4yk0h")
 1:0/0 = 0
 0:1/0 = 0
-0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_side1_patient_0_1")
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_djnk8")
 1:1/0 = 0
-1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_side1_patient_1_1")
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_5s5nz")
 0:2/0 = 0
-0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_side1_patient_0_2")
+0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_ztigd")
 1:2/0 = 0
-1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_side1_patient_1_2")
+1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_76ji6")
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_side1_monitor"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_247pg"]
 polygon = PackedVector2Array(-5, -6, 4, -6, 4, -5, 5, -5, 5, 4, 4, 4, 4, 5, 1, 5, 1, 7, -2, 7, -2, 5, -5, 5, -5, 4, -6, 4, -6, -5, -5, -5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o7j4k"]
@@ -102,37 +102,37 @@ texture = ExtResource("4_o7j4k")
 0:0/animation_frame_3/duration = 1.0
 0:0/animation_frame_4/duration = 1.0
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_side1_monitor")
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_247pg")
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_side1_medicines_0_0"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2prmk"]
 polygon = PackedVector2Array(8, 6, 0, 6, 0, 7, -1, 7, -1, 8, -6, 8, -6, -5, -5, -5, -5, -6, -2, -6, -2, -8, 1, -8, 1, -6, 5, -6, 5, -8, 8, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_side1_medicines_1_0"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j8rvf"]
 polygon = PackedVector2Array(3, -8, 3, -6, 5, -6, 5, -5, 6, -5, 6, 8, 1, 8, 1, 7, 0, 7, 0, 6, -8, 6, -8, -6, 0, -6, 0, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vmrhw"]
 texture = ExtResource("6_0qwwm")
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_side1_medicines_0_0")
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_2prmk")
 1:0/0 = 0
-1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_side1_medicines_1_0")
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_j8rvf")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cfnpk"]
 polygon = PackedVector2Array(-4, -8, 4, -8, 4, -7, 6, -7, 6, -6, 7, -6, 7, -5, 8, -5, 8, 8, -8, 8, -8, -5, -7, -5, -7, -6, -6, -6, -6, -7, -4, -7)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_side1_bed_0_1"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uh2ug"]
 polygon = PackedVector2Array(8, -8, 8, 7, 7, 7, 7, 8, 5, 8, 5, 7, -5, 7, -5, 8, -7, 8, -7, 7, -8, 7, -8, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_side1_bed_1_0"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bvkjk"]
 polygon = PackedVector2Array(8, 7, 0, 7, 0, 8, -5, 8, -5, 7, -5, 6, -6, 6, -6, -6, -6, -7, -5, -7, -5, -8, -3, -8, 8, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_side1_bed_1_1"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0zjax"]
 polygon = PackedVector2Array(8, 7, 1, 7, 1, 8, -4, 8, -4, 7, -5, 7, -5, 6, -6, 6, -6, -6, -5, -6, -5, -7, -3, -7, -3, -8, 8, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_side1_bed_2_0"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uotmo"]
 polygon = PackedVector2Array(-8, -8, 3, -8, 3, -7, 5, -7, 5, -6, 6, -6, 6, 6, 5, 6, 5, 7, 4, 7, 4, 8, -1, 8, -1, 7, -8, 7)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_side1_bed_2_1"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_52l99"]
 polygon = PackedVector2Array(-8, -8, 3, -8, 5, -8, 5, -7, 6, -7, 6, 6, 5, 6, 5, 7, 5, 8, 0, 8, 0, 7, -8, 7)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7o3do"]
@@ -140,15 +140,15 @@ texture = ExtResource("4_mqh5v")
 0:0/0 = 0
 0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_cfnpk")
 1:0/0 = 0
-1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_side1_bed_1_0")
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bvkjk")
 2:0/0 = 0
-2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_side1_bed_2_0")
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_uotmo")
 0:1/0 = 0
-0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_side1_bed_0_1")
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_uh2ug")
 1:1/0 = 0
-1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_side1_bed_1_1")
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_0zjax")
 2:1/0 = 0
-2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_side1_bed_2_1")
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_52l99")
 
 [sub_resource type="TileSet" id="TileSet_ndtll"]
 occlusion_layer_0/light_mask = 1

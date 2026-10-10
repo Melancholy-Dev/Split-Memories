@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cwfqnh25nbcba" path="res://assets/sprites/entities/static_objects/level_3/reality/button_red_up.png" id="10_n7m6w"]
 [ext_resource type="Texture2D" uid="uid://co5537c7kftfi" path="res://assets/sprites/entities/static_objects/level_3/reality/button_red_down.png" id="10_tio2m"]
 [ext_resource type="Texture2D" uid="uid://dwfui6ucsqi84" path="res://assets/sprites/entities/static_objects/level_3/reality/button_purple_up.png" id="11_ju8vr"]
-[ext_resource type="PackedScene" uid="uid://buv341givgj8r" path="res://scenes/components/pressure_button.tscn" id="11_pressure_button"]
+[ext_resource type="PackedScene" uid="uid://buv341givgj8r" path="res://scenes/components/pressure_button.tscn" id="11_iaxp3"]
 [ext_resource type="Texture2D" uid="uid://dg1ds76eroak7" path="res://assets/sprites/entities/static_objects/level_3/reality/button_purple_down.png" id="12_p0p7o"]
 [ext_resource type="Texture2D" uid="uid://cf8wyfw237bc4" path="res://assets/sprites/entities/pushable_objects/level_3/mirror/arm_mirror.png" id="14_kva3v"]
 [ext_resource type="Texture2D" uid="uid://bhdjxpstemly1" path="res://assets/sprites/entities/players/level_3/mirror/scientist_mirror_down.png" id="14_lgrx1"]
@@ -66,128 +66,128 @@ texture = ExtResource("3_kdsi4")
 [sub_resource type="TileSet" id="TileSet_kva3v"]
 sources/0 = SubResource("TileSetAtlasSource_kva3v")
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_0_0"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bt8z5"]
 polygon = PackedVector2Array(8, -4, 0, -4, 0, 4, -1, 4, -1, 5, -2, 5, -2, 6, -3, 6, -3, 7, -4, 7, -4, 8, 8, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_0_1"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u7w3g"]
 polygon = PackedVector2Array(-4, -8, -4, 8, 8, 8, 8, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_0_2"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rfhfz"]
 polygon = PackedVector2Array(-4, -8, -4, 8, 8, 8, 8, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_0_3"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_9gwlq"]
 polygon = PackedVector2Array(-4, -8, -4, 6, 1, 6, 1, 4, 4, 4, 4, 3, 5, 3, 5, 2, 8, 2, 8, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_1_0"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_v8w15"]
 polygon = PackedVector2Array(6, 8, 6, 7, 5, 7, 5, 6, 4, 6, 4, 4, 3, 4, 3, 3, 2, 3, 2, 2, 1, 2, 1, 1, 0, 1, 0, -4, -8, -4, -8, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_1_1"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kveve"]
 polygon = PackedVector2Array(-8, -8, 6, -8, 6, -7, 5, -7, 5, -3, 4, -3, 4, 8, -8, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_1_2"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_runo9"]
 polygon = PackedVector2Array(-8, -8, -8, 8, 6, 8, 6, 7, 7, 7, 7, 4, 6, 4, 6, 2, 5, 2, 5, -2, 4, -2, 4, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_1_3"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xlfod"]
 polygon = PackedVector2Array(-8, 2, -5, 2, -5, 3, -4, 3, -4, 4, -1, 4, -1, 6, 0, 6, 0, 7, 7, 7, 7, 3, 6, 3, 6, -1, 5, -1, 5, -6, 6, -6, 6, -8, -8, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_2_0"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bwulm"]
 polygon = PackedVector2Array(8, -4, -6, -4, -6, 1, -4, 1, -4, 4, -3, 4, -3, 5, -2, 5, -2, 8, 8, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_2_1"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2jpge"]
 polygon = PackedVector2Array(-2, -8, -2, -5, -3, -5, -3, -4, -4, -4, -4, -1, -6, -1, -6, 0, -7, 0, -7, 7, -3, 7, -3, 6, 1, 6, 1, 5, 6, 5, 6, 6, 8, 6, 8, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_2_2"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dnj8e"]
 polygon = PackedVector2Array(-4, 8, -4, 0, 4, 0, 4, -1, 5, -1, 5, -2, 6, -2, 6, -3, 7, -3, 7, -4, 8, -4, 8, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_2_3"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j6akn"]
 polygon = PackedVector2Array(8, 6, 7, 6, 7, 5, 6, 5, 6, 4, 4, 4, 4, 3, 3, 3, 3, 2, 2, 2, 2, 1, 1, 1, 1, 0, -4, 0, -4, -8, 8, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_3_0"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uikq1"]
 polygon = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_3_1"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_umnpx"]
 polygon = PackedVector2Array(8, -8, -8, -8, -8, 6, -7, 6, -7, 7, -4, 7, -4, 6, -2, 6, -2, 5, 2, 5, 2, 4, 8, 4)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_3_2"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mzxzw"]
 polygon = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_3_3"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_p7438"]
 polygon = PackedVector2Array(-8, 6, -7, 6, -7, 5, -3, 5, -3, 4, 8, 4, 8, -8, -8, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_4_0"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_caiw8"]
 polygon = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_4_1"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_chb5r"]
 polygon = PackedVector2Array(8, -8, -8, -8, -8, 4, 8, 4)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_4_2"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1yh1k"]
 polygon = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_4_3"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xj7fp"]
 polygon = PackedVector2Array(-8, 4, -2, 4, -2, 5, 2, 5, 2, 6, 4, 6, 4, 7, 7, 7, 7, 6, 8, 6, 8, -8, -8, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_5_0"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3g0f4"]
 polygon = PackedVector2Array(-8, -4, -7, -4, -7, -3, -6, -3, -6, -2, -5, -2, -5, -1, -4, -1, -4, 0, 4, 0, 4, 8, -8, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_5_1"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_46qpm"]
 polygon = PackedVector2Array(-8, 6, -7, 6, -7, 5, -6, 5, -6, 4, -4, 4, -4, 3, -3, 3, -3, 2, -2, 2, -2, 1, -1, 1, -1, 0, 4, 0, 4, -8, -8, -8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_5_2"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tnvya"]
 polygon = PackedVector2Array(-8, -4, 6, -4, 6, 1, 4, 1, 4, 4, 3, 4, 3, 4, 3, 5, 2, 5, 2, 8, -8, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l3_s1_k0dme_5_3"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1uua8"]
 polygon = PackedVector2Array(2, -8, 2, -5, 3, -5, 3, -4, 4, -4, 4, -1, 6, -1, 6, 0, 7, 0, 7, 7, 3, 7, 3, 6, -1, 6, -1, 5, -6, 5, -6, 6, -8, 6, -8, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k0dme"]
 texture = ExtResource("5_o3ttr")
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_0_0")
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bt8z5")
 1:0/0 = 0
-1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_1_0")
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_v8w15")
 0:1/0 = 0
-0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_0_1")
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_u7w3g")
 1:1/0 = 0
-1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_1_1")
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_kveve")
 0:2/0 = 0
-0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_0_2")
+0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_rfhfz")
 1:2/0 = 0
-1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_1_2")
+1:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_runo9")
 0:3/0 = 0
-0:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_0_3")
+0:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_9gwlq")
 1:3/0 = 0
-1:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_1_3")
+1:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xlfod")
 2:0/0 = 0
-2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_2_0")
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bwulm")
 3:0/0 = 0
-3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_3_0")
+3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_uikq1")
 3:1/0 = 0
-3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_3_1")
+3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_umnpx")
 4:1/0 = 0
-4:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_4_1")
+4:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_chb5r")
 5:0/0 = 0
-5:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_5_0")
+5:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_3g0f4")
 5:1/0 = 0
-5:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_5_1")
+5:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_46qpm")
 4:0/0 = 0
-4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_4_0")
+4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_caiw8")
 3:2/0 = 0
-3:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_3_2")
+3:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_mzxzw")
 2:2/0 = 0
-2:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_2_2")
+2:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dnj8e")
 2:1/0 = 0
-2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_2_1")
+2:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_2jpge")
 4:2/0 = 0
-4:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_4_2")
+4:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_1yh1k")
 5:2/0 = 0
-5:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_5_2")
+5:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_tnvya")
 5:3/0 = 0
-5:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_5_3")
+5:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_1uua8")
 4:3/0 = 0
-4:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_4_3")
+4:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xj7fp")
 3:3/0 = 0
-3:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_3_3")
+3:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_p7438")
 2:3/0 = 0
-2:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_l3_s1_k0dme_2_3")
+2:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_j6akn")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdsi4"]
 texture = ExtResource("7_o3ttr")
@@ -3749,7 +3749,7 @@ script = ExtResource("8_do6pa")
 
 [node name="Buttons" type="Node2D" parent="Side_1/Entities" unique_id=1971711599]
 
-[node name="RedButton" parent="Side_1/Entities/Buttons" unique_id=638381465 node_paths=PackedStringArray("objects_to_disable") instance=ExtResource("11_pressure_button")]
+[node name="RedButton" parent="Side_1/Entities/Buttons" unique_id=638381465 node_paths=PackedStringArray("objects_to_disable") instance=ExtResource("11_iaxp3")]
 position = Vector2(8, 136)
 is_pressed_texture = ExtResource("10_tio2m")
 objects_to_disable = [NodePath("../../../../Side_2/Entities/StaticObjects/HologramRed_0"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramRed_1"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramRed_2"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramRed_3"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramRed_4"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramRed_5"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramRed_6"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramRed_7"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramRed_8"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramRed_9"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramRed_10"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramRed_11")]
@@ -3760,7 +3760,7 @@ texture = ExtResource("10_n7m6w")
 [node name="PointLight2D" parent="Side_1/Entities/Buttons/RedButton" index="2" unique_id=324128134]
 color = Color(0.9165012, 0, 0.12903675, 1)
 
-[node name="PurpleButton" parent="Side_1/Entities/Buttons" unique_id=161842611 node_paths=PackedStringArray("objects_to_disable") instance=ExtResource("11_pressure_button")]
+[node name="PurpleButton" parent="Side_1/Entities/Buttons" unique_id=161842611 node_paths=PackedStringArray("objects_to_disable") instance=ExtResource("11_iaxp3")]
 position = Vector2(200, 8)
 is_pressed_texture = ExtResource("12_p0p7o")
 objects_to_disable = [NodePath("../../../../Side_2/Entities/StaticObjects/HologramPurple_0"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramPurple_1"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramPurple_2"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramPurple_3"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramPurple_4"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramPurple_5"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramPurple_6"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramPurple_7"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramPurple_8"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramPurple_9"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramPurple_10"), NodePath("../../../../Side_2/Entities/StaticObjects/HologramPurple_11")]
@@ -4292,7 +4292,7 @@ script = ExtResource("8_do6pa")
 
 [node name="Buttons" type="Node2D" parent="Side_2/Entities" unique_id=681854478]
 
-[node name="BlueButton" parent="Side_2/Entities/Buttons" unique_id=1992500944 node_paths=PackedStringArray("objects_to_disable") instance=ExtResource("11_pressure_button")]
+[node name="BlueButton" parent="Side_2/Entities/Buttons" unique_id=1992500944 node_paths=PackedStringArray("objects_to_disable") instance=ExtResource("11_iaxp3")]
 position = Vector2(216, 264)
 is_pressed_texture = ExtResource("31_jnyl3")
 objects_to_disable = [NodePath("../../../../Side_1/Entities/StaticObjects/HologramBlue_0"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramBlue_1"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramBlue_2"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramBlue_3"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramBlue_4"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramBlue_5"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramBlue_6"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramBlue_7"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramBlue_8"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramBlue_9"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramBlue_10"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramBlue_11")]
@@ -4304,7 +4304,7 @@ texture = ExtResource("32_2gq65")
 color = Color(0, 0, 1, 1)
 energy = 2.0
 
-[node name="GreenButton" parent="Side_2/Entities/Buttons" unique_id=808806640 node_paths=PackedStringArray("objects_to_disable") instance=ExtResource("11_pressure_button")]
+[node name="GreenButton" parent="Side_2/Entities/Buttons" unique_id=808806640 node_paths=PackedStringArray("objects_to_disable") instance=ExtResource("11_iaxp3")]
 position = Vector2(120, 200)
 is_pressed_texture = ExtResource("33_v1m6f")
 objects_to_disable = [NodePath("../../../../Side_1/Entities/StaticObjects/HologramGreen_0"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramGreen_1"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramGreen_2"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramGreen_3"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramGreen_4"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramGreen_5"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramGreen_6"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramGreen_7"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramGreen_8"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramGreen_9"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramGreen_10"), NodePath("../../../../Side_1/Entities/StaticObjects/HologramGreen_11")]

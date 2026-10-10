@@ -12,11 +12,17 @@ signal pause_pressed
 @onready var main_menu: MainMenu = get_tree().get_first_node_in_group("main_menu")
 @onready var animation_manager: AnimationManager = get_tree().get_first_node_in_group("animation_manager")
 @onready var scene_manager: SceneManager = get_tree().get_first_node_in_group("scene_manager")
+
+# Variables
 var _input_reading_enabled := true
 var _is_controller_active := false
+var _is_touch_active := false
+var _level_touch_controls_visible := false
 var _active_controller_id := -1
-
+var _last_held_direction_p1 := Vector2i.ZERO
+var _last_held_direction_p2 := Vector2i.ZERO
 const CONTROLLER_DEADZONE := 0.2
+const DIRECTION_AXIS_HYSTERESIS := 0.1
 
 # Input Costants
 const MOVE_UP_P1: StringName = &"move_up_p1"
@@ -30,11 +36,6 @@ const MOVE_RIGHT_P2: StringName = &"move_right_p2"
 const UNDO: StringName = &"undo"
 const PAUSE: StringName = &"pause"
 
-const DIRECTION_AXIS_HYSTERESIS := 0.1
-
-var _last_held_direction_p1 := Vector2i.ZERO
-var _last_held_direction_p2 := Vector2i.ZERO
-
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	var connected_joypads := Input.get_connected_joypads()
@@ -43,11 +44,17 @@ func _ready() -> void:
 		_is_controller_active = true
 	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 	_connect_scene_manager()
+	_connect_control_buttons()
+	animation_manager.touch_buttons_animation_finished.connect(_on_touch_buttons_animation_finished)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo:
+	if event is InputEventScreenTouch and event.pressed and event.device != InputEvent.DEVICE_ID_EMULATION:
+		_set_touch_active()
+	elif event is InputEventScreenDrag and event.device != InputEvent.DEVICE_ID_EMULATION:
+		_set_touch_active()
+	elif event is InputEventKey and event.pressed and not event.echo:
 		_set_input_method(false)
-	elif event is InputEventMouseButton and event.pressed:
+	elif event is InputEventMouseButton and event.pressed and event.device != InputEvent.DEVICE_ID_EMULATION:
 		_set_input_method(false)
 	elif event is InputEventJoypadButton and event.pressed:
 		_set_input_method(true, event.device)
@@ -55,23 +62,60 @@ func _input(event: InputEvent) -> void:
 		_set_input_method(true, event.device)
 
 func _set_input_method(controller_active: bool, controller_id := -1) -> void:
+	var changed: bool
 	if controller_active:
 		var connected_joypads := Input.get_connected_joypads()
 		if not connected_joypads.has(controller_id):
 			if connected_joypads.is_empty():
 				return
 			controller_id = connected_joypads.front()
-		var changed := not _is_controller_active or _active_controller_id != controller_id
+		changed = not _is_controller_active or _is_touch_active or _active_controller_id != controller_id
 		_is_controller_active = true
+		_is_touch_active = false
 		_active_controller_id = controller_id
 		if changed:
 			input_method_changed.emit()
-	elif _is_controller_active:
+	else:
+		changed = _is_controller_active or _is_touch_active
 		_is_controller_active = false
-		input_method_changed.emit()
+		_is_touch_active = false
+		if changed:
+			input_method_changed.emit()
+
+func _set_touch_active() -> void:
+	if _is_touch_active and not _is_controller_active:
+		return
+	_is_controller_active = false
+	_is_touch_active = true
+	input_method_changed.emit()
 
 func is_controller_active() -> bool:
 	return _is_controller_active
+
+func is_touch_active() -> bool:
+	return _is_touch_active
+
+func set_level_touch_buttons_visible(visible: bool) -> void:
+	if _level_touch_controls_visible == visible:
+		return
+	_level_touch_controls_visible = visible
+	for node in get_tree().get_nodes_in_group("level_touch_buttons"):
+		var button := node as TouchScreenButton
+		if button != null:
+			button.set_process_input(visible)
+			if visible:
+				button.visible = true
+			elif node.is_in_group("movement_touch_buttons"):
+				button.visible = false
+	animation_manager.play_touch_buttons_animation(visible)
+
+func _on_touch_buttons_animation_finished(visible: bool) -> void:
+	if visible or _level_touch_controls_visible:
+		return
+	for node in get_tree().get_nodes_in_group("level_touch_buttons"):
+		var button := node as TouchScreenButton
+		if button != null:
+			button.visible = false
 
 func get_controller_undo_label() -> String:
 	var controller_name := _get_active_controller_name()
@@ -153,13 +197,37 @@ func _connect_scene_manager() -> void:
 	scene_manager.loading_level.connect(_disable_input_reading)
 	scene_manager.level_loaded.connect(_enabling_input_reading)
 
+func _connect_control_buttons() -> void:
+	for node in get_tree().get_nodes_in_group("pause_control_button"):
+		var pause_button := node as Button
+		if pause_button != null:
+			pause_button.pressed.connect(_on_pause_button_pressed)
+	for node in get_tree().get_nodes_in_group("undo_control_button"):
+		var undo_button := node as Button
+		if undo_button != null:
+			undo_button.pressed.connect(_on_undo_button_pressed)
+
+func _on_pause_button_pressed() -> void:
+	if (main_menu == null or not main_menu.visible) and _can_pause():
+		pause_pressed.emit()
+
+func _on_undo_button_pressed() -> void:
+	if _can_move():
+		undo_pressed.emit()
+
 func _disable_input_reading() -> void:
 	_input_reading_enabled = false
 	set_process_unhandled_input(false)
+	set_level_touch_buttons_visible(false)
 
 func _enabling_input_reading() -> void:
 	_input_reading_enabled = true
 	set_process_unhandled_input(true)
+	set_level_touch_buttons_visible(
+		is_instance_valid(scene_manager.current_level)
+		and (main_menu == null or not main_menu.visible)
+		and (pause_menu == null or not pause_menu.is_paused)
+	)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if main_menu != null and main_menu.visible:
