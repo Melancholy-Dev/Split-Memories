@@ -473,7 +473,6 @@ Graphics:
 Music and Sounds:
 Level Design:
 Narrative:"
-horizontal_alignment = 2
 
 [node name="Names" type="Label" parent="Credits" unique_id=1989047881]
 layout_mode = 1
@@ -492,6 +491,7 @@ Zaffy (Level 3, UI), FranzTheMerchant (Level 2), Ciuffo (Level 1, Artwork)
 Ambit, Melancholy
 Melancholy, Clanvy
 Melancholy, Ambit, Clanvy, Ciuffo, FranzTheMerchant, Zaffy"
+horizontal_alignment = 2
 
 [connection signal="pressed" from="BackButton/Back/PanelContainer/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="MenuButtons/Play/PanelContainer/PlayButton" to="." method="_on_play_button_pressed"]
